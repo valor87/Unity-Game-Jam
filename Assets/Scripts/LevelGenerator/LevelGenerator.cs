@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 public enum propType
 {
@@ -20,10 +21,16 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private Transform _trSpot1;
     [Tooltip("Bottom corner location oppisite form the one above")]
     [SerializeField] private Transform _trSpot2;
-
+    [SerializeField] private float _roofOffset = 50;
     [Header("Prop infomation")]
-    [SerializeField] private int _amountOfRoofProps;
     [SerializeField] private propStruct[] _allSpawnAbleProps = new propStruct[10];
+
+    #region amount of props
+    [Header("----------------------------------------------------------------------------")]
+    [SerializeField] private int _amountOfRoofProps;
+    [SerializeField] private int _amountOfFloatingProps;
+    [SerializeField] private int _amountOfGroundProps;
+    #endregion
 
     void Start()
     {
@@ -40,17 +47,29 @@ public class LevelGenerator : MonoBehaviour
     {
         for (int i = 0; i < _amountOfRoofProps; i++)
         {
-            int _r = Random.Range(0, _allSpawnAbleProps.Length);
             Vector3 _rV = new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
-                                      Random.Range(_trSpot1.position.y, _trSpot2.position.y),
+                                      Random.Range(_trSpot1.position.y - (_roofOffset * 1.5f), _trSpot1.position.y - _roofOffset),
                                       Random.Range(_trSpot1.position.z, _trSpot2.position.z));
+            GameObject _gO = null;
+            while(true)
+            {
+                int _r = Random.Range(0, _allSpawnAbleProps.Length);
+                if (_allSpawnAbleProps[_r].thisPropType == propType.Roof)
+                {
+                    _gO = Instantiate(_allSpawnAbleProps[_r].propObject);
+                    break;
+                }
+            }
 
-            GameObject _gO = Instantiate(_allSpawnAbleProps[_r].propObject);
             _gO.transform.position = _rV;
         }
+
     }
 
+    private void spawnPropsLoop()
+    {
 
+    }
     // for drawing a box of the spawnable objects
     private void debugDrawBoxBounds(Color c)
     {
