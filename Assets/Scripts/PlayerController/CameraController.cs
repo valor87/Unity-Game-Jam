@@ -26,6 +26,7 @@ public class CameraController : MonoBehaviour
 
         XRotation += Input.GetAxis("Mouse Y") * -1 * sensitivity;
         YRotation += Input.GetAxis("Mouse X") * sensitivity;
-        transform.localEulerAngles = new Vector3(XRotation, YRotation, 0);
+        transform.localEulerAngles = new Vector3(XRotation, 0, 0);
+        transform.parent.localEulerAngles = new Vector3(0, YRotation, 0);
     }
 }

@@ -7,21 +7,22 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Camera _camera; //for movement zoom out effects
     [SerializeField] private float moveSpeed, maxMoveSpeed, jumpStrength;
+
+
     private bool isGrounded = true;
     private void Start()
     {
         _camera = Camera.main.GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
-        rb.maxLinearVelocity = maxMoveSpeed;
     }
 
     private void Update()
     {
-        Vector3 moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
         if (isGrounded)
         {
-            MoveInDirection(transform.TransformDirection(moveDirection));
+            MoveInDirection(moveVector());
+            Debug.Log(rb.linearVelocity);
+            
         }
         
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -32,21 +33,28 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(Vector3.up * jumpStrength);
+        //temp code not how jump will actually work later
+        rb.linearVelocity += Vector3.up * jumpStrength;
     }
-
+    Vector3 moveVector()
+    {
+        return new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+    }
     void MoveInDirection(Vector3 _direction)
     {
-        rb.linearVelocity += _direction * moveSpeed * Time.deltaTime;
+        Vector3 rMove = transform.right;
+        Vector3 fMove = transform.forward;
+
+        rb.linearVelocity +=  (rMove * _direction.x + fMove * _direction.z) * moveSpeed * Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Something entered me trigger!");
+        isGrounded = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //Debug.Log("Something left me trigger!");
+        isGrounded = false;
     }
 }
