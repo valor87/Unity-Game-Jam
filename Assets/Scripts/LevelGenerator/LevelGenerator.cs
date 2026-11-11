@@ -24,9 +24,9 @@ public class LevelGenerator : MonoBehaviour
 
     #region amount of props
     [Header("----------------------------------------------------------------------------")]
-    [SerializeField] private int _amountOfRoofProps;
-    [SerializeField] private int _amountOfFloatingProps;
-    [SerializeField] private int _amountOfGroundProps;
+    public int _amountOfRoofProps;
+    public int _amountOfFloatingProps;
+    public int _amountOfGroundProps;
     #endregion
 
     void Start()
@@ -82,8 +82,10 @@ public class LevelGenerator : MonoBehaviour
                     break;
                 }
             }
-
             _gO.transform.position = _rV;
+            _gO.GetComponent<Prop>().pT = _p;
+            _gO.GetComponent<Prop>().lg = this;
+
         }
     }
     // for drawing a box of the spawnable objects
@@ -116,5 +118,4 @@ public class LevelGenerator : MonoBehaviour
         Debug.DrawLine(_v3, _v7, _c);
         Debug.DrawLine(_v4, _v8, _c);
     }
-
 }
