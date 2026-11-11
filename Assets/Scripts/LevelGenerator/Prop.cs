@@ -28,6 +28,11 @@ public class Prop : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    private void moveToARandomWorldSpace()
+    {
+        Vector3 newPos = new Vector3();
+    }
     // Update is called once per frame
     void Update()
     {
