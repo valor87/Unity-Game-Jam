@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Prop : MonoBehaviour
@@ -9,23 +10,17 @@ public class Prop : MonoBehaviour
     void Start()
     {
         _thisCollider = GetComponent<Collider>();
+        StartCoroutine(LateStart());
+    }
+    
+    IEnumerator LateStart()
+    {
+        yield return new WaitForSeconds(.25f);
+        _thisCollider.isTrigger = false;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (pT == propType.Floating)
-        {
-            lg._amountOfFloatingProps++;
-        }
-        else if(pT == propType.Ground)
-        {
-            lg._amountOfGroundProps++;
-        }
-        else if (pT == propType.Roof)
-        {
-            lg._amountOfRoofProps++;
-        }
-
         Destroy(gameObject);
     }
 

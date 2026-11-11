@@ -42,14 +42,14 @@ public class LevelGenerator : MonoBehaviour
     [ContextMenu("Spawn Objects")]
     private void spawnProps()
     {
-        spawnPropsLoop(propType.Roof);
-        spawnPropsLoop(propType.Floating);
-        spawnPropsLoop(propType.Ground);
+        spawnPropsLoop(propType.Roof, _amountOfRoofProps);
+        spawnPropsLoop(propType.Floating, _amountOfFloatingProps);
+        spawnPropsLoop(propType.Ground, _amountOfGroundProps);
     }
 
-    private void spawnPropsLoop(propType _p)
+    private void spawnPropsLoop(propType _p, int _itemSpawnAmount)
     {
-        for (int i = 0; i < _amountOfRoofProps; i++)
+        for (int i = 0; i < _itemSpawnAmount; i++)
         {
             Vector3 _rV = Vector3.zero;
             GameObject _gO = null;
@@ -68,7 +68,7 @@ public class LevelGenerator : MonoBehaviour
                     break;
                 case propType.Floating:
                     _rV = new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
-                                         Random.Range(_trSpot1.position.y - (_roofOffset * 1.5f), _trSpot2.position.y + _roofOffset + (_roofOffset * 1.5f)),
+                                         Random.Range(_trSpot1.position.y - (_roofOffset * 8f), _trSpot2.position.y + _roofOffset + (_roofOffset * 8f)),
                                          Random.Range(_trSpot1.position.z, _trSpot2.position.z));
                     break;
             }
