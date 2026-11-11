@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
     }
-
+   
     void Jump()
     {
         //temp code not how jump will actually work later
