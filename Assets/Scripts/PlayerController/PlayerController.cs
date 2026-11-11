@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(rb.linearVelocity);
         Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         if (isGrounded)
@@ -44,8 +43,19 @@ public class PlayerController : MonoBehaviour
     }
     void Jump()
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position - Vector3.up * 0.41f, 0.72f);
-        rb.linearVelocity += Vector3.up * jumpStrength;
+        Collider[] colliders = Physics.OverlapSphere(transform.position - Vector3.up * 0.41f, 0.72f);
+        Vector3 meanPosition = Vector3.zero;
+        foreach (Collider collider in colliders)
+        {
+            Vector3 closestPos = collider.ClosestPointOnBounds(transform.position - Vector3.up * 0.41f);
+            Debug.Log("Closest pos: " + closestPos);
+            meanPosition += closestPos;
+        }
+        meanPosition /= colliders.Length;
+        Debug.Log("mean position: " +  meanPosition);
+        Vector3 direction = transform.position - meanPosition;
+        Debug.Log("direction: " + direction);
+        rb.linearVelocity += direction.normalized * jumpStrength;
     }
     void MoveInDirection(Vector3 _direction)
     {
