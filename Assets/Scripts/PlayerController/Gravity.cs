@@ -10,8 +10,8 @@ public class Gravity : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        rb.AddForce(Vector3.down * gravityScale);
+        rb.linearVelocity += Vector3.down * gravityScale;
     }
 }
