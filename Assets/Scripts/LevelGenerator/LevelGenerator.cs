@@ -2,11 +2,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 public enum propType
 {
-    None,
-    Roof,
-    Ground,
-    Floating
+    None, Roof, Ground, Floating
 }
+
 [System.Serializable]
 public struct propStruct
 {
@@ -39,7 +37,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        debugDrawBoxBounds(Color.green);
+        debugDrawBoxBounds(_trSpot1, _trSpot2, Color.green);
     }
 
     [ContextMenu("Spawn Objects")]
@@ -71,10 +69,10 @@ public class LevelGenerator : MonoBehaviour
 
     }
     // for drawing a box of the spawnable objects
-    private void debugDrawBoxBounds(Color c)
+    private void debugDrawBoxBounds(Transform t1, Transform t2, Color c)
     {
-        Vector3 _topLocation = _trSpot1.position;
-        Vector3 _bottomLocation = _trSpot2.position;
+        Vector3 _topLocation = t1.position;
+        Vector3 _bottomLocation = t2.position;
 
         Vector3 _v1 = _topLocation;
         Vector3 _v2 = new Vector3(_topLocation.x, _topLocation.y, _bottomLocation.z);
