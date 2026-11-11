@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [Header("Camera units")]
     [SerializeField] private AnimationCurve cameraFOVMultiplier;
     [SerializeField] private float minSpeedForFOVChange, maxSpeedForFOVChange;
+    private float currentCamFOV;
+
     [Header("Movement units")]
     [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength;
     private Vector3 moveDirection;
@@ -86,8 +88,9 @@ public class PlayerController : MonoBehaviour
     void ChangeCameraFOVBasedOnSpeed()
     {
         float speed = Mathf.InverseLerp(minSpeedForFOVChange, maxSpeedForFOVChange, rb.linearVelocity.magnitude);
-        float cameraFOV = Mathf.Lerp(60, 120, speed);
-        _camera.fieldOfView = cameraFOV;
+        float targCameraFOV = Mathf.Lerp(60, 120, speed);
+        currentCamFOV = Mathf.Lerp(currentCamFOV, targCameraFOV, 0.05f);
+        _camera.fieldOfView = currentCamFOV;
     }
     //TRIGGER COLLISIONS CHECKING FOR SURFACES PLAYER IS COLLIDING WITH
     private void OnTriggerEnter(Collider other)
