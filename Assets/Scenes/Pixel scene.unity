@@ -484,6 +484,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 22.793, z: 0}
+--- !u!1 &771030422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 771030423}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &771030423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771030422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.35, y: -0.9, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1135014767
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,15 +808,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: moveSpeed
-      value: 13.2
+      value: 79.3
       objectReference: {fileID: 0}
     - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: jumpStrength
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: maxMoveSpeed
-      value: 599.5
+      value: 17.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: airStrafeSpeed
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: cameraFOVMultiplier.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297054149834628830, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297054149834628830, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: m_AngularDamping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_Name
@@ -806,3 +869,4 @@ SceneRoots:
   - {fileID: 2020327932}
   - {fileID: 78711943}
   - {fileID: 15439430}
+  - {fileID: 771030423}
