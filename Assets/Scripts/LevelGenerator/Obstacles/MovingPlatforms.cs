@@ -14,9 +14,9 @@ public class MovingPlatforms : MonoBehaviour
 
     void Update()
     {
-        _plat.position += new Vector3(_mA,0,0) * _platformSpeed * Time.deltaTime;
+        _plat.localPosition += new Vector3(_mA,0,0) * _platformSpeed * Time.deltaTime;
         
-        if (_plat.position.x > _rightPosition.position.x || _plat.position.x < _leftPosition.position.x)
+        if (_plat.localPosition.x > _rightPosition.localPosition.x || _plat.localPosition.x < _leftPosition.localPosition.x)
         {
             _mA = _mA * -1;
         }
