@@ -1,63 +1,44 @@
+using System.Collections;
 using UnityEngine;
 
 public class ElevatorDoor : MonoBehaviour, IInteractable
 {
-    [SerializeField] private float _openAmount = 5;
-    [SerializeField] private float _stayOpenTime = 1;
+    public bool interactable; //determines whether elevator door can be opened or not
 
-    private Vector3 _oPos;
-    private Vector3 _cPos;
-    
-    private Transform _dTrans;
-
-    private float _oT = 0;
-    private float _cT = 0;
-    private float _t = 0;
-
+    [SerializeField] private float distanceToOpenDoor = 3.21999884f;
+    [SerializeField] private float timeToOpenDoor;
+    [SerializeField] private AnimationCurve doorOpenAnimationCurve;
+    private Vector3 doorOpenPosition, doorClosePosition;
+    private void Start()
+    {
+        doorClosePosition = transform.position;
+        doorOpenPosition = transform.position + Vector3.right * distanceToOpenDoor;
+    }
     public void Exacute()
     {
-        _dTrans = transform;
-    }
-    
-    void Start()
-    {
-        _cPos = transform.position;
-        _oPos = new(transform.position.x, transform.position.y * _openAmount,transform.position.z);
-    }
-
-    void Update()
-    {
-        if (_dTrans != null)
+        if (interactable)
         {
-            if (transform.position.y < _oPos.y && _oT/_stayOpenTime < 0.99f)
-            {
-                _oT += Time.deltaTime;
-                transform.position = Vector3.Lerp(_cPos, _oPos, _oT/_stayOpenTime);
-                return;
-            }
-
-            if (_t < _stayOpenTime)
-            {
-                _t += Time.deltaTime;
-                return;
-            }
-
-            if (transform.position.y > _cPos.y && _cT / _stayOpenTime < 0.99f)
-            {
-                _cT += Time.deltaTime;
-                transform.position = Vector3.Lerp(_oPos, _cPos, _cT/_stayOpenTime);
-                return;
-            }
-
-            transform.position = _cPos;
-            resetDoorValues();
+            StartCoroutine(OpenOrCloseDoor(doorOpenPosition));
         }
     }
-    private void resetDoorValues()
+
+    public IEnumerator OpenOrCloseDoor(Vector3 destination)
     {
-        _dTrans = null;
-        _oT = 0;
-        _cT = 0;
-        _t = 0;
+        float time = 0;
+        Vector3 startPos = transform.position;
+        while (transform.position != destination)
+        {
+            time+= Time.deltaTime;
+
+            transform.position = Vector3.Lerp(startPos, destination, doorOpenAnimationCurve.Evaluate(time / timeToOpenDoor));
+
+            if(time > 8)
+            {
+                Debug.Log("SAFETY TRIPPED, EXITING ELEVATOR DOOR COROUTINE");
+                break;
+            }
+            yield return null;
+        }
     }
+
 }
