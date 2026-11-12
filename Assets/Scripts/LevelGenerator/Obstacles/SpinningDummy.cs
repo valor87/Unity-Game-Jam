@@ -1,0 +1,63 @@
+using UnityEngine;
+
+public class SpinningDummy : MonoBehaviour
+{
+    [SerializeField] private float _bufferTime;
+    [SerializeField] private int _amountOfSpins;
+    [SerializeField] private float _rotationSpeed;
+    private bool _windUp = true;
+    private float _rotationTarget = 0;
+    private float _currentIntervelTime;
+    void Update()
+    {
+        // spins the player
+        Spin();
+        // when the timers complete restart the rotation
+        if (_currentIntervelTime >= _bufferTime)
+        {
+            StartSpin();
+        }
+    }
+
+    [ContextMenu("spinDummy")]
+    // reset values
+    void StartSpin()
+    {
+        _windUp = true;
+        _currentIntervelTime = 0;
+        _rotationTarget = 0;
+    }
+    //spin the dummy
+    void Spin()
+    {
+        // start the windup
+        if (_windUp)
+        {
+            
+            if (_rotationTarget <= 30 * _amountOfSpins)
+            {
+                // rotate the dummy
+                transform.eulerAngles = new Vector3(0, _rotationTarget, 0);
+                _rotationTarget += 2 * _rotationSpeed * Time.deltaTime;
+            }
+            else 
+            {
+                // set the new rotation for the dummy
+                _rotationTarget = 390 * _amountOfSpins;
+                _windUp = false;
+            }
+        }
+        // preform the new rotation
+        if (!_windUp)
+        {
+            if (_rotationTarget > 0)
+            {
+                //rotate the dummy
+                transform.eulerAngles = new Vector3(0, _rotationTarget, 0);
+                _rotationTarget -= 5 * _rotationSpeed * Time.deltaTime;
+                return;
+            }
+            _currentIntervelTime += 1 * Time.deltaTime;
+        }
+    }
+}
