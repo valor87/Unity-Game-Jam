@@ -14,6 +14,11 @@ public class EventCore : MonoBehaviour
     /// called everytime the player takes damage
     /// </summary>
     public UnityEvent UE_PlayTakeDamge;
+    /// <summary>
+    /// For whenever the coin values changes. The int
+    /// passed in the NEW coin value
+    /// </summary>
+    public UnityEvent<int> UE_ChangeCoinValue;
     void Awake()
     {
         if (instance == null)
