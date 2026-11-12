@@ -726,6 +726,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379ad247ae0ba44fb622b9901b37538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
+  numberOutcomes:
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
+  - numebr: 0
+    effect: {fileID: 0}
 --- !u!65 &131189152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2860,6 +2879,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379ad247ae0ba44fb622b9901b37538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
+  numberOutcomes:
+  - numebr: 1
+    effect: {fileID: 0}
+  - numebr: 2
+    effect: {fileID: 0}
+  - numebr: 3
+    effect: {fileID: 0}
+  - numebr: 4
+    effect: {fileID: 0}
+  - numebr: 5
+    effect: {fileID: 0}
+  - numebr: 6
+    effect: {fileID: 0}
+  - numebr: 7
+    effect: {fileID: 0}
+  - numebr: 8
+    effect: {fileID: 0}
+  - numebr: 9
+    effect: {fileID: 0}
 --- !u!65 &1642994531
 BoxCollider:
   m_ObjectHideFlags: 0

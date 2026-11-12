@@ -8,9 +8,9 @@ public class TeleportPlayer : MonoBehaviour
         EventCore.instance.UE_EnterEndElevator.AddListener(MovePlayer);
     }
 
-    void MovePlayer()
+    void MovePlayer(Vector3 playerOffset)
     {
-        Debug.Log("Instance filled");
-        _playerTransform.position = transform.position;
+        playerOffset.y = 0;
+        _playerTransform.position = transform.position - playerOffset;
     }
 }

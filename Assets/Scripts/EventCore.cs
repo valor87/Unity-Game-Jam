@@ -8,7 +8,7 @@ public class EventCore : MonoBehaviour
     /// when the player is in the end elevator and 
     /// needs to be move to the begining again
     /// </summary>
-    public UnityEvent UE_EnterEndElevator;
+    public UnityEvent<Vector3> UE_EnterEndElevator;
 
     void Awake()
     {

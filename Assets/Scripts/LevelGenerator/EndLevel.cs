@@ -10,7 +10,6 @@ public class EndLevel : MonoBehaviour
     }
     void Update()
     {
-        if (Vector3.Distance(transform.position, _pT.position) < _triggerDistence)
-            EventCore.instance.UE_EnterEndElevator.Invoke();
+        
     }
 }
