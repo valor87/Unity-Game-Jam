@@ -309,9 +309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b08991a44b3b474eba8e609a69ecc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 10
-  maxMoveSpeed: 2
-  jumpStrength: 3
+  moveSpeed: 12.7
+  airStrafeSpeed: 0.64
+  maxMoveSpeed: 620
+  jumpStrength: 14
 --- !u!136 &2827501439995741059
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -347,4 +348,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8af156c9aac2e488322b0b1e5e3e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gravity
-  gravityScale: 9.81
+  gravityScale: 0.45
