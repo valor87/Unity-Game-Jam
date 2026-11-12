@@ -10,8 +10,18 @@ public class MovingPlatforms : MonoBehaviour
     void Start()
     {
         _plat = transform.GetChild(0).transform;
+        EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
+        EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
+    }
+    private void DoubleMovementSpeed()
+    {
+        _platformSpeed = _platformSpeed * 2;
     }
 
+    private void ReturnMovement(Vector3 arg)
+    {
+        _platformSpeed = _platformSpeed / 2;
+    }
     void Update()
     {
         _plat.localPosition += new Vector3(_moveAmount,0,0) * _platformSpeed * Time.deltaTime;

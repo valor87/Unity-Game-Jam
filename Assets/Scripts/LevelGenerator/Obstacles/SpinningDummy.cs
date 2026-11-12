@@ -8,6 +8,20 @@ public class SpinningDummy : MonoBehaviour
     private bool _windUp = true;
     private float _rotationTarget = 0;
     private float _currentIntervelTime;
+    void Start()
+    {
+        EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
+        EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
+    }
+    private void DoubleMovementSpeed()
+    {
+        _rotationSpeed = _rotationSpeed * 2;
+    }
+
+    private void ReturnMovement(Vector3 arg)
+    {
+        _rotationSpeed = _rotationSpeed / 2;
+    }
     void Update()
     {
         // spins the player

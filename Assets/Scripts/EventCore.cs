@@ -9,7 +9,7 @@ public class EventCore : MonoBehaviour
     /// needs to be move to the begining again
     /// </summary>
     public UnityEvent<Vector3> UE_EnterEndElevator;
-
+    public UnityEvent UE_DoubleObsticalSpeed;
     void Awake()
     {
         if (instance == null)
