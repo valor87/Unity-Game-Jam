@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    [SerializeField] private Transform _cameraTransform;
     [SerializeField] private KeyCode _interactionKey = KeyCode.E;
     [SerializeField] private float _interactionDistance = 2.0f;
     void Update()
@@ -13,7 +14,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, _interactionDistance))
+        if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out hit, _interactionDistance))
         {
             if (hit.collider.GetComponent<IInteractable>() == null)
                 return;
@@ -27,6 +28,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private void DebugDrawRay()
     {
-        Debug.DrawLine(transform.position, transform.position + transform.forward * _interactionDistance, Color.rebeccaPurple);
+        Debug.DrawLine(_cameraTransform.position, _cameraTransform.position + _cameraTransform.forward * _interactionDistance, Color.rebeccaPurple);
     }
 }

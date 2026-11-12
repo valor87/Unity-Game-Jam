@@ -39,7 +39,7 @@ Material:
     m_Floats:
     - _Dithspread: 0
     - _Opacity: 0
-    - _PixelCount: 247.03
+    - _PixelCount: 250
     - _res: 21.59
     m_Colors: []
   m_BuildTextureStacks: []
