@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(rb.linearVelocity.magnitude);
         rb.maxLinearVelocity = maxMoveSpeed;
         if (!isGrounded)
         {
