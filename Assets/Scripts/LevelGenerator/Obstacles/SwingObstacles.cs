@@ -12,6 +12,17 @@ public class SwingObstacles : MonoBehaviour
     bool _sR=false;
     void Start()
     {
+        EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
+        EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
+    }
+    private void DoubleMovementSpeed()
+    {
+        _rotationAmount = _rotationAmount * 2;
+    }
+
+    private void ReturnMovement(Vector3 arg)
+    {
+        _rotationAmount = _rotationAmount / 2;
     }
     void Update()
     {
@@ -33,4 +44,6 @@ public class SwingObstacles : MonoBehaviour
             }
         }
     }
+
+  
 }
