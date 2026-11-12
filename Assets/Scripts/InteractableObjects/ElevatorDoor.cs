@@ -29,7 +29,7 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
     {
         if(doorMovingCR == null && isOpened)
         {
-            doorMovingCR = StartCoroutine(MoveDoors(distanceToOpenDoor));
+            doorMovingCR = StartCoroutine(MoveDoors(-distanceToOpenDoor));
             isOpened = false;
         }
         
