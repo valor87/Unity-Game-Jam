@@ -10,10 +10,14 @@ public class DamageSurface : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         t -= Time.deltaTime;
-        if (collision.gameObject.GetComponent<IDamageable>() != null && t < 0)
+        if (collision.gameObject.GetComponent<IDamageable>() != null && t <= 0)
         {
             t = _damgeIntervelsSec;
             collision.gameObject.GetComponent<IDamageable>().TakeDamage(_damageNumber);
         }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        t = 0;
     }
 }

@@ -5,7 +5,7 @@ public interface IDamageable
 {
     public float maxHealth { get; set; }
     public float currentHealth { get; set; }
-
+    public bool isPlayer { get; set;}
     public bool IsDead()
     {
         if (currentHealth <= 0)
@@ -22,5 +22,9 @@ public interface IDamageable
             Debug.Log("im dead");
         }
 
+        if (isPlayer)
+        {
+            EventCore.instance.UE_PlayTakeDamge.Invoke();
+        }
     }
 }

@@ -871,61 +871,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5940914, y: 7.1292667, z: 6.887512}
   m_Center: {x: 0.002108574, y: -5.085478, z: 0.013130188}
---- !u!1 &910788260 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-  m_PrefabInstance: {fileID: 7648649474997021126}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &910788269
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910788260}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.78
-  m_Center: {x: 0.000000059604645, y: -0.62, z: -0.00000008940697}
---- !u!114 &910788270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910788260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3fd6e3a880dcd44a738cd3b034d519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  _cameraTransform: {fileID: 7648649474997021127}
-  _interactionKey: 101
-  _interactionDistance: 5
---- !u!114 &910788271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910788260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56db98e13a99fbd419d7b87661ec094c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  _maxHealth: 100
-  _currentHealth: 75
 --- !u!1 &974453851
 GameObject:
   m_ObjectHideFlags: 0
@@ -2487,86 +2432,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3274842666706200704, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: gravityScale
-      value: 0.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: moveSpeed
-      value: 79.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: jumpStrength
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: maxMoveSpeed
-      value: 17.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: airStrafeSpeed
-      value: 0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: maxSpeedForFOVChange
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: minSpeedForFOVChange
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: cameraFOVMultiplier.m_Curve.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: cameraFOVMultiplier.m_Curve.Array.data[1].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297054149834628830, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4297054149834628830, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: m_AngularDamping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2827501439995741059, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 910788270}
-    - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 910788269}
-    - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 910788271}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
---- !u!4 &7648649474997021127 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7243377674119435622, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-  m_PrefabInstance: {fileID: 7648649474997021126}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
