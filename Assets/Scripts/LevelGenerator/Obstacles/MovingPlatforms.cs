@@ -8,18 +8,25 @@ public class MovingPlatforms : MonoBehaviour
     private Transform _plat;
     private float _moveAmount = 2;
     private float _moveAmountDoubled;
+    private float _moveAmountHalved;
+
     void Start()
     {
         _moveAmountDoubled = _moveAmount * 2;
+        _moveAmountHalved = _moveAmount / 2;
         _plat = transform.GetChild(0).transform;
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
+        EventCore.instance.UE_HalfObsticalSpeed.AddListener(HalfMovementSpeed);
     }
     private void DoubleMovementSpeed()
     {
         _platformSpeed = _moveAmountDoubled;
     }
-
+    private void HalfMovementSpeed()
+    {
+        _platformSpeed = _moveAmountHalved;
+    }
     private void ReturnMovement(Vector3 arg)
     {
         _platformSpeed = _moveAmountDoubled / 2;

@@ -6,6 +6,9 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
 {
     private float heldTime, progress;
     [SerializeField] float timeToHold, decayrate;
+
+    //connects mesh animations
+    public Animator SlotMeshAnim;
     [SerializeField] AnimationCurve fillCurve;
     [SerializeField] Slider progressBarUI;
     [SerializeField] CanvasGroup canvasGroup;
@@ -28,6 +31,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     }
     public void Exacute()
     {
+        SlotMeshAnim.SetTrigger("Spin");
         if (SlotMachine.Instance.interactable)
         {
             heldTime += Time.deltaTime;
