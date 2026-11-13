@@ -24,6 +24,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
 
         if(progress == timeToHold && SlotMachine.Instance.interactable)
         {
+            SlotMeshAnim.SetTrigger("Spin");
             StartCoroutine(FadeCanvasGroup());
             SlotMachine.Instance.StartSlotMachine();
             SlotMachine.Instance.interactable = false;
@@ -31,7 +32,6 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     }
     public void Exacute()
     {
-        SlotMeshAnim.SetTrigger("Spin");
         if (SlotMachine.Instance.interactable)
         {
             heldTime += Time.deltaTime;

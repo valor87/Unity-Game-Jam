@@ -45,8 +45,10 @@ public class LevelGenerator : MonoBehaviour
     private void spawnProps()
     {
         spawnPropsLoop(propType.Roof, _amountOfRoofProps);
-        spawnPropsLoop(propType.Floating, _amountOfFloatingProps);
-        spawnPropsLoop(propType.Ground, _amountOfGroundProps);
+        if(_amountOfFloatingProps != 0)
+            spawnPropsLoop(propType.Floating, _amountOfFloatingProps);
+        if(_amountOfGroundProps != 0)
+            spawnPropsLoop(propType.Ground, _amountOfGroundProps);
     }
     [ContextMenu("Clear props")]
     private void ClearProps()

@@ -23,7 +23,7 @@ public class EventCore : MonoBehaviour
     /// <summary>
     /// called everytime the player takes damage
     /// </summary>
-    public UnityEvent UE_PlayTakeDamge;
+    public UnityEvent<float> UE_PlayTakeDamge;
     /// <summary>
     /// For whenever the coin values changes. The int
     /// passed in the NEW coin value
@@ -49,6 +49,11 @@ public class EventCore : MonoBehaviour
     /// Spawns coins for the coming level, int is the amount of coin in the level
     /// </summary>
     public UnityEvent<int> UE_SpawnCoins;
+    /// <summary>
+    /// Effect that causes the player to heal while they're moving
+    /// </summary>
+    public UnityEvent UE_HealWhenMoving;
+
     void Awake()
     {
         if (instance == null)
