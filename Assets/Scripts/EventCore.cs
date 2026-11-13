@@ -17,6 +17,10 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_DoubleObsticalSpeed;
     /// <summary>
+    /// Call when the obsticals move half the speed
+    /// </summary>
+    public UnityEvent UE_HalfObsticalSpeed;
+    /// <summary>
     /// called everytime the player takes damage
     /// </summary>
     public UnityEvent UE_PlayTakeDamge;
@@ -42,9 +46,13 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_TakeDamageWhenStill;
     /// <summary>
-    /// Effect that causes the player to heal when they're moving
+    /// Spawns coins for the coming level, int is the amount of coin in the level
     /// </summary>
-    public UnityEvent UE_HealWhenMoving;
+    public UnityEvent<int> UE_SpawnCoins;
+    /// <summary>
+    /// Effect that causes the player to take damage when they're still
+    /// </summary>
+    public UnityEvent UE_TakeDamageWhenStill;
 
     void Awake()
     {
