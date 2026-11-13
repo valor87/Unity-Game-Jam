@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{2cba7953-65a1-4b8b-9d96-27e49bb10f76}">
+		<property name="assetPath">
+			<value>Axe Swing_2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3653333333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{709bd059-392a-47dc-b985-387c4bf50488}</destination>
+		</relationship>
+	</object>
+</objects>

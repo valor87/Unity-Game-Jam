@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{ba4ff066-395a-4fc1-b919-3264de8ae130}">
+		<property name="name">
+			<value>OnIce</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9f75e30f-341b-4065-b081-24a13140b713}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{704fcb7e-a577-4385-a42d-fd6a1b2b821b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{704fcb7e-a577-4385-a42d-fd6a1b2b821b}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Value A</value>
+			<value>Value B</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

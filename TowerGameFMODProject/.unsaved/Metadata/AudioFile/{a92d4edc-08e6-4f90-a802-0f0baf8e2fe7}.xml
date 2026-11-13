@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{a92d4edc-08e6-4f90-a802-0f0baf8e2fe7}">
+		<property name="assetPath">
+			<value>Lava Burn_1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.048</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{709bd059-392a-47dc-b985-387c4bf50488}</destination>
+		</relationship>
+	</object>
+</objects>

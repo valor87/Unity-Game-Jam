@@ -922,6 +922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorCloseTrigger
   doors: {fileID: 786228785}
+--- !u!1 &609575188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4128756817741119682, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+  m_PrefabInstance: {fileID: 7648649474997021126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &771030422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1321,53 @@ MonoBehaviour:
   _cameraTransform: {fileID: 7648649474997021127}
   _interactionKey: 101
   _interactionDistance: 5
+--- !u!114 &910788271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910788260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b47822e77a504f0cae4c83727a1e75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFootsteps
+  footstepEvent:
+    Guid:
+      Data1: 1169282598
+      Data2: 1311641828
+      Data3: -809574739
+      Data4: 1555008533
+    Path: event:/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: 1255413958
+      Data2: 1337339408
+      Data3: -557138022
+      Data4: -791432362
+    Path: event:/Jump
+  wallRunEvent:
+    Guid:
+      Data1: -717196554
+      Data2: 1142888536
+      Data3: -1609319514
+      Data4: 1513922310
+    Path: event:/Wall Running
+  wallRunParameterName: IsWallRunning
+  strideLength: 2.5
+  minSpeed: 0.5
+  minStepInterval: 0.3
+  surfaceCheckRadius: 1.2
+  surfaceMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  floorMinNormalY: 0.5
+  wallContactDistance: 0.7
+  wallRunMinSpeed: 3
+  wallRunStopDelay: 0.1
+  footstepsOnWalls: 1
+  minAirTimeForLanding: 0.25
 --- !u!1 &974453851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,6 +3544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2827501439995741059, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+    - {fileID: 3208704279381254681, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3501,12 +3554,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       insertIndex: -1
       addedObject: {fileID: 910788269}
+    - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910788271}
+    - targetCorrespondingSourceObject: {fileID: 4128756817741119682, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7648649474997021128}
   m_SourcePrefab: {fileID: 100100000, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
 --- !u!4 &7648649474997021127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7243377674119435622, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
   m_PrefabInstance: {fileID: 7648649474997021126}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7648649474997021128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609575188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
