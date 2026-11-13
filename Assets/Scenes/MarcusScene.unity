@@ -922,6 +922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorCloseTrigger
   doors: {fileID: 786228785}
+--- !u!1 &609575188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4128756817741119682, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+  m_PrefabInstance: {fileID: 7648649474997021126}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &771030422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,7 +1321,7 @@ MonoBehaviour:
   _cameraTransform: {fileID: 7648649474997021127}
   _interactionKey: 101
   _interactionDistance: 5
---- !u!114 &910788278
+--- !u!114 &910788271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1349,7 +1354,7 @@ MonoBehaviour:
       Data3: -1609319514
       Data4: 1513922310
     Path: event:/Wall Running
-  wallRunParameterName: WallRunning
+  wallRunParameterName: IsWallRunning
   strideLength: 2.5
   minSpeed: 0.5
   minStepInterval: 0.3
@@ -3533,16 +3538,13 @@ PrefabInstance:
       propertyPath: m_AngularDamping
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4896146508534926691, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
-      propertyPath: wallRunParameterName
-      value: IsWallRunning
-      objectReference: {fileID: 0}
     - target: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2827501439995741059, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+    - {fileID: 3208704279381254681, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3551,16 +3553,33 @@ PrefabInstance:
       addedObject: {fileID: 910788270}
     - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 910788278}
+      addedObject: {fileID: 910788269}
     - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 910788269}
+      addedObject: {fileID: 910788271}
+    - targetCorrespondingSourceObject: {fileID: 4128756817741119682, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7648649474997021128}
   m_SourcePrefab: {fileID: 100100000, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
 --- !u!4 &7648649474997021127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7243377674119435622, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
   m_PrefabInstance: {fileID: 7648649474997021126}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7648649474997021128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609575188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
