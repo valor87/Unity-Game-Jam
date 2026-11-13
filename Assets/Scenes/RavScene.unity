@@ -893,7 +893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38e9216fe4d2a44eba73f16949db983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorDoor
-  interactable: 1
+  interactable: 0
   leftDoor: {fileID: 1691389414}
   rightDoor: {fileID: 431710591}
   distanceToOpenDoor: 3.2199988
@@ -1400,6 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379ad247ae0ba44fb622b9901b37538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
+  interactable: 0
   firstNumber: 0
   secondNumber: 0
   thirdNumber: 0
@@ -1610,7 +1611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &547676264
 Transform:
   m_ObjectHideFlags: 0
@@ -1677,7 +1678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &572964759
 Transform:
   m_ObjectHideFlags: 0
@@ -1779,7 +1780,7 @@ MonoBehaviour:
   leftDoor: {fileID: 1180532512}
   rightDoor: {fileID: 1248113974}
   distanceToOpenDoor: 3.2199988
-  timeToOpenDoors: 0.5
+  timeToOpenDoors: 0.25
   doorOpenAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -1968,6 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Elevator
   startElevator: {fileID: 1732695094}
+  exitElevator: {fileID: 474278977}
   levelExitDoors: {fileID: 584425272}
   levelEntranceDoors: {fileID: 1022880996}
   startElevatorSlotMachine: {fileID: 968974810}
@@ -2471,7 +2473,6 @@ GameObject:
   m_Component:
   - component: {fileID: 786228784}
   - component: {fileID: 786228785}
-  - component: {fileID: 786228786}
   m_Layer: 0
   m_Name: ElevatorDoors
   m_TagString: Untagged
@@ -2509,7 +2510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38e9216fe4d2a44eba73f16949db983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorDoor
-  interactable: 1
+  interactable: 0
   leftDoor: {fileID: 431871986}
   rightDoor: {fileID: 1315168279}
   distanceToOpenDoor: 3.2199988
@@ -2538,27 +2539,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!65 &786228786
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786228783}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.44520092, y: 7.1292667, z: 6.887512}
-  m_Center: {x: -0.072336674, y: -5.085478, z: 0.013130188}
 --- !u!1 &851828390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,6 +2875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379ad247ae0ba44fb622b9901b37538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
+  interactable: 1
   firstNumber: 0
   secondNumber: 0
   thirdNumber: 0
@@ -3187,11 +3168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38e9216fe4d2a44eba73f16949db983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorDoor
-  interactable: 1
+  interactable: 0
   leftDoor: {fileID: 541038280}
   rightDoor: {fileID: 1218672684}
   distanceToOpenDoor: 3.2199988
-  timeToOpenDoors: 0.5
+  timeToOpenDoors: 0.25
   doorOpenAnimationCurve:
     serializedVersion: 2
     m_Curve:
@@ -5033,7 +5014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580499070}
   - component: {fileID: 1580499072}
-  - component: {fileID: 1580499071}
+  - component: {fileID: 1580499073}
   m_Layer: 0
   m_Name: CloseDoorTrigger
   m_TagString: Untagged
@@ -5056,19 +5037,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1022880995}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1580499071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580499069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f866da1fac193c2418127a96a1f5a6c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ElevatorCloseTrigger
-  doors: {fileID: 1022880996}
 --- !u!65 &1580499072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5088,8 +5056,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.4868145, y: 9.681513, z: 10.711984}
-  m_Center: {x: 5.949937, y: -3.6448717, z: 0.22504568}
+  m_Size: {x: 7.7423363, y: 20.188128, z: 21.574497}
+  m_Center: {x: -6.4968243, y: -6.380084, z: -1.6345577}
+--- !u!114 &1580499073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580499069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9c3abd3aabfa54cb9992514f7fd849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLeftStartTrigger
+  doors: {fileID: 1022880996}
 --- !u!1 &1586458099
 GameObject:
   m_ObjectHideFlags: 0
@@ -6325,31 +6306,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35355
+      value: 16.89
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24748
+      value: 0.24748003
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.35355
+      value: 20.35
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.68973535
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7240616
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6357,7 +6338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 92.782
       objectReference: {fileID: 0}
     - target: {fileID: 231477087346320470, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
