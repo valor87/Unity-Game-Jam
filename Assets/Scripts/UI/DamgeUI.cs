@@ -11,7 +11,7 @@ public class DamgeUI : MonoBehaviour
     {
         EventCore.instance.UE_PlayTakeDamge.AddListener(startDamageUI);
     }
-    private void startDamageUI()
+    private void startDamageUI(float currentHealth)
     {
         if (running)
             return;
