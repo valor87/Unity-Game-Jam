@@ -2632,6 +2632,9 @@ MonoBehaviour:
   UE_DoubleObsticalSpeed:
     m_PersistentCalls:
       m_Calls: []
+  UE_HalfObsticalSpeed:
+    m_PersistentCalls:
+      m_Calls: []
   UE_PlayTakeDamge:
     m_PersistentCalls:
       m_Calls: []
@@ -2648,6 +2651,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   UE_TakeDamageWhenStill:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_SpawnCoins:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &713658321
@@ -5472,7 +5478,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.91, y: -8.54, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3.0107, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1732695094}
@@ -6674,7 +6680,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710172451}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6736,7 +6742,8 @@ Transform:
   m_LocalPosition: {x: 5.289999, y: -7.58, z: -4.409999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1916203838}
   m_Father: {fileID: 1732695094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1732695093
@@ -7327,6 +7334,118 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845692427}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1916203837
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1710172455}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.036565
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.036565
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.036565
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.038
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.89299965
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.11800003
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3934315627840102089, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f760e5e386f189042afba3fa5bf7cdba, type: 2}
+    - target: {fileID: -3934315627840102089, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 88134b40f8b6036418d3ef9f10e040ee, type: 2}
+    - target: {fileID: 919132149155446097, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      propertyPath: m_Name
+      value: Gumballmachine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1916203840}
+  m_SourcePrefab: {fileID: 100100000, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+--- !u!4 &1916203838 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+  m_PrefabInstance: {fileID: 1916203837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1916203839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9fabec3304809394d94a692723e8778c, type: 3}
+  m_PrefabInstance: {fileID: 1916203837}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1916203840
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916203839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c3fd78ea4a240d498374fea006cac88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2020327928
 GameObject:
   m_ObjectHideFlags: 0
