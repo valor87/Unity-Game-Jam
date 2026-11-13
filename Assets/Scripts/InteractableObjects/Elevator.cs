@@ -4,7 +4,7 @@ public class Elevator : MonoBehaviour
 {
     public static Elevator instance;
     private Transform playerTransform;
-    [SerializeField] Transform startElevator;
+    [SerializeField] Transform startElevator, exitElevator;
     [SerializeField] ElevatorDoor levelExitDoors, levelEntranceDoors; //Player will ALWAYS enter through NORTH and exit through SOUTH
     [SerializeField] SlotMachine startElevatorSlotMachine;
     private void Start()
@@ -12,30 +12,28 @@ public class Elevator : MonoBehaviour
         instance = this;
         playerTransform = GameObject.FindWithTag("Player").transform;
     }
-    public void EndCurrentLevel()
+    public void PlayerReachedExit()
     {
-        UnloadLevel();
-        //roll payline numbers
-        LoadLevel();
+        EndLevel();
     }
-    private void UnloadLevel()
+    public void PlayerStartedLevel()
     {
-       //unload current level between elevators
+        //call necessary effects from slotmachine CODE HERE
+        SlotMachine.Instance.ResetSlotMachineInteracts();
+        levelExitDoors.OpenDoors();
+        levelEntranceDoors.interactable = false;
     }
-    private void LoadLevel()
+    public void MakeStartDoorsInteractable()
     {
-        //based on rolled payline numbers
+        levelEntranceDoors.interactable = true;
     }
-    private void TeleportPlayerToStartElevator()
+    private void EndLevel()
     {
-        //called when succesfully interacted with slot machine (payline)
-    }
-    public void BeginLevel()
-    {
-        //Teleport player to start elevator
-        Vector3 playerOffset = transform.position - playerTransform.position;
-        EventCore.instance.UE_EnterEndElevator.Invoke(playerOffset);
-        //do payline animation
-        levelEntranceDoors.OpenDoors();
+        //Teleport player to start elevator and make start doors uninteractable and make slot machine interactable
+        levelEntranceDoors.interactable = false;
+        SlotMachine.Instance.interactable = true;
+        Vector3 offset = playerTransform.position - exitElevator.position;
+        playerTransform.position = startElevator.position + offset;
+        EventCore.instance.UE_EnterEndElevator.Invoke(offset);
     }
 }
