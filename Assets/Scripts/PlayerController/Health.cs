@@ -11,16 +11,19 @@ public class Health : MonoBehaviour, IDamageable
     public bool isPlayer { get; set;}
 
     //Effect stuff
-    private bool takeDamageWhenStill = false;
+    private bool takeDamageWhenStill = false, healWhenMoving = false;
     [SerializeField] float tickDamage = 0.1f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         if(gameObject.CompareTag("Player"))
             isPlayer = true;
-
+        //one phobia
         EventCore.instance.UE_TakeDamageWhenStill.AddListener(EnableTakeDamageWhileStill);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableTakeDamageWhileStill);
+        //one philia
+        EventCore.instance.UE_TakeDamageWhenStill.AddListener(EnableHealWhenMoving);
+        EventCore.instance.UE_EnterEndElevator.AddListener(DisableHealWhenMoving);
     }
 
     private void Update()
@@ -28,6 +31,10 @@ public class Health : MonoBehaviour, IDamageable
         if(rb.linearVelocity.magnitude < 0.3f && takeDamageWhenStill)
         {
             GetComponent<IDamageable>().TakeDamage(tickDamage);
+        }
+        if (rb.linearVelocity.magnitude > 0.3f && healWhenMoving)
+        {
+            GetComponent<IDamageable>().TakeDamage(-tickDamage);
         }
     }
 
@@ -38,5 +45,13 @@ public class Health : MonoBehaviour, IDamageable
     private void DisableTakeDamageWhileStill(Vector3 arg)
     {
         takeDamageWhenStill = false;
+    }
+    private void EnableHealWhenMoving()
+    {
+        healWhenMoving = true;
+    }
+    private void DisableHealWhenMoving(Vector3 arf)
+    {
+        healWhenMoving = false;
     }
 }
