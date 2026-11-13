@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3208704279381254681}
   - component: {fileID: 5891836796192596895}
   - component: {fileID: 2263377855461626036}
+  - component: {fileID: 1528702587298829067}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -151,6 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   sensitivity: 2
+--- !u!114 &1528702587298829067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128756817741119682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &6345926857273361753
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,6 +324,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b08991a44b3b474eba8e609a69ecc78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  cameraFOVMultiplier:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  minSpeedForFOVChange: 0
+  maxSpeedForFOVChange: 0
   moveSpeed: 12.7
   airStrafeSpeed: 0.64
   maxMoveSpeed: 620
@@ -349,3 +372,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gravity
   gravityScale: 0.45
+  windScale: 0
