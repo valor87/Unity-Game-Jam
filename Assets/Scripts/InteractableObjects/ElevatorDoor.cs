@@ -10,6 +10,7 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
     [SerializeField] private float timeToOpenDoors;
     [SerializeField] private AnimationCurve doorOpenAnimationCurve;
     private Coroutine doorMovingCR;
+    public bool isStartDoor;
     public void Exacute()
     {
         if (interactable)
@@ -21,6 +22,7 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
                 SoundManager.Instance.OpenElevatorDoors(transform);
             }
             OpenDoors();
+            if (isStartDoor) Elevator.instance.PlayerStartedLevel();
         }
     }
     public void OpenDoors()

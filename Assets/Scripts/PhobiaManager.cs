@@ -15,7 +15,13 @@ public class PhobiaManager : MonoBehaviour
             Debug.Log("Phobia added: " + i);
         }
     }
-    public void RunEffect(int number)
+    public void StartAllActiveEffects()
+    {
+        RunEffect(SlotMachine.Instance.firstNumber);
+        RunEffect(SlotMachine.Instance.secondNumber);
+        RunEffect(SlotMachine.Instance.thirdNumber);
+    }
+    private void RunEffect(int number)
     {
         Effects[number - 1].DoEffect();
     }

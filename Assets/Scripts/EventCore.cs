@@ -53,6 +53,14 @@ public class EventCore : MonoBehaviour
     /// Effect that causes the player to heal while they're moving
     /// </summary>
     public UnityEvent UE_HealWhenMoving;
+    /// <summary>
+    /// Effect that spawns 2 coins in the level
+    /// </summary>
+    public UnityEvent UE_SpawnTwoCoins;
+    /// <summary>
+    /// Effect that spawns no coins in the level
+    /// </summary>
+    public UnityEvent UE_SpawnNoCoins;
 
     void Awake()
     {

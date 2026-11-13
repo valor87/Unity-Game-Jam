@@ -8,7 +8,6 @@ public class PlayerLeftStartTrigger : MonoBehaviour
         if (other.name == "Player")
         {
             doors.CloseDoors();
-            Elevator.instance.PlayerStartedLevel();
         }
     }
 }
