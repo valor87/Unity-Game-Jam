@@ -50,9 +50,9 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent<int> UE_SpawnCoins;
     /// <summary>
-    /// Effect that causes the player to take damage when they're still
+    /// Effect that causes the player to heal while they're moving
     /// </summary>
-    public UnityEvent UE_TakeDamageWhenStill;
+    public UnityEvent UE_HealWhenMoving;
 
     void Awake()
     {
