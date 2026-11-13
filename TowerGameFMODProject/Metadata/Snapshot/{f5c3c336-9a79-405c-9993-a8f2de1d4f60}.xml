@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="Snapshot" id="{f5c3c336-9a79-405c-9993-a8f2de1d4f60}">
+		<property name="name">
+			<value>InShopDucking</value>
+		</property>
+		<property name="behavior">
+			<value>1</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{1fd00ced-a5df-45c4-8ad4-e74a639f1153}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{1f820aa3-577b-48ad-a3c2-097ba6c64eb1}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{d9bacabf-446e-469d-8453-ba3a5353ba9d}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{9b8d3582-7024-4dac-9e59-802ee90ce75e}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{ccbecb0d-55de-43dd-a451-4f2381bff64b}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{1f820aa3-577b-48ad-a3c2-097ba6c64eb1}" />
+	<object class="MarkerTrack" id="{d9bacabf-446e-469d-8453-ba3a5353ba9d}" />
+	<object class="Timeline" id="{9b8d3582-7024-4dac-9e59-802ee90ce75e}" />
+	<object class="SnapshotMasterTrack" id="{ccbecb0d-55de-43dd-a451-4f2381bff64b}" />
+</objects>

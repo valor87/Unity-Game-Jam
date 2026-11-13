@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3208704279381254681}
   - component: {fileID: 5891836796192596895}
   - component: {fileID: 2263377855461626036}
+  - component: {fileID: 1528702587298829067}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -151,6 +152,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   sensitivity: 2
+--- !u!114 &1528702587298829067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128756817741119682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &6345926857273361753
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,10 +180,9 @@ GameObject:
   - component: {fileID: 9072559000059697109}
   - component: {fileID: 4297054149834628830}
   - component: {fileID: 4139943531171715633}
+  - component: {fileID: 2827501439995741059}
   - component: {fileID: 3274842666706200704}
-  - component: {fileID: 7873966740278154324}
-  - component: {fileID: 7448202741416527794}
-  - component: {fileID: 1956359040197386922}
+  - component: {fileID: 4896146508534926691}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -280,9 +294,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6345926857273361753}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -313,64 +327,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   cameraFOVMultiplier:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  minSpeedForFOVChange: 18
-  maxSpeedForFOVChange: 55
-  moveSpeed: 79.3
-  airStrafeSpeed: 0.41
-  maxMoveSpeed: 17.52
-  jumpStrength: 15
---- !u!114 &3274842666706200704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345926857273361753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c8af156c9aac2e488322b0b1e5e3e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gravity
-  gravityScale: 0.45
---- !u!114 &7873966740278154324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6345926857273361753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3fd6e3a880dcd44a738cd3b034d519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  _cameraTransform: {fileID: 7243377674119435622}
-  _interactionKey: 101
-  _interactionDistance: 5
---- !u!135 &7448202741416527794
-SphereCollider:
+  minSpeedForFOVChange: 0
+  maxSpeedForFOVChange: 0
+  moveSpeed: 12.7
+  airStrafeSpeed: 0.64
+  maxMoveSpeed: 620
+  jumpStrength: 14
+--- !u!136 &2827501439995741059
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -387,10 +355,12 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.78
-  m_Center: {x: 0.000000059604645, y: -0.62, z: -0.00000008940697}
---- !u!114 &1956359040197386922
+  serializedVersion: 2
+  m_Radius: 0.62
+  m_Height: 2.24
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3274842666706200704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -399,8 +369,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 6345926857273361753}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56db98e13a99fbd419d7b87661ec094c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c8af156c9aac2e488322b0b1e5e3e09, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  _maxHealth: 100
-  _currentHealth: 75
+  m_EditorClassIdentifier: Assembly-CSharp::Gravity
+  gravityScale: 0.45
+  windScale: 0
+--- !u!114 &4896146508534926691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345926857273361753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b47822e77a504f0cae4c83727a1e75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerFootsteps
+  footstepEvent:
+    Guid:
+      Data1: 1169282598
+      Data2: 1311641828
+      Data3: -809574739
+      Data4: 1555008533
+    Path: event:/Footsteps
+  jumpEvent:
+    Guid:
+      Data1: 1255413958
+      Data2: 1337339408
+      Data3: -557138022
+      Data4: -791432362
+    Path: event:/Jump
+  wallRunEvent:
+    Guid:
+      Data1: -717196554
+      Data2: 1142888536
+      Data3: -1609319514
+      Data4: 1513922310
+    Path: event:/Wall Running
+  wallRunParameterName: WallRunning
+  strideLength: 2.5
+  minSpeed: 0.5
+  minStepInterval: 0.3
+  surfaceCheckRadius: 1.2
+  surfaceMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  floorMinNormalY: 0.5
+  wallContactDistance: 0.7
+  wallRunMinSpeed: 3
+  wallRunStopDelay: 0.1
+  footstepsOnWalls: 1
+  minAirTimeForLanding: 0.25

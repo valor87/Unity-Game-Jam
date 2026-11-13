@@ -1,33 +1,21 @@
+using System.Collections;
 using UnityEngine;
+public class SlotMachine : MonoBehaviour
+{
+    public static SlotMachine Instance;
+    [SerializeField] public slotOutcome[] numberOutcomes = new slotOutcome[9];
 
+    private void Start()
+    {
+        Instance = this;
+    }
+    
+}
 
 [System.Serializable]
-public struct slotOutcomes
+public struct slotOutcome
 {
-    public int numebr;
+    public int number;
     public EffectNumber effect;
 }
 
-public class SlotMachine : MonoBehaviour, IInteractable
-{
-    private Transform _pT;
-
-    [SerializeField] public slotOutcomes[] numberOutcomes = new slotOutcomes[9];
-    public void Exacute()
-    {
-        Vector3 playerOffset = transform.position - _pT.position;
-        EventCore.instance.UE_EnterEndElevator.Invoke(playerOffset);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _pT = GameObject.FindWithTag("Player").transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
