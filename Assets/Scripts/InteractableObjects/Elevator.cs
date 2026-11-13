@@ -21,6 +21,7 @@ public class Elevator : MonoBehaviour
         //call necessary effects from slotmachine CODE HERE
         SlotMachine.Instance.ResetSlotMachineInteracts();
         levelExitDoors.OpenDoors();
+        levelEntranceDoors.interactable = false;
     }
     public void MakeStartDoorsInteractable()
     {
