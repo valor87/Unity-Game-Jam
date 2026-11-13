@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 public enum propType
 {
     None, Roof, Ground, Floating
@@ -22,6 +23,7 @@ public class LevelGenerator : MonoBehaviour
     [Header("Prop infomation")]
     [SerializeField] private propStruct[] _allSpawnAbleProps = new propStruct[10];
 
+    [SerializeField] private List<GameObject> _allSpawnedProps = new List<GameObject>();
     #region amount of props
     [Header("----------------------------------------------------------------------------")]
     public int _amountOfRoofProps;
@@ -46,33 +48,21 @@ public class LevelGenerator : MonoBehaviour
         spawnPropsLoop(propType.Floating, _amountOfFloatingProps);
         spawnPropsLoop(propType.Ground, _amountOfGroundProps);
     }
-
+    [ContextMenu("Clear props")]
+    private void ClearProps()
+    {
+        for (int i = _allSpawnedProps.Count; i > 0; i--)
+        {
+            _allSpawnedProps[i].SetActive(false);
+        }
+    }
     private void spawnPropsLoop(propType _p, int _itemSpawnAmount)
     {
         for (int i = 0; i < _itemSpawnAmount; i++)
         {
-            Vector3 _rV = Vector3.zero;
+            Vector3 _rV = ReplaceObsticale(_p);
             GameObject _gO = null;
 
-            switch (_p)
-            {
-                case propType.Roof:
-                    _rV = new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
-                                          Random.Range(_trSpot1.position.y - (_roofOffset * 1.5f), _trSpot1.position.y - _roofOffset),
-                                          Random.Range(_trSpot1.position.z, _trSpot2.position.z));
-                    break;
-                case propType.Ground:
-                    _rV = new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
-                                          _trSpot2.position.y,
-                                          Random.Range(_trSpot1.position.z, _trSpot2.position.z));
-                    break;
-                case propType.Floating:
-                    _rV = new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
-                                         Random.Range(_trSpot1.position.y - (_roofOffset * 8f), _trSpot2.position.y + _roofOffset + (_roofOffset * 8f)),
-                                         Random.Range(_trSpot1.position.z, _trSpot2.position.z));
-                    break;
-            }
-            
             while (true)
             {
                 int _r = Random.Range(0, _allSpawnAbleProps.Length);
@@ -85,8 +75,29 @@ public class LevelGenerator : MonoBehaviour
             _gO.transform.position = _rV;
             _gO.GetComponent<Prop>().pT = _p;
             _gO.GetComponent<Prop>().lg = this;
-
+            _allSpawnedProps.Add(_gO);
         }
+    }
+
+    public Vector3 ReplaceObsticale(propType _p)
+    {
+        switch (_p)
+        {
+            case propType.Roof:
+               return new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
+                                      Random.Range(_trSpot1.position.y - (_roofOffset * 1.5f), _trSpot1.position.y - _roofOffset),
+                                      Random.Range(_trSpot1.position.z, _trSpot2.position.z));
+                
+            case propType.Ground:
+                return new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
+                                      _trSpot2.position.y,
+                                      Random.Range(_trSpot1.position.z, _trSpot2.position.z));
+            case propType.Floating:
+                return new Vector3(Random.Range(_trSpot1.position.x, _trSpot2.position.x),
+                                     Random.Range(_trSpot1.position.y - (_roofOffset * 8f), _trSpot2.position.y + _roofOffset + (_roofOffset * 8f)),
+                                     Random.Range(_trSpot1.position.z, _trSpot2.position.z));
+        }
+        return default;
     }
     // for drawing a box of the spawnable objects
     private void debugDrawBoxBounds(Transform _t1, Transform _t2, Color _c)
