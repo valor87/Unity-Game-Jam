@@ -5820,6 +5820,10 @@ PrefabInstance:
       propertyPath: m_AngularDamping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4896146508534926691, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: wallRunParameterName
+      value: IsWallRunning
+      objectReference: {fileID: 0}
     - target: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: m_Name
       value: Player
