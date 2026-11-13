@@ -41,7 +41,10 @@ public class EventCore : MonoBehaviour
     /// Effect that causes the player to take damage when they're still
     /// </summary>
     public UnityEvent UE_TakeDamageWhenStill;
-
+    /// <summary>
+    /// Spawns coins for the coming level, int is the amount of coin in the level
+    /// </summary>
+    public UnityEvent<int> UE_SpawnCoins;
     void Awake()
     {
         if (instance == null)

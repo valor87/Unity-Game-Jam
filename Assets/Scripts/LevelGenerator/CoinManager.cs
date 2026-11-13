@@ -10,6 +10,8 @@ public class CoinManager : MonoBehaviour
     [SerializeField] List<CoinSpawner> _remainingPositions = new List<CoinSpawner>();
     void Start()
     {
+        EventCore.instance.UE_SpawnCoins.AddListener(CoinSpawnLoop);
+
         for (int i = 0; i < _amountOfCoins; i++)
         {
             GameObject c = Instantiate(_coinPrefab);
@@ -25,6 +27,14 @@ public class CoinManager : MonoBehaviour
             }
         }
         SetLists<CoinSpawner>(_allCoinPositions, _remainingPositions);
+    }
+
+    void CoinSpawnLoop(int i)
+    {
+        for (int loopNum = 0; loopNum < i; loopNum++)
+        {
+            SpawnRandomCoin();
+        }
     }
 
     [ContextMenu("SpawnRandomCoin")]
