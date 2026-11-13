@@ -11,7 +11,7 @@ public class CoinSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject coin;
     [SerializeField] private CoinPosition coinPos;
-    void Start()
+    public void SpawnCoint(GameObject c)
     {
         Vector3 spawnPositino = transform.position;
         switch (coinPos)
@@ -30,12 +30,7 @@ public class CoinSpawner : MonoBehaviour
                 break;
         }
 
-        Instantiate(coin).transform.position = spawnPositino;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        c.transform.position = spawnPositino;
+        c.SetActive(true);
     }
 }

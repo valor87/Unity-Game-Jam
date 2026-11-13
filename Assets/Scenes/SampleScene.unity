@@ -6320,6 +6320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 656518317}
+  - component: {fileID: 656518318}
   m_Layer: 0
   m_Name: Level_4
   m_TagString: Untagged
@@ -6367,6 +6368,23 @@ Transform:
   - {fileID: 208270238}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656518318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656518316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a373dc69dc8bd14ebaee3f25afcbfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
+  _amountOfCoins: 500
+  _coinPool: []
+  _coinPrefab: {fileID: 2361610134225572011, guid: 2c94841ba8af06f46a48a9f29a3158ad, type: 3}
+  _allCoinPositions: []
+  _remainingPositions: []
 --- !u!1 &667984325
 GameObject:
   m_ObjectHideFlags: 0
@@ -9529,6 +9547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171330017}
+  - component: {fileID: 1171330018}
   m_Layer: 0
   m_Name: Level_3
   m_TagString: Untagged
@@ -9572,6 +9591,23 @@ Transform:
   - {fileID: 391907334}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171330018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171330016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a373dc69dc8bd14ebaee3f25afcbfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
+  _amountOfCoins: 500
+  _coinPool: []
+  _coinPrefab: {fileID: 2361610134225572011, guid: 2c94841ba8af06f46a48a9f29a3158ad, type: 3}
+  _allCoinPositions: []
+  _remainingPositions: []
 --- !u!1 &1175949031
 GameObject:
   m_ObjectHideFlags: 0
@@ -11315,6 +11351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1403624348}
+  - component: {fileID: 1403624349}
   m_Layer: 0
   m_Name: Level_1
   m_TagString: Untagged
@@ -11361,6 +11398,23 @@ Transform:
   - {fileID: 160298096}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1403624349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403624347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a373dc69dc8bd14ebaee3f25afcbfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
+  _amountOfCoins: 500
+  _coinPool: []
+  _coinPrefab: {fileID: 2361610134225572011, guid: 2c94841ba8af06f46a48a9f29a3158ad, type: 3}
+  _allCoinPositions: []
+  _remainingPositions: []
 --- !u!1 &1406988354
 GameObject:
   m_ObjectHideFlags: 0
@@ -11874,6 +11928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498504665}
+  - component: {fileID: 1498504666}
   m_Layer: 0
   m_Name: Level_5
   m_TagString: Untagged
@@ -11921,6 +11976,23 @@ Transform:
   - {fileID: 1804148780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1498504666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498504664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a373dc69dc8bd14ebaee3f25afcbfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
+  _amountOfCoins: 500
+  _coinPool: []
+  _coinPrefab: {fileID: 2361610134225572011, guid: 2c94841ba8af06f46a48a9f29a3158ad, type: 3}
+  _allCoinPositions: []
+  _remainingPositions: []
 --- !u!1 &1500578497
 GameObject:
   m_ObjectHideFlags: 0
@@ -17566,6 +17638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101754977}
+  - component: {fileID: 2101754978}
   m_Layer: 0
   m_Name: Level_2
   m_TagString: Untagged
@@ -17605,6 +17678,23 @@ Transform:
   - {fileID: 618606708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2101754978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101754976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a373dc69dc8bd14ebaee3f25afcbfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinManager
+  _amountOfCoins: 500
+  _coinPool: []
+  _coinPrefab: {fileID: 2361610134225572011, guid: 2c94841ba8af06f46a48a9f29a3158ad, type: 3}
+  _allCoinPositions: []
+  _remainingPositions: []
 --- !u!1 &2114850126
 GameObject:
   m_ObjectHideFlags: 0
