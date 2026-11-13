@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class SixEffect : MonoBehaviour
+public class SixEffect : EffectNumber
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void GoodEffect()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void BadEffect()
     {
-        
+
     }
 }
