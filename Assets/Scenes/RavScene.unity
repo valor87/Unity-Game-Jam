@@ -5721,6 +5721,16 @@ GameObject:
   - component: {fileID: 1521607004}
   - component: {fileID: 1521607003}
   - component: {fileID: 1521607002}
+  - component: {fileID: 1521607014}
+  - component: {fileID: 1521607013}
+  - component: {fileID: 1521607012}
+  - component: {fileID: 1521607011}
+  - component: {fileID: 1521607010}
+  - component: {fileID: 1521607009}
+  - component: {fileID: 1521607008}
+  - component: {fileID: 1521607007}
+  - component: {fileID: 1521607006}
+  - component: {fileID: 1521607005}
   m_Layer: 0
   m_Name: PhobiaManager
   m_TagString: Untagged
@@ -5755,14 +5765,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PhobiaManager
   Effects:
   - {fileID: 1521607002}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1521607014}
+  - {fileID: 1521607013}
+  - {fileID: 1521607012}
+  - {fileID: 1521607011}
+  - {fileID: 1521607010}
+  - {fileID: 1521607009}
+  - {fileID: 1521607008}
+  - {fileID: 1521607007}
+  - {fileID: 1521607006}
+  - {fileID: 1521607005}
 --- !u!4 &1521607004
 Transform:
   m_ObjectHideFlags: 0
@@ -5778,6 +5790,136 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1521607005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed60fa108b708646a95c624324e5e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SixSixSixEffect
+  number: 666
+--- !u!114 &1521607006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ff78dfb0a07334e9d44b4dd5d81a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SevenSevenSevenEffect
+  number: 777
+--- !u!114 &1521607007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f27b2da83c64342af2a13a1f3157ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NineEffect
+  number: 9
+--- !u!114 &1521607008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0599952e2d3214bb7dfaaa4787c14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EightEffect
+  number: 8
+--- !u!114 &1521607009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49980f8cc998847439ab01db007cda40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SevenEffect
+  number: 7
+--- !u!114 &1521607010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55059327d75f9204bad8040bfdeada2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SixEffect
+  number: 6
+--- !u!114 &1521607011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c87e4e007cd3b44aa29182539c26275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FiveEffect
+  number: 5
+--- !u!114 &1521607012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf47b6aadba19d4b9a25fb0ae11eff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FourEffect
+  number: 4
+--- !u!114 &1521607013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887102eb31870a34bb68d98d9e62d63e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ThreeEffect
+  number: 3
+--- !u!114 &1521607014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6aadabc21c1c864cacd163039cd2236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TwoEffect
+  number: 2
 --- !u!1 &1529992427
 GameObject:
   m_ObjectHideFlags: 0
