@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{967cd58f-b120-47bf-964c-48e6838a695c}">
+		<property name="name">
+			<value>IsWallRunning</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9f75e30f-341b-4065-b081-24a13140b713}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{86975803-74c6-4c36-8996-1b9e35c625ba}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{86975803-74c6-4c36-8996-1b9e35c625ba}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

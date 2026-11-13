@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="SandboxScene" id="{afb4b830-2ba7-40ca-b0a2-84db4b974bce}">
+		<property name="name">
+			<value>Elevator Shop Test</value>
+		</property>
+		<relationship name="folder">
+			<destination>{86a3c99e-aa3a-4d1e-a732-af667c52edbc}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{01396666-e971-43f8-9ed9-d7b66f64001e}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{d04219d8-4075-480e-bc23-d8b300c25ea1}</destination>
+		</relationship>
+		<relationship name="emitters">
+			<destination>{ff81fe75-89a5-4911-889b-83dd8927541b}</destination>
+			<destination>{eda3bb09-8987-45ef-8b12-db0415bd970e}</destination>
+		</relationship>
+	</object>
+	<object class="MarkerTrack" id="{01396666-e971-43f8-9ed9-d7b66f64001e}" />
+	<object class="Timeline" id="{d04219d8-4075-480e-bc23-d8b300c25ea1}" />
+	<object class="SandboxEmitter" id="{ff81fe75-89a5-4911-889b-83dd8927541b}">
+		<property name="positionX">
+			<value>-8.52500057</value>
+		</property>
+		<property name="positionZ">
+			<value>8.125</value>
+		</property>
+		<relationship name="event">
+			<destination>{6874844d-e00f-4251-a3e0-1f6e8117795f}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxEmitter" id="{eda3bb09-8987-45ef-8b12-db0415bd970e}">
+		<property name="positionX">
+			<value>-5.32500029</value>
+		</property>
+		<property name="positionZ">
+			<value>7.2249999</value>
+		</property>
+		<relationship name="event">
+			<destination>{ff25dde9-213a-45c6-82e5-d4412ca45a88}</destination>
+		</relationship>
+	</object>
+</objects>

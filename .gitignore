@@ -10,7 +10,9 @@
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
+!TowerGameFMODProject/Build/
 [Bb]uilds/
+!TowerGameFMODProject/Build/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 *.log

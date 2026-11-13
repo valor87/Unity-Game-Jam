@@ -1,8 +1,9 @@
+
 using UnityEngine;
 
+[System.Serializable]
 public class EffectNumber : MonoBehaviour
 {
-    public int number;
-
-    public virtual void NumberEffect() { }
+    public virtual void GoodEffect() { }
+    public virtual void BadEffect() { }
 }

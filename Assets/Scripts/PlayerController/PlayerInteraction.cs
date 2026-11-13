@@ -7,7 +7,11 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float _interactionDistance = 2.0f;
     void Update()
     {
-        Interact();
+        if (Input.GetKey(_interactionKey))
+        {
+            Interact();
+        }
+
         DebugDrawRay();
     }
     private void Interact()
@@ -19,10 +23,7 @@ public class PlayerInteraction : MonoBehaviour
             if (hit.collider.GetComponent<IInteractable>() == null)
                 return;
 
-            if (Input.GetKeyDown(_interactionKey))
-            {
-                hit.collider.GetComponent<IInteractable>().Exacute();
-            }
+            hit.collider.GetComponent<IInteractable>().Exacute();
         }
     }
 
