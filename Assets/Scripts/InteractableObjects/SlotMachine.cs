@@ -9,6 +9,7 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] float timeForFirstNum, timeForSecondNum, timeForThirdNum, endTime;
     public int firstNumber, secondNumber, thirdNumber;
     private Coroutine slotMachineCR;
+    [SerializeField] SlotMachineInteract _slotMachineInteract;
     private void Start()
     {
         Instance = this;
@@ -65,6 +66,12 @@ public class SlotMachine : MonoBehaviour
         randomNum = Random.Range(0, 100);
         thirdNumber = numbers[(int)(randomNum % numbers.Count)];
         Debug.Log($"rolled: {firstNumber} {secondNumber} {thirdNumber}");
+    }
+    
+    public void ResetSlotMachineInteracts()
+    {
+        _slotMachineInteract.ResetValues();
+        //endMachine.ResetValues();
     }
 }
 
