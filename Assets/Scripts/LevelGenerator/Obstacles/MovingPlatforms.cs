@@ -7,20 +7,22 @@ public class MovingPlatforms : MonoBehaviour
     [SerializeField] private Transform _rightPosition;
     private Transform _plat;
     private float _moveAmount = 2;
+    private float _moveAmountDoubled;
     void Start()
     {
+        _moveAmountDoubled = _moveAmount * 2;
         _plat = transform.GetChild(0).transform;
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
     }
     private void DoubleMovementSpeed()
     {
-        _platformSpeed = _platformSpeed * 2;
+        _platformSpeed = _moveAmountDoubled;
     }
 
     private void ReturnMovement(Vector3 arg)
     {
-        _platformSpeed = _platformSpeed / 2;
+        _platformSpeed = _moveAmountDoubled / 2;
     }
     void Update()
     {

@@ -8,21 +8,22 @@ public class SwingObstacles : MonoBehaviour
 
 
     float _rotationAmount = 25;
-
+    float _doubleRotationAmount;
     bool _sR=false;
     void Start()
     {
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
+        _doubleRotationAmount = _rotationAmount * 2;
     }
     private void DoubleMovementSpeed()
     {
-        _rotationAmount = _rotationAmount * 2;
+        _rotationAmount = _doubleRotationAmount;
     }
 
     private void ReturnMovement(Vector3 arg)
     {
-        _rotationAmount = _rotationAmount / 2;
+        _rotationAmount = _doubleRotationAmount/2;
     }
     void Update()
     {

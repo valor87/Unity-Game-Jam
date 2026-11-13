@@ -5,22 +5,24 @@ public class SpinningDummy : MonoBehaviour
     [SerializeField] private float _bufferTime;
     [SerializeField] private int _amountOfSpins;
     [SerializeField] private float _rotationSpeed;
+    private float _rotatinoSpeedDoubled;
     private bool _windUp = true;
     private float _rotationTarget = 0;
     private float _currentIntervelTime;
     void Start()
     {
+        _rotatinoSpeedDoubled = _rotationSpeed * 2;
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
     }
     private void DoubleMovementSpeed()
     {
-        _rotationSpeed = _rotationSpeed * 2;
+        _rotationSpeed = _rotatinoSpeedDoubled;
     }
 
     private void ReturnMovement(Vector3 arg)
     {
-        _rotationSpeed = _rotationSpeed / 2;
+        _rotationSpeed = _rotatinoSpeedDoubled / 2;
     }
     void Update()
     {
