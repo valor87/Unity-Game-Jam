@@ -17,6 +17,10 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_DoubleObsticalSpeed;
     /// <summary>
+    /// Call when the obsticals move half the speed
+    /// </summary>
+    public UnityEvent UE_HalfObsticalSpeed;
+    /// <summary>
     /// called everytime the player takes damage
     /// </summary>
     public UnityEvent UE_PlayTakeDamge;

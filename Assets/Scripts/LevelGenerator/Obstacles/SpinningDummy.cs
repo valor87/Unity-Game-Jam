@@ -6,20 +6,26 @@ public class SpinningDummy : MonoBehaviour
     [SerializeField] private int _amountOfSpins;
     [SerializeField] private float _rotationSpeed;
     private float _rotatinoSpeedDoubled;
+    private float _rotationSpeedHalfed;
     private bool _windUp = true;
     private float _rotationTarget = 0;
     private float _currentIntervelTime;
     void Start()
     {
         _rotatinoSpeedDoubled = _rotationSpeed * 2;
+        _rotationSpeedHalfed = _rotationSpeed / 2;
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
+        EventCore.instance.UE_HalfObsticalSpeed.AddListener(HalfMovementSpeed);
     }
     private void DoubleMovementSpeed()
     {
         _rotationSpeed = _rotatinoSpeedDoubled;
     }
-
+    private void HalfMovementSpeed()
+    {
+        _rotationSpeed = _rotationSpeedHalfed;
+    }
     private void ReturnMovement(Vector3 arg)
     {
         _rotationSpeed = _rotatinoSpeedDoubled / 2;
