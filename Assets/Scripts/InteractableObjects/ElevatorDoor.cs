@@ -14,6 +14,12 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
     {
         if (interactable)
         {
+            // Only play the sound if the doors will actually open (not already open or mid-animation)
+            bool willOpen = doorMovingCR == null && !isOpened;
+            if (willOpen && SoundManager.Instance != null)
+            {
+                SoundManager.Instance.OpenElevatorDoors(transform);
+            }
             OpenDoors();
         }
     }
