@@ -2,29 +2,38 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    [SerializeField] Transform startElevator;
-    [SerializeField] ElevatorDoor northDoors, southDoors; //Player will ALWAYS enter through NORTH and exit through SOUTH
-    public void EndCurrentLevel()
+    public static Elevator instance;
+    private Transform playerTransform;
+    [SerializeField] Transform startElevator, exitElevator;
+    [SerializeField] ElevatorDoor levelExitDoors, levelEntranceDoors; //Player will ALWAYS enter through NORTH and exit through SOUTH
+    [SerializeField] SlotMachine startElevatorSlotMachine;
+    private void Start()
     {
-        UnloadLevel();
-        //roll payline numbers
-        LoadLevel();
+        instance = this;
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
-    private void UnloadLevel()
+    public void PlayerReachedExit()
     {
-       //unload current level between elevators
+        EndLevel();
     }
-    private void LoadLevel()
+    public void PlayerStartedLevel()
     {
-        //based on rolled payline numbers
+        //call necessary effects from slotmachine CODE HERE
+        SlotMachine.Instance.ResetSlotMachineInteracts();
+        levelExitDoors.OpenDoors();
+        levelEntranceDoors.interactable = false;
     }
-    private void TeleportPlayerToStartElevator()
+    public void MakeStartDoorsInteractable()
     {
-        //called when succesfully interacted with slot machine (payline)
+        levelEntranceDoors.interactable = true;
     }
-    public void BeginLevel()
+    private void EndLevel()
     {
-        //do payline animation
-        //open south doors after animation ends
+        //Teleport player to start elevator and make start doors uninteractable and make slot machine interactable
+        levelEntranceDoors.interactable = false;
+        SlotMachine.Instance.interactable = true;
+        Vector3 offset = playerTransform.position - exitElevator.position;
+        playerTransform.position = startElevator.position + offset;
+        EventCore.instance.UE_EnterEndElevator.Invoke(offset);
     }
 }

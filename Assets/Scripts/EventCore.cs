@@ -37,6 +37,10 @@ public class EventCore : MonoBehaviour
     /// for when the player only takes three hits on the bottom platform
     /// </summary>
     public UnityEvent UE_TrippleDamge;
+    /// <summary>
+    /// Effect that causes the player to take damage when they're still
+    /// </summary>
+    public UnityEvent UE_TakeDamageWhenStill;
 
     void Awake()
     {

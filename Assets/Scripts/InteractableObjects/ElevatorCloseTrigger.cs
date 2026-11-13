@@ -7,8 +7,8 @@ public class ElevatorCloseTrigger : MonoBehaviour
     {
         if(other.name == "Player")
         {
+            Elevator.instance.PlayerReachedExit();
             doors.CloseDoors();
-            this.enabled = false;
         }
     }
 
