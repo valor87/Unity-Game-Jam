@@ -17,6 +17,6 @@ public class PhobiaManager : MonoBehaviour
     }
     public void RunEffect(int number)
     {
-
+        Effects[number - 1].DoEffect();
     }
 }
