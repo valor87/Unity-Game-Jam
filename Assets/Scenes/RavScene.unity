@@ -2523,6 +2523,9 @@ MonoBehaviour:
   UE_TakeDamageWhenStill:
     m_PersistentCalls:
       m_Calls: []
+  UE_HealWhenMoving:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &713658321
 Transform:
   m_ObjectHideFlags: 0
@@ -5707,6 +5710,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1521607001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1521607004}
+  - component: {fileID: 1521607003}
+  - component: {fileID: 1521607002}
+  m_Layer: 0
+  m_Name: PhobiaManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1521607002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f78a74b38abfd4b8a149efc7a1ab73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OneEffect
+  number: 1
+--- !u!114 &1521607003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f061214ce0b53449f67669a7384d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhobiaManager
+  Effects:
+  - {fileID: 1521607002}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!4 &1521607004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521607001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.5, y: 2.74024, z: 19.40763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1529992427
 GameObject:
   m_ObjectHideFlags: 0
@@ -7559,5 +7630,6 @@ SceneRoots:
   - {fileID: 1793382434}
   - {fileID: 1518746509}
   - {fileID: 713658321}
+  - {fileID: 1521607004}
   - {fileID: 1570386266}
   - {fileID: 1783490774}
