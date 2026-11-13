@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
+    public static Elevator instance;
     [SerializeField] Transform startElevator;
     [SerializeField] ElevatorDoor northDoors, southDoors; //Player will ALWAYS enter through NORTH and exit through SOUTH
+    private void Start()
+    {
+        instance = this;
+    }
     public void EndCurrentLevel()
     {
         UnloadLevel();

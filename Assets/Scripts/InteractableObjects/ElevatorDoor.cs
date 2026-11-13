@@ -21,7 +21,7 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
     {
         if (doorMovingCR == null && !isOpened)
         {
-            doorMovingCR = StartCoroutine(MoveDoors(distanceToOpenDoor));
+            doorMovingCR = StartCoroutine(MoveDoors(distanceToOpenDoor, false));
             isOpened = true;
         }
     }
@@ -29,12 +29,12 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
     {
         if(doorMovingCR == null && isOpened)
         {
-            doorMovingCR = StartCoroutine(MoveDoors(-distanceToOpenDoor));
+            doorMovingCR = StartCoroutine(MoveDoors(-distanceToOpenDoor, true));
             isOpened = false;
         }
         
     }
-    private IEnumerator MoveDoors(float distance)
+    private IEnumerator MoveDoors(float distance, bool shouldEndLevelAfter)
     {
         float time = 0;
         Vector3 startPosLeft = leftDoor.position;
@@ -52,6 +52,7 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
             }
             yield return null;
         }
+        if (shouldEndLevelAfter) Elevator.instance.EndCurrentLevel();
         doorMovingCR = null;
     }
 
