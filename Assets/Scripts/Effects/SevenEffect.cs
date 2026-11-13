@@ -9,6 +9,6 @@ public class SevenEffect : EffectNumber
 
     public override void BadEffect()
     {
-
+        
     }
 }

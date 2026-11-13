@@ -9,6 +9,6 @@ public class FourEffect : EffectNumber
 
     public override void BadEffect()
     {
-
+        EventCore.instance.UE_DoubleDamage.Invoke();
     }
 }
