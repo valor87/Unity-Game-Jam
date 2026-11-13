@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9185775594977457811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Lava Damage
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Lava Damage
+  Guid:
+    Data1: -1128649009
+    Data2: 1075705618
+    Data3: 419117475
+    Data4: -208530785
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2048
 --- !u!114 &-8482189790282025489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +54,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9557
+--- !u!114 &-7632891137346534755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/OnIce
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: OnIce
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2027768048
+    data2: 3826223395
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Value A
+  - Value B
+  Exists: 1
 --- !u!114 &-7555875475927394652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +236,33 @@ MonoBehaviour:
   - Closed
   - Open
   Exists: 1
+--- !u!114 &-5406708145268615483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Taking Damage
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Taking Damage
+  Guid:
+    Data1: 1114040150
+    Data2: 1224508669
+    Data3: 1978978235
+    Data4: -890737683
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &-5352631765173543913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +283,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1954
   Exists: 1
+--- !u!114 &-4961838133026019286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Icy Footsteps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Icy Footsteps
+  Guid:
+    Data1: -479770363
+    Data2: 1232443377
+    Data3: 434326973
+    Data4: 615153337
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3943751101385233273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +518,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9557
+--- !u!114 &-1379948112278829101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Axe Swing
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Axe Swing
+  Guid:
+    Data1: -244882943
+    Data2: 1265789266
+    Data3: 1755412664
+    Data4: -1217713705
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1437
 --- !u!114 &-1205971571285143770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,6 +684,12 @@ MonoBehaviour:
   - {fileID: 8748545863822859715}
   - {fileID: -504230489568088491}
   - {fileID: 8848248669968356975}
+  - {fileID: -1379948112278829101}
+  - {fileID: -4961838133026019286}
+  - {fileID: -5406708145268615483}
+  - {fileID: 7973749826694083006}
+  - {fileID: 980217713694494696}
+  - {fileID: -9185775594977457811}
   EditorParameters:
   - {fileID: 8922966024763351459}
   MasterBanks:
@@ -557,7 +697,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7214993048590288762}
   cacheVersion: 131861
-  cacheTime: 639301294620711990
+  cacheTime: 639301906415075807
   SerializableEventsDict:
   - key: snapshot:/InShopDucking
     index: 0
@@ -632,10 +772,11 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -7632891137346534755}
   MinDistance: 1
   MaxDistance: 20
-  Length: 500
+  Length: 320
 --- !u!114 &943207878544318758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +804,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1125
+--- !u!114 &980217713694494696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Lava
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Lava
+  Guid:
+    Data1: 920361116
+    Data2: 1084967231
+    Data3: -713155947
+    Data4: 1802787357
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 117630
 --- !u!114 &2424381686454042810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,10 +1044,10 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639301294620676866
+  lastModified: 639301906414880385
   FileSizes:
   - Name: Desktop
-    Value: 1514
+    Value: 1804
   Exists: 1
 --- !u!114 &7215789891695877044
 MonoBehaviour:
@@ -962,6 +1130,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &7973749826694083006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sword Swipe
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Sword Swipe
+  Guid:
+    Data1: 92521820
+    Data2: 1322882374
+    Data3: 1067399299
+    Data4: 738608970
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 682
 --- !u!114 &8532658047724725762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,8 +1302,8 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/SFXBank.bank
   Name: SFXBank
   StudioPath: bank:/SFXBank
-  lastModified: 639301294620711990
+  lastModified: 639301906415075807
   FileSizes:
   - Name: Desktop
-    Value: 1422144
+    Value: 2973280
   Exists: 1
