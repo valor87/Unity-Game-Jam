@@ -23,7 +23,7 @@ public class EventCore : MonoBehaviour
     /// <summary>
     /// called everytime the player takes damage
     /// </summary>
-    public UnityEvent UE_PlayTakeDamge;
+    public UnityEvent<float> UE_PlayTakeDamge;
     /// <summary>
     /// For whenever the coin values changes. The int
     /// passed in the NEW coin value

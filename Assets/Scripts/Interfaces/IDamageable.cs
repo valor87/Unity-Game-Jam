@@ -24,7 +24,7 @@ public interface IDamageable
 
         if (isPlayer)
         {
-            EventCore.instance.UE_PlayTakeDamge.Invoke();
+            EventCore.instance.UE_PlayTakeDamge.Invoke(currentHealth);
         }
     }
 }
