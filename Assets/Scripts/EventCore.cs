@@ -41,6 +41,10 @@ public class EventCore : MonoBehaviour
     /// Effect that causes the player to take damage when they're still
     /// </summary>
     public UnityEvent UE_TakeDamageWhenStill;
+    /// <summary>
+    /// Effect that causes the player to heal when they're moving
+    /// </summary>
+    public UnityEvent UE_HealWhenMoving;
 
     void Awake()
     {

@@ -4,7 +4,7 @@ public class OneEffect : EffectNumber
 {
     public override void GoodEffect()
     {
-        
+        EventCore.instance.UE_HealWhenMoving.Invoke();
     }
 
     public override void BadEffect()
