@@ -7,6 +7,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     [SerializeField] float timeToHold, decayrate;
     [SerializeField] AnimationCurve fillCurve;
     [SerializeField] Slider progressBarUI;
+    private bool interactable = true;
     private void Update()
     {
         heldTime -= Time.deltaTime * decayrate;
@@ -14,13 +15,17 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
 
         progressBarUI.value = progress = fillCurve.Evaluate(heldTime / timeToHold);
 
-        if(progress == timeToHold)
+        if(progress == timeToHold && interactable)
         {
-            Debug.Log("SLOT MACHINE FINISHED");
+            SlotMachine.Instance.RollRandomNumbers();
+            interactable = false;
         }
     }
     public void Exacute()
     {
-        heldTime += Time.deltaTime;
+        if (interactable)
+        {
+            heldTime += Time.deltaTime;
+        }
     }
 }

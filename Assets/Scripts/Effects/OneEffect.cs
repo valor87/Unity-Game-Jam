@@ -1,5 +1,5 @@
-using UnityEngine;
 
+[System.Serializable]
 public class OneEffect : EffectNumber
 {
     public override void GoodEffect()
