@@ -21,7 +21,7 @@ public class Elevator : MonoBehaviour
     }
     public void PlayerStartedLevel()
     {
-        //call necessary effects from slotmachine CODE HERE
+        PhobiaManager.instance.StartAllActiveEffects();
         SlotMachine.Instance.ResetSlotMachineInteracts();
         EventCore.instance.UE_SpawnCoins.Invoke(numberOfCoinsToSpawn);
         levelExitDoors.OpenDoors();
