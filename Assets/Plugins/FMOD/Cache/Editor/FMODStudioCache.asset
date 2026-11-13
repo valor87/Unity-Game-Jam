@@ -671,7 +671,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7214993048590288762}
   cacheVersion: 131861
-  cacheTime: 639301821183906815
+  cacheTime: 639301902903723214
   SerializableEventsDict:
   - key: snapshot:/InShopDucking
     index: 0
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639301821169474822
+  lastModified: 639301902903585643
   FileSizes:
   - Name: Desktop
     Value: 1804
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/SFXBank.bank
   Name: SFXBank
   StudioPath: bank:/SFXBank
-  lastModified: 639301821183906815
+  lastModified: 639301902903723214
   FileSizes:
   - Name: Desktop
     Value: 2973280
