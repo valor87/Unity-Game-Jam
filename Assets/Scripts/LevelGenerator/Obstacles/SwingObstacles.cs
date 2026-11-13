@@ -3,48 +3,51 @@ using UnityEngine;
 public class SwingObstacles : MonoBehaviour
 {
     [SerializeField] float _rotationSpeed;
-    [SerializeField] float _rightApex = 80;
-    [SerializeField] float _leftApex = 260;
+    [SerializeField] Transform _rightApex;
+    [SerializeField] Transform _leftApex;
+    [SerializeField] AnimationCurve _curve;
+    private float resetValue = 1;  
+    Quaternion _rotationR;
+    Quaternion _rotationL;
+    float t;
 
-
-    float _rotationAmount = 25;
+    bool changeRotation = false;
     float _doubleRotationAmount;
-    bool _sR=false;
     void Start()
     {
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
-        _doubleRotationAmount = _rotationAmount * 2;
+        _doubleRotationAmount = _rotationSpeed * 2;
+
+        _rotationR = _rightApex.rotation;
+        _rotationL = _leftApex.rotation;
     }
+
+    void Update()
+    {
+        RoateAxe();
+    }
+
     private void DoubleMovementSpeed()
     {
-        _rotationAmount = _doubleRotationAmount;
+        _rotationSpeed = _doubleRotationAmount;
     }
 
     private void ReturnMovement(Vector3 arg)
     {
-        _rotationAmount = _doubleRotationAmount/2;
+        _rotationSpeed = _doubleRotationAmount / 2;
     }
-    void Update()
+    private void RoateAxe()
     {
-        if (_sR == false)
+        t += Time.deltaTime;
+        transform.rotation = Quaternion.Lerp(_rotationR, _rotationL, _curve.Evaluate(t / _rotationSpeed));
+        
+
+        if (t / _rotationSpeed >= resetValue)
         {
-            transform.eulerAngles += new Vector3(0, 0, _rotationAmount) * _rotationSpeed * Time.deltaTime;
-            if (Mathf.Round(transform.eulerAngles.z) >= _rightApex && Mathf.Round(transform.eulerAngles.z) <= _rightApex + 50)
-            {
-                _sR = true;
-            }
+            t = 0;
         }
 
-        if (_sR == true)
-        {
-            transform.eulerAngles -= new Vector3(0, 0, _rotationAmount) * _rotationSpeed * Time.deltaTime;
-            if (Mathf.Round(transform.eulerAngles.z) <= _leftApex && Mathf.Round(transform.eulerAngles.z) >= _leftApex - 50)
-            {
-                _sR = false;
-            }
-        }
     }
 
-  
 }
