@@ -1,25 +1,21 @@
+using System.Collections;
 using UnityEngine;
-public class SlotMachine : MonoBehaviour, IInteractable
+public class SlotMachine : MonoBehaviour
 {
-    private Transform playerTransform;
+    public static SlotMachine Instance;
+    [SerializeField] public slotOutcome[] numberOutcomes = new slotOutcome[9];
 
-    [SerializeField] public slotOutcomes[] numberOutcomes = new slotOutcomes[9];
-
-    void Start()
+    private void Start()
     {
-        playerTransform = GameObject.FindWithTag("Player").transform;
+        Instance = this;
     }
-    public void Exacute()
-    {
-        Vector3 playerOffset = transform.position - playerTransform.position;
-        EventCore.instance.UE_EnterEndElevator.Invoke(playerOffset);
-    }
+    
 }
 
 [System.Serializable]
-public struct slotOutcomes
+public struct slotOutcome
 {
-    public int numebr;
+    public int number;
     public EffectNumber effect;
 }
 

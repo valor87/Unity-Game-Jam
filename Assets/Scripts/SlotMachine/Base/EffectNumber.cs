@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class EffectNumber : MonoBehaviour
+public abstract class EffectNumber : MonoBehaviour
 {
-    public int number;
-
-    public virtual void NumberEffect() { }
+    public virtual void GoodEffect() { }
+    public virtual void BadEffect() { }
 }

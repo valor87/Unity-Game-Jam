@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private float _interactionDistance = 2.0f;
     void Update()
     {
-        if (Input.GetKeyDown(_interactionKey))
+        if (Input.GetKey(_interactionKey))
         {
             Interact();
         }
