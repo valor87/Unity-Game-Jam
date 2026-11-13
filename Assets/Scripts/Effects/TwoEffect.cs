@@ -1,15 +1,13 @@
 using UnityEngine;
 
-public class TwoEffect : MonoBehaviour
+public class TwoEffect : EffectNumber
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void GoodEffect()
     {
-        
+        EventCore.instance.UE_DoubleObsticalSpeed.Invoke();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void BadEffect()
     {
         
     }
