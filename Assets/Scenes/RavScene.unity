@@ -1400,25 +1400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379ad247ae0ba44fb622b9901b37538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  numberOutcomes:
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
+  firstNumber: 0
+  secondNumber: 0
+  thirdNumber: 0
 --- !u!65 &530338136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2150,6 +2134,77 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &713658319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713658321}
+  - component: {fileID: 713658320}
+  m_Layer: 0
+  m_Name: EventCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &713658320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713658319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3159d74c0d073549829bfc9b547356c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventCore
+  UE_RespawnPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_EnterEndElevator:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_DoubleObsticalSpeed:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_PlayTakeDamge:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_ChangeCoinValue:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_DoubleCoinValue:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_DoubleDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_TrippleDamge:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_TakeDamageWhenStill:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &713658321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713658319}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.88, y: 1.6711, z: 24.0999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &740608039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,25 +2895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3379ad247ae0ba44fb622b9901b37538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachine
-  numberOutcomes:
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
-  - numebr: 0
-    effect: {fileID: 0}
+  firstNumber: 0
+  secondNumber: 0
+  thirdNumber: 0
 --- !u!4 &968974811
 Transform:
   m_ObjectHideFlags: 0
@@ -6429,3 +6468,4 @@ SceneRoots:
   - {fileID: 968974811}
   - {fileID: 1793382434}
   - {fileID: 1518746509}
+  - {fileID: 713658321}
