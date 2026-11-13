@@ -10,6 +10,7 @@ public class SlotMachine : MonoBehaviour
     public int firstNumber, secondNumber, thirdNumber;
     private Coroutine slotMachineCR;
     [SerializeField] SlotMachineInteract _slotMachineInteract;
+    private SoundManager.SlotResult rolledResult;
     private void Start()
     {
         Instance = this;
@@ -24,8 +25,9 @@ public class SlotMachine : MonoBehaviour
     }
     private IEnumerator RunSlotMachineCoroutine()
     {
-        //start elevator sound
         RollRandomNumbers();
+            if (SoundManager.Instance != null)
+            SoundManager.Instance.PlaySlotMachineThenElevator(rolledResult, transform);
         yield return new WaitForSeconds(timeForFirstNum);
         //DISPLAY FIRST NUM CODE HERE
         yield return new WaitForSeconds(timeForSecondNum);
@@ -48,17 +50,20 @@ public class SlotMachine : MonoBehaviour
         if (randomNum > 99)
         {
             Debug.Log("Rolled 777");
+            rolledResult = SoundManager.SlotResult.Jackpot777;
             //777
             return;
         } else if (randomNum > 98)
         {
             Debug.Log("Rolled 666");
+            rolledResult = SoundManager.SlotResult.Ominous666;
             //666
             return;
         } else
         {
             firstNumber = numbers[(int)(randomNum % numbers.Count)];
             numbers.Remove(firstNumber);
+            rolledResult = SoundManager.SlotResult.Normal;
         }
         randomNum = Random.Range(0, 100);
         secondNumber = numbers[(int)(randomNum % numbers.Count)];
