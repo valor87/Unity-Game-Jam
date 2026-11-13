@@ -32,8 +32,8 @@ public class Elevator : MonoBehaviour
         //Teleport player to start elevator and make start doors uninteractable and make slot machine interactable
         levelEntranceDoors.interactable = false;
         SlotMachine.Instance.interactable = true;
-        Vector3 offset = playerTransform.position - exitElevator.position;
-        playerTransform.position = startElevator.position + offset;
-        EventCore.instance.UE_EnterEndElevator.Invoke(offset);
+        //Vector3 offset = playerTransform.position - exitElevator.position;
+        playerTransform.position = startElevator.position + new Vector3(0f,playerTransform.localScale.y,0f);
+        EventCore.instance.UE_EnterEndElevator.Invoke(Vector3.zero);
     }
 }
