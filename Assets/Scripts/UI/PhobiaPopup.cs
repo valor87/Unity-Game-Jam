@@ -12,7 +12,6 @@ using UnityEngine.UI;
 /// </summary>
 public class PhobiaPopup : MonoBehaviour
 {
-    public static PhobiaPopup Instance;
     public enum DismissMode
     {
         AutoFade,            // fades out after Display Duration
@@ -27,8 +26,10 @@ public class PhobiaPopup : MonoBehaviour
         public int number;
         [Tooltip("Number icon shown in the popup.")]
         public Sprite icon;
+        [Tooltip("Title of the phobia, shown in the larger text above the description.")]
+        public string title;
         [TextArea(2, 5)]
-        [Tooltip("Phobia description shown in the popup.")]
+        [Tooltip("Description of what the phobia does, shown in smaller text below the title.")]
         public string description;
     }
 
@@ -39,6 +40,9 @@ public class PhobiaPopup : MonoBehaviour
     [Tooltip("The popup panel. Needs a CanvasGroup (used for fading). Place and size it however you like.")]
     [SerializeField] private CanvasGroup popup;
     [SerializeField] private Image icon;
+    [Tooltip("Text for the phobia's title. Give this the larger font.")]
+    [SerializeField] private TMP_Text titleText;
+    [Tooltip("Text for the phobia's description. Give this the smaller font, below the title.")]
     [SerializeField] private TMP_Text description;
     [Tooltip("Optional object such as 'Press ENTER to continue'. Only shown when pressing a key can dismiss the popup.")]
     [SerializeField] private GameObject dismissPrompt;
@@ -70,7 +74,6 @@ public class PhobiaPopup : MonoBehaviour
 
         popup.alpha = 0f;
         popup.gameObject.SetActive(false);
-        Instance = this;
     }
 
     private void OnEnable()
@@ -131,6 +134,9 @@ public class PhobiaPopup : MonoBehaviour
             icon.sprite = entry.icon;
             icon.enabled = entry.icon != null;
         }
+
+        if (titleText != null)
+            titleText.text = entry.title;
 
         if (description != null)
             description.text = entry.description;

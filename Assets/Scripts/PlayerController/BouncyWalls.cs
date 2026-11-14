@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BouncyWalls : MonoBehaviour
 {
     PlayerController controller;
     bool areWallsBouncy = false;
+    public List<Transform> wallsPlayerIsTouching = new List<Transform>();
+
     private void Start()
     {
         EventCore.instance.UE_EnableBouncyWalls.AddListener(EnableBouncyWalls);
@@ -11,9 +14,17 @@ public class BouncyWalls : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Coin") && areWallsBouncy)
+        if (!wallsPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))
         {
-            controller.Jump();
+            wallsPlayerIsTouching.Add(other.transform);
+
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (wallsPlayerIsTouching.Contains(other.transform))
+        {
+            wallsPlayerIsTouching.Remove(other.transform);
         }
     }
 

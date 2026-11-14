@@ -631,39 +631,54 @@ MonoBehaviour:
   entries:
   - number: 1
     icon: {fileID: 0}
-    description: asdasd
+    title: You have contracted HENOPHOBIA
+    description: Fear of One mirrors fear of oneself. You will take damage if you
+      stay still on this floor.
   - number: 2
     icon: {fileID: 0}
-    description: asdasd
+    title: You have contracted DYOPHOBIA
+    description: Obstacles will move twice as fast on this floor.
   - number: 3
     icon: {fileID: 0}
-    description: asd
+    title: You have contracted TRISKAPHOBIA
+    description: Three strikes, you're out! You can only take damage three times
+      before perishing on this floor.
   - number: 4
     icon: {fileID: 0}
-    description: asdasdasdasd
+    title: You have contracted TETRAPHOBIA
+    description: You will receive double damage on this floor.
   - number: 5
     icon: {fileID: 0}
-    description: asaa
+    title: You have contracted PENTAPHOBIA
+    description: This floor will be covered in ice.
   - number: 6
     icon: {fileID: 0}
-    description: asdasdasdasdasd
+    title: You have contracted HEXAPHOBIA
+    description: 'A storm is approaching. Wind gusts will push you about on this
+      floor. '
   - number: 7
     icon: {fileID: 0}
-    description: aaaaaaaaaaaaaaaaaaaa
+    title: You have contracted HEPTAPHOBIA
+    description: No coins will spawn on this floor.
   - number: 8
     icon: {fileID: 0}
-    description: dsssssssssssssss
+    title: You have contracted OCTOPHOBIA
+    description: 'Walls will repel you on this floor. '
   - number: 9
     icon: {fileID: 0}
-    description: asdasdd
+    title: You have contracted ENNEAPHOBIA
+    description: 'This floor will be enshrouded in fog. '
   - number: 777
     icon: {fileID: 0}
-    description: asdasdasdasdadasdasd
+    title: JACKPOT
+    description: Permanent health upgrade + bonus coin room
   - number: 666
     icon: {fileID: 0}
-    description: 123123123
+    title: You have contracted HEXAKOSIOIHEXAKONTAHEXAPHOBIA
+    description: You have entered the Prince of Hell's domain. The floor is lava.
   popup: {fileID: 783982975}
   icon: {fileID: 520771170}
+  titleText: {fileID: 0}
   description: {fileID: 258474886}
   dismissPrompt: {fileID: 0}
   delayBeforeShow: 6
