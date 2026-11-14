@@ -5,7 +5,7 @@ public class Elevator : MonoBehaviour
     public static Elevator instance;
     private Transform playerTransform;
     [SerializeField] Transform startElevator, exitElevator;
-    [SerializeField] ElevatorDoor levelExitDoors, levelEntranceDoors; //Player will ALWAYS enter through NORTH and exit through SOUTH
+    [SerializeField] ElevatorDoor levelExitDoors, levelEntranceDoors, tutorialDoors; //Player will ALWAYS enter through NORTH and exit through SOUTH
     [SerializeField] SlotMachine startElevatorSlotMachine;
     private int numberOfCoinsToSpawn = 1;
     private void Start()
@@ -16,6 +16,11 @@ public class Elevator : MonoBehaviour
         EventCore.instance.UE_SpawnNoCoins.AddListener(SevenBadEffect);
         EventCore.instance.UE_JackpotEffect.AddListener(JackPotEffect);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetCoinvalue);
+    }
+    public void CloseTutorialDoors()
+    {
+        tutorialDoors.CloseDoors();
+        tutorialDoors.interactable = false;
     }
     public void PlayerReachedExit()
     {
