@@ -29,6 +29,7 @@ public class Health : MonoBehaviour, IDamageable
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableHealWhenMoving);
 
         EventCore.instance.UE_GivePlayerSheild.AddListener(GiveSheild);
+        EventCore.instance.UE_JackpotEffect.AddListener(IncreaseMaxHealth);
     }
 
     private void Update()
@@ -62,5 +63,13 @@ public class Health : MonoBehaviour, IDamageable
     private void DisableHealWhenMoving(Vector3 arf)
     {
         healWhenMoving = false;
+    }
+    private void IncreaseMaxHealth()
+    {
+        if (isPlayer) maxHealth += 20;
+    }
+    private void EnableBurnDamage()
+    {
+
     }
 }

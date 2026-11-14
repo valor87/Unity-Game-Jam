@@ -88,6 +88,22 @@ public class EventCore : MonoBehaviour
     /// Enables bouncy walls
     /// </summary>
     public UnityEvent UE_EnableSuperJumpOffWalls;
+    /// <summary>
+    /// Enables fog
+    /// </summary>
+    public UnityEvent UE_EnableFog;
+    /// <summary>
+    /// Enables low gravity
+    /// </summary>
+    public UnityEvent UE_Cloud9;
+    /// <summary>
+    ///  increases player max hp and spawns multiple coins
+    /// </summary>
+    public UnityEvent UE_JackpotEffect;
+    /// <summary>
+    ///  helll!!!
+    /// </summary>
+    public UnityEvent UE_666Effect;
     public UnityEvent UE_UsedShield;
         void Awake()
     {
