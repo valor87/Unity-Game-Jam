@@ -31,11 +31,11 @@ public class SlotMachine : MonoBehaviour
             if (SoundManager.Instance != null)
             SoundManager.Instance.PlaySlotMachineThenElevator(rolledResult, transform);
         yield return new WaitForSeconds(timeForFirstNum);
-        _tokenPreview.UpdateFirstNumberMaterial(firstNumber);
+        _tokenPreview.UpdateFirstNumberMaterial(firstNumber-1);
         yield return new WaitForSeconds(timeForSecondNum);
-        _tokenPreview.UpdateSecondNumberMaterial(secondNumber);
+        _tokenPreview.UpdateSecondNumberMaterial(secondNumber-1);
         yield return new WaitForSeconds(timeForThirdNum);
-        _tokenPreview.UpdateThirdNumberMaterial(thirdNumber);
+        _tokenPreview.UpdateThirdNumberMaterial(thirdNumber-1);
 
         yield return new WaitForSeconds(endTime);
         SlotMachineAnimationEnds();
