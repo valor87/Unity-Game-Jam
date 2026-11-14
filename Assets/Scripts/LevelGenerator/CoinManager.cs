@@ -16,7 +16,6 @@ public class CoinManager : MonoBehaviour
         EventCore.instance.UE_SpawnCoins.AddListener(CoinSpawnLoop);
         EventCore.instance.UE_666Effect.AddListener(SetLavaGround);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetGroundMaterial);
-        EventCore.instance.UE_666Effect.Invoke();
 
         for (int i = 0; i < _amountOfCoins; i++)
         {
