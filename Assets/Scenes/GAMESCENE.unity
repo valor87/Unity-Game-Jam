@@ -4431,7 +4431,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  isStartDoor: 0
+  isStartDoor: 1
 --- !u!65 &1022880997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8573,6 +8573,82 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.96, y: 1.53, z: 4.33}
   m_LocalScale: {x: 1, y: 7.0689125, z: 5.1234}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2093698056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093698058}
+  - component: {fileID: 2093698057}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2093698057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093698056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea8463ca05e84819845ab910de16a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  slotMachineEvent:
+    Guid:
+      Data1: 2033818693
+      Data2: 1252065908
+      Data3: 737093002
+      Data4: 514597319
+    Path: event:/Slot Machine
+  slotMachine777Event:
+    Guid:
+      Data1: 1270628538
+      Data2: 1097105458
+      Data3: 1784865178
+      Data4: -812965459
+    Path: event:/Slot Machine Jackpot
+  slotMachine666Event:
+    Guid:
+      Data1: 1087367010
+      Data2: 1222091435
+      Data3: 94468762
+      Data4: 215726939
+    Path: event:/Slot Machine 666
+  elevatorStartDelay: 6
+  elevatorEvent:
+    Guid:
+      Data1: 1752466509
+      Data2: 1112662031
+      Data3: 1847582883
+      Data4: 1601771393
+    Path: event:/Elevator
+  elevatorStateParameter: Elevator State
+  closedLabel: Closed
+  openLabel: Open
+--- !u!4 &2093698058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093698056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.23858, y: 1.52477, z: 24.17566}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
