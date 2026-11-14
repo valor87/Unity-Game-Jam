@@ -16,6 +16,7 @@ public class CoinManager : MonoBehaviour
         EventCore.instance.UE_SpawnCoins.AddListener(CoinSpawnLoop);
         EventCore.instance.UE_666Effect.AddListener(SetLavaGround);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetGroundMaterial);
+        EventCore.instance.UE_666Effect.Invoke();
 
         for (int i = 0; i < _amountOfCoins; i++)
         {
@@ -78,10 +79,16 @@ public class CoinManager : MonoBehaviour
     void ResetGroundMaterial(Vector3 arg)
     {
         _groundBlock.GetComponent<MeshRenderer>().material = _baseMaterial;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.StopLavaAmbience();
     }
     void SetLavaGround()
     {
         _baseMaterial = _groundBlock.GetComponent<MeshRenderer>().material;
         _groundBlock.GetComponent<MeshRenderer>().material = _lavaAnimation;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.StartLavaAmbience(_groundBlock.transform);
     }
 }

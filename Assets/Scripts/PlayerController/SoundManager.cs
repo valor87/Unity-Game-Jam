@@ -56,6 +56,10 @@ public class SoundManager : MonoBehaviour
     [Tooltip("Parameter label that triggers the door-open sound. Must match FMOD exactly.")]
     [SerializeField] private string openLabel = "Open";
 
+    [Header("UI")]
+    [Tooltip("One-shot played whenever a pop-up message appears (intro messages and phobia messages). Use a 2D event.")]
+    [SerializeField] private EventReference popupEvent;
+
     [Header("Player")]
     [Tooltip("One-shot played when the player takes damage. Use a 2D event so it always sounds the same.")]
     [SerializeField] private EventReference playerDamageEvent;
@@ -65,6 +69,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private EventReference dummySwingEvent;
     [Tooltip("One-shot played each time a swinging axe passes the middle of its swing. Use a 3D event so it comes from the axe.")]
     [SerializeField] private EventReference axeSwingEvent;
+
+    [Header("Lava level")]
+    [Tooltip("Looping lava ambience. Plays from when the lava appears until the player enters the end elevator.")]
+    [SerializeField] private EventReference lavaAmbienceEvent;
+    [Tooltip("One-shot played when the player falls into the lava.")]
+    [SerializeField] private EventReference lavaBurnEvent;
 
     [Header("Coins")]
     [Tooltip("One-shot played when the player collects a coin.")]
@@ -81,6 +91,13 @@ public class SoundManager : MonoBehaviour
     private bool musicStarted;
     private MusicState currentMusicState = MusicState.Level;
     private MusicState stateBeforeShop = MusicState.Level;
+
+    private EventInstance lavaInstance;
+    private bool lavaInstancePlaying;
+    private bool lavaLevelActive;
+
+    /// <summary>True from when the lava appears until the player enters the end elevator.</summary>
+    public bool IsLavaActive => lavaLevelActive;
 
     private void Awake()
     {
@@ -113,6 +130,8 @@ public class SoundManager : MonoBehaviour
                 musicInstance.release();
                 musicStarted = false;
             }
+
+            StopLavaAmbience(immediate: true);
         }
 
         CancelPendingElevatorStart();
@@ -288,6 +307,55 @@ public class SoundManager : MonoBehaviour
             return;
 
         RuntimeManager.PlayOneShot(coinCollectEvent, GetPosition(source));
+    }
+
+    // ---------------- Lava level ----------------
+
+    /// <summary>Call when the lava appears. Starts the lava ambience loop and marks the lava as active.</summary>
+    public void StartLavaAmbience(Transform source = null)
+    {
+        lavaLevelActive = true;
+
+        if (lavaInstancePlaying || lavaAmbienceEvent.IsNull)
+            return;
+
+        lavaInstance = RuntimeManager.CreateInstance(lavaAmbienceEvent);
+        lavaInstance.set3DAttributes(RuntimeUtils.To3DAttributes(GetPosition(source)));
+        lavaInstance.start();
+        lavaInstancePlaying = true;
+    }
+
+    /// <summary>Call when the player enters the end elevator. Fades out the ambience. Safe to call when no lava is active.</summary>
+    public void StopLavaAmbience(bool immediate = false)
+    {
+        lavaLevelActive = false;
+
+        if (!lavaInstancePlaying)
+            return;
+
+        lavaInstance.stop(immediate ? FMOD.Studio.STOP_MODE.IMMEDIATE : FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        lavaInstance.release();
+        lavaInstancePlaying = false;
+    }
+
+    /// <summary>Call when the player falls into the lava.</summary>
+    public void PlayLavaBurn(Transform source = null)
+    {
+        if (lavaBurnEvent.IsNull)
+            return;
+
+        RuntimeManager.PlayOneShot(lavaBurnEvent, GetPosition(source));
+    }
+
+    // ---------------- UI ----------------
+
+    /// <summary>Call at the moment a pop-up message appears on screen.</summary>
+    public void PlayPopup()
+    {
+        if (popupEvent.IsNull)
+            return;
+
+        RuntimeManager.PlayOneShot(popupEvent, GetPosition(null));
     }
 
     // ---------------- Player ----------------
