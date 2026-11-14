@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,5 +12,10 @@ public class HealthBarUI : MonoBehaviour
     void ChangeHealthBar(float currentHealth)
     {
         _healthImage.fillAmount = currentHealth/100;
+    }
+
+    IEnumerator HeartAnimation()
+    {
+        yield return null;
     }
 }

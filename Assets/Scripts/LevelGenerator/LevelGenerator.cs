@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 public enum propType
 {
     None, Roof, Ground, Floating
@@ -33,7 +34,8 @@ public class LevelGenerator : MonoBehaviour
 
     void Start()
     {
-
+        EventCore.instance.UE_EnterEndElevator.AddListener(ClearProps);
+        spawnProps();
     }
 
     private void Update()
@@ -51,12 +53,13 @@ public class LevelGenerator : MonoBehaviour
             spawnPropsLoop(propType.Ground, _amountOfGroundProps);
     }
     [ContextMenu("Clear props")]
-    private void ClearProps()
+    private void ClearProps(Vector3 arg)
     {
-        for (int i = _allSpawnedProps.Count; i > 0; i--)
+        for (int i = _allSpawnedProps.Count - 1; i > 0; i--)
         {
             _allSpawnedProps[i].SetActive(false);
         }
+        spawnProps();
     }
     private void spawnPropsLoop(propType _p, int _itemSpawnAmount)
     {

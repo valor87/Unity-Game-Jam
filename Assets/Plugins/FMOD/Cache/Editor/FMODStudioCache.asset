@@ -697,7 +697,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7214993048590288762}
   cacheVersion: 131861
-  cacheTime: 639301913217344842
+  cacheTime: 639301912778286407
   SerializableEventsDict:
   - key: snapshot:/InShopDucking
     index: 0
@@ -725,6 +725,18 @@ MonoBehaviour:
     index: 11
   - key: event:/Slot Machine 666
     index: 12
+  - key: event:/Axe Swing
+    index: 13
+  - key: event:/Icy Footsteps
+    index: 14
+  - key: event:/Taking Damage
+    index: 15
+  - key: event:/Sword Swipe
+    index: 16
+  - key: event:/Lava
+    index: 17
+  - key: event:/Lava Damage
+    index: 18
 --- !u!114 &116071979998922154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -893,7 +905,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639301330086838454
+  lastModified: 639301294620676866
   FileSizes:
   - Name: Desktop
     Value: 1954
@@ -1064,7 +1076,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639301913216935380
+  lastModified: 639301912778136099
   FileSizes:
   - Name: Desktop
     Value: 1804
@@ -1318,7 +1330,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/SFXBank.bank
   Name: SFXBank
   StudioPath: bank:/SFXBank
-  lastModified: 639301913217344842
+  lastModified: 639301912778286407
   FileSizes:
   - Name: Desktop
     Value: 2973280

@@ -66,6 +66,9 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_SpawnNoCoins;
     /// <summary>
+    /// give the player three sheilds
+    /// </summary>
+    public UnityEvent UE_GivePlayerSheild;
     /// Effect that makes floors slippery
     /// </summary>
     public UnityEvent UE_SetSlipperyFloors;

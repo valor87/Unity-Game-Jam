@@ -6,9 +6,12 @@ public class Health : MonoBehaviour, IDamageable
     private Rigidbody rb;
     [SerializeField] private float _maxHealth;
     [SerializeField] public float _currentHealth;
+    [SerializeField] public int _currentSheild;
+
     public float maxHealth { get => _maxHealth; set => _maxHealth = value; }
     public float currentHealth { get => _currentHealth; set => _currentHealth = value; }
     public bool isPlayer { get; set;}
+    public int _sheildValue { get => _currentSheild; set => _currentSheild = value; }
 
     //Effect stuff
     private bool takeDamageWhenStill = false, healWhenMoving = false;
@@ -24,11 +27,13 @@ public class Health : MonoBehaviour, IDamageable
         //one philia
         EventCore.instance.UE_HealWhenMoving.AddListener(EnableHealWhenMoving);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableHealWhenMoving);
+
+        EventCore.instance.UE_GivePlayerSheild.AddListener(GiveSheild);
     }
 
     private void Update()
     {
-        if(rb.linearVelocity.magnitude < 0.3f && takeDamageWhenStill)
+        if (rb.linearVelocity.magnitude < 0.3f && takeDamageWhenStill)
         {
             GetComponent<IDamageable>().TakeDamage(tickDamage * Time.deltaTime);
         }
@@ -38,7 +43,10 @@ public class Health : MonoBehaviour, IDamageable
         }
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
-
+    private void GiveSheild()
+    {
+        _currentSheild = 3;
+    }
     private void EnableTakeDamageWhileStill()
     {
         takeDamageWhenStill = true;
