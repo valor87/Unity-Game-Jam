@@ -10303,11 +10303,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   musicEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -981679496
+      Data2: 1198033852
+      Data3: 928555953
+      Data4: -1826367855
+    Path: event:/Music
   musicStateParameter: Music State
   autoStartMusic: 1
   slotMachineEvent:
@@ -10344,32 +10344,32 @@ MonoBehaviour:
   openLabel: Open
   playerDamageEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1114040150
+      Data2: 1224508669
+      Data3: 1978978235
+      Data4: -890737683
+    Path: event:/Taking Damage
   dummySwingEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 92521820
+      Data2: 1322882374
+      Data3: 1067399299
+      Data4: 738608970
+    Path: event:/Sword Swipe
   axeSwingEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -244882943
+      Data2: 1265789266
+      Data3: 1755412664
+      Data4: -1217713705
+    Path: event:/Axe Swing
   coinCollectEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -9321383
+      Data2: 1249075195
+      Data3: 49179821
+      Data4: -1811737456
+    Path: event:/Coin Collect
 --- !u!4 &2093698058
 Transform:
   m_ObjectHideFlags: 0
