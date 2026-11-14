@@ -9,6 +9,6 @@ public class NineEffect : EffectNumber
 
     public override void BadEffect()
     {
-
+        EventCore.instance.UE_FoggyLevel.Invoke();
     }
 }
