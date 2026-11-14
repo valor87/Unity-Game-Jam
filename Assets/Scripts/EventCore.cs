@@ -89,6 +89,10 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_EnableSuperJumpOffWalls;
     public UnityEvent UE_UsedShield;
+    /// <summary>
+    /// When triggering messages for the player
+    /// </summary>
+    public UnityEvent<string> UE_DisplayMessage;
         void Awake()
     {
         if (instance == null)
