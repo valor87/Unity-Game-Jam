@@ -5,6 +5,9 @@ public class EventCore : MonoBehaviour
 {
     public static EventCore instance;
 
+    public UnityEvent UE_PausePlayer;
+    public UnityEvent UE_ResumePlayer;
+
     public UnityEvent<Transform> UE_RespawnPlayer;
     
     /// <summary>

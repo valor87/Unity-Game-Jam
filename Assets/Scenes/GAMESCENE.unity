@@ -3661,6 +3661,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 748033362}
+        m_TargetAssemblyTypeName: MessageUI, Assembly-CSharp
+        m_MethodName: ResumePlayerInvoke
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 545568646}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -3963,6 +3975,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3159d74c0d073549829bfc9b547356c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventCore
+  UE_PausePlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_ResumePlayer:
+    m_PersistentCalls:
+      m_Calls: []
   UE_RespawnPlayer:
     m_PersistentCalls:
       m_Calls: []
@@ -4024,6 +4042,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   UE_EnableSuperJumpOffWalls:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_EnableFog:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_Cloud9:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_JackpotEffect:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_666Effect:
     m_PersistentCalls:
       m_Calls: []
   UE_UsedShield:
@@ -4783,26 +4813,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1877973389}
     m_Modifications:
-    - target: {fileID: 1114938955885887201, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 57.626793
-      objectReference: {fileID: 0}
-    - target: {fileID: 1114938955885887201, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.5154
-      objectReference: {fileID: 0}
-    - target: {fileID: 2204874056348836198, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.6988958
-      objectReference: {fileID: 0}
-    - target: {fileID: 2204874056348836198, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 30.6274
-      objectReference: {fileID: 0}
-    - target: {fileID: 2204874056348836198, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 4196527603512021777, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.54
@@ -4842,22 +4852,6 @@ PrefabInstance:
     - target: {fileID: 4196527603512021777, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423620230231718603, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 57.373848
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423620230231718603, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8.825669
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423620230231718603, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.3905
-      objectReference: {fileID: 0}
-    - target: {fileID: 4423620230231718603, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.3794
       objectReference: {fileID: 0}
     - target: {fileID: 6568455205023080936, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
       propertyPath: m_Name
@@ -5862,6 +5856,7 @@ MonoBehaviour:
   secondNumber: 0
   thirdNumber: 0
   _slotMachineInteract: {fileID: 881329157}
+  _tokenPreview: {fileID: 0}
 --- !u!4 &968974811
 Transform:
   m_ObjectHideFlags: 0
