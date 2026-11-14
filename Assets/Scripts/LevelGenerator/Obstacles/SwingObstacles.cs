@@ -11,6 +11,8 @@ public class SwingObstacles : MonoBehaviour
     Quaternion _rotationL;
     float _baseRotationTime;
     float t;
+    float _previousSide;
+    [SerializeField, Range(0f, 0.5f)] float _whooshLead = 0.15f;
 
     bool changeRotation = false;
     float _doubleRotationTimeAmount;
@@ -48,12 +50,25 @@ public class SwingObstacles : MonoBehaviour
         t += Time.deltaTime;
         transform.rotation = Quaternion.Lerp(_rotationR, _rotationL, _curve.Evaluate(t / _rotationTime));
         
+        // Whoosh a little BEFORE the axe reaches the middle of its swing
+        float span = Quaternion.Angle(_rotationR, _rotationL);
+        float side = Quaternion.Angle(transform.rotation, _rotationR) - Quaternion.Angle(transform.rotation, _rotationL);
+        float lead = span * _whooshLead; // 0 = exactly the middle, higher = earlier
 
-        if (t / _rotationTime >= resetValue)
+        bool smallStep = Mathf.Abs(side - _previousSide) < span * 0.5f; // ignores the snap back when t resets
+        bool comingFromRight = _previousSide < -lead && side >= -lead;
+        bool comingFromLeft = _previousSide > lead && side <= lead;
+
+        if (smallStep && (comingFromRight || comingFromLeft))
         {
-            t = 0;
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlayAxeSwing(transform);
         }
-
+    _previousSide = side;
+        _previousSide = side;
+            if (t / _rotationTime >= resetValue)
+            {
+                t = 0;
+            }
     }
-
 }

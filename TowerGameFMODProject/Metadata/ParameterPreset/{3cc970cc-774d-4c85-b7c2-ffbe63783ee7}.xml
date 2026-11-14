@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{3cc970cc-774d-4c85-b7c2-ffbe63783ee7}">
+		<property name="name">
+			<value>Music State</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9f75e30f-341b-4065-b081-24a13140b713}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e3c36222-3b49-4e82-b983-0d9e59cb5e5f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e3c36222-3b49-4e82-b983-0d9e59cb5e5f}">
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{18e33480-c696-40a3-b334-26e796cd4bcf}</destination>
+		</relationship>
+	</object>
+	<object class="SeekModulator" id="{18e33480-c696-40a3-b334-26e796cd4bcf}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
+		<property name="speedAscending">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

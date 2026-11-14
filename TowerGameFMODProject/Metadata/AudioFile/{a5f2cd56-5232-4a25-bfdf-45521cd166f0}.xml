@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{aa957ed1-2977-4f63-8fe3-f10d13824167}">
+	<object class="AudioFile" id="{a5f2cd56-5232-4a25-bfdf-45521cd166f0}">
 		<property name="assetPath">
-			<value>Lava Burn.wav</value>
+			<value>MarcusUnityJam_2026_MedievalMusic_Dry_loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>2.048</value>
+			<value>33.982312925170071</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{709bd059-392a-47dc-b985-387c4bf50488}</destination>

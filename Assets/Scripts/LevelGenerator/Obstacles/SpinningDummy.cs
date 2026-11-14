@@ -69,6 +69,9 @@ public class SpinningDummy : MonoBehaviour
                 _rotationTarget = 390 * _amountOfSpins;
                 _rotationSpeed = _rotationSpeed * 2;
                 _windUp = false;
+
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlayDummySwing(transform);
             }
         }
         // preform the new rotation
