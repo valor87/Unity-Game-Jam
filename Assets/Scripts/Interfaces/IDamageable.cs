@@ -24,6 +24,7 @@ public interface IDamageable
         {
             Debug.Log("The player had a sheild that protected them");
             _sheildValue--;
+            EventCore.instance.UE_UsedShield.Invoke();
             return;
         }
         currentHealth -= incomingDamage;

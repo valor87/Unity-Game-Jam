@@ -73,6 +73,7 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_SetSlipperyFloors;
 
+    public UnityEvent UE_UsedShield;
     void Awake()
     {
         if (instance == null)
