@@ -697,6 +697,20 @@ MonoBehaviour:
   dismissKey: 13
   fadeInDuration: 0.3
   fadeOutDuration: 0.5
+  _firstPhobiaMessage: 'Curse that Witch Mathilda! Now that you''ve contracted a
+    phobia, every time
+
+    you draw that number on the payline you will experience
+    negative effects.
+
+
+    If you collect coins on your journey, you can spend them
+    over at the Goblin Gumball Shop inside the elevator. Coins can be spent to banish
+    one of your current phobias, or refill your health. Choose wisely, as you can
+    only spend one coin per floor.
+
+
+    Good luck on your journey home!'
 --- !u!114 &61785534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,6 +2724,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &522045030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9182716704514986513, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+  m_PrefabInstance: {fileID: 7648649474997021126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00aeaa57f5ad4342808c25e8d6be15f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BouncyWalls
 --- !u!1 &530338133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3973,6 +3998,9 @@ MonoBehaviour:
   UE_DisplayMessage:
     m_PersistentCalls:
       m_Calls: []
+  UE_FirstPhobia:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &713658321
 Transform:
   m_ObjectHideFlags: 0
@@ -4128,12 +4156,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a49cf5fb804d8b439545be67e0b64c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialaugeTriggers
-  message: 'Blast! The evil Witch Mathilda has cursed the elevator too! She''s replaced
+  _message: 'Blast! The evil Witch Mathilda has cursed the elevator too! She''s replaced
     the
 
     buttons with a cursed slot machine. Pull the crank to randomly select
     a floor, but be warned: the last digit to appear in the payline will always be
-    cursed, and you will contract a phobia of that specific number!'
+    cursed, and you will contract a phobia of that specific number!
+
+
+    All numbers
+    on the payline have effects that will alter the next floor, however if you''ve
+    contracted a phobia of a specific number, you will experience negative effects
+    when that number is pulled from the Payline. Pull the lever now to see what happens!'
 --- !u!4 &736781415
 Transform:
   m_ObjectHideFlags: 0
@@ -4618,6 +4652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786228784}
   - component: {fileID: 786228785}
+  - component: {fileID: 786228786}
   m_Layer: 0
   m_Name: ElevatorDoors
   m_TagString: Untagged
@@ -4655,7 +4690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38e9216fe4d2a44eba73f16949db983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatorDoor
-  interactable: 0
+  interactable: 1
   leftDoor: {fileID: 431871986}
   rightDoor: {fileID: 1315168279}
   distanceToOpenDoor: 3.2199988
@@ -4685,6 +4720,27 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isStartDoor: 0
+--- !u!65 &786228786
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786228783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 7.087499, z: 5.772087}
+  m_Center: {x: 0, y: -5.138135, z: 0.23722267}
 --- !u!1001 &793242617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4693,6 +4749,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1877973389}
     m_Modifications:
+    - target: {fileID: 1114938955885887201, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 57.626793
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114938955885887201, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204874056348836198, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6988958
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204874056348836198, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 30.6274
+      objectReference: {fileID: 0}
+    - target: {fileID: 2204874056348836198, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 4196527603512021777, guid: 83e7a213fb4c43d4faf22916e36c7b8d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.54
@@ -8244,6 +8320,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8175620268292599175, guid: db50455499fe80c47ae63151916b31a9, type: 3}
   m_PrefabInstance: {fileID: 1461513252}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1487183397
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1136233706063920007, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_Name
+      value: Dummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387960419235062040, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: _amountOfSpins
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.062364
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.11026645
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.921412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7335230832526730864, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5ad55c70d1838bd4a8920c6799e0546c, type: 3}
 --- !u!1 &1504517235
 GameObject:
   m_ObjectHideFlags: 0
@@ -9937,6 +10074,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1902678495}
   m_LocalEulerAnglesHint: {x: 0, y: 94.363, z: 0}
+--- !u!1 &1747586682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747586685}
+  - component: {fileID: 1747586684}
+  - component: {fileID: 1747586683}
+  m_Layer: 0
+  m_Name: DialaugeTriggers (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1747586683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747586682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1747586684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747586682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a49cf5fb804d8b439545be67e0b64c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialaugeTriggers
+  _message: 'Welcome to Infinitower! You are the great Wizard Decimus who is returning
+
+    home
+    to his apartment on the 999 floor, only to find that the nefarious Witch Mathilda
+    has cursed the entire building and stripped you of your magical staff and cursed
+    you with Arithmophobia, the fear of numbers!
+
+
+    You''ll have to use your physical
+    prowess to ascend the tower. Each floor has transformed into a cursed obstacle
+    course for you to conquer. Reach the elevator at the end of each level to traverse
+    to the next floor.'
+--- !u!4 &1747586685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747586682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.52, y: 7.31, z: 20.11}
+  m_LocalScale: {x: 1, y: 16.33288, z: 9.549162}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748131488
 GameObject:
   m_ObjectHideFlags: 0
@@ -11647,6 +11862,10 @@ PrefabInstance:
       value: 79.3
       objectReference: {fileID: 0}
     - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: bouncyWalls
+      value: 
+      objectReference: {fileID: 522045030}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: jumpStrength
       value: 15
       objectReference: {fileID: 0}
@@ -11816,6 +12035,8 @@ SceneRoots:
   - {fileID: 1123242433}
   - {fileID: 2093698058}
   - {fileID: 736781415}
+  - {fileID: 1747586685}
   - {fileID: 1508977120}
   - {fileID: 1902678495}
   - {fileID: 1877973389}
+  - {fileID: 1487183397}

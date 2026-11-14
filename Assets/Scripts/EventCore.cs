@@ -93,6 +93,10 @@ public class EventCore : MonoBehaviour
     /// When triggering messages for the player
     /// </summary>
     public UnityEvent<string> UE_DisplayMessage;
+
+    public UnityEvent UE_FirstPhobia;
+
+
         void Awake()
     {
         if (instance == null)
