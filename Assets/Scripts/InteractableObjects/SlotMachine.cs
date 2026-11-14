@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.VisualScripting;
 public class SlotMachine : MonoBehaviour
 {
     public static SlotMachine Instance;
@@ -34,6 +35,7 @@ public class SlotMachine : MonoBehaviour
         //DISPLAY SECOND NUM CODE HERE
         yield return new WaitForSeconds(timeForThirdNum);
         //DISPLAY THIRD NUM CODE HERE
+
         yield return new WaitForSeconds(endTime);
         SlotMachineAnimationEnds();
     }
@@ -51,12 +53,14 @@ public class SlotMachine : MonoBehaviour
         {
             Debug.Log("Rolled 777");
             rolledResult = SoundManager.SlotResult.Jackpot777;
+            PhobiaEvents.RaisePhobiaAdded(PhobiaEvents.Phobia777);
             //777
             return;
         } else if (randomNum > 98)
         {
             Debug.Log("Rolled 666");
             rolledResult = SoundManager.SlotResult.Ominous666;
+            PhobiaEvents.RaisePhobiaAdded(PhobiaEvents.Phobia666);
             //666
             return;
         } else

@@ -12,6 +12,7 @@ using UnityEngine.UI;
 /// </summary>
 public class PhobiaPopup : MonoBehaviour
 {
+    public static PhobiaPopup Instance;
     public enum DismissMode
     {
         AutoFade,            // fades out after Display Duration
@@ -69,6 +70,7 @@ public class PhobiaPopup : MonoBehaviour
 
         popup.alpha = 0f;
         popup.gameObject.SetActive(false);
+        Instance = this;
     }
 
     private void OnEnable()
