@@ -16,7 +16,8 @@ public class Prop : MonoBehaviour
     {
         yield return new WaitForSeconds(.25f);
         _stopDestroy = true;
-        GetComponent<BoxCollider>().isTrigger = false;
+        if(GetComponent<BoxCollider>() != null)
+            GetComponent<BoxCollider>().isTrigger = false;
     }
 
     private void OnTriggerStay(Collider other)
