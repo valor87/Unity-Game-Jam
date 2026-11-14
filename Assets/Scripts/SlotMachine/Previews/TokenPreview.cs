@@ -19,6 +19,14 @@ public class TokenPreview : MonoBehaviour
         }
 
     }
+
+    public void setSlotsTransparent()
+    {
+        slots[0].material = materials[9];
+        slots[1].material = materials[9];
+        slots[2].material = materials[9];
+    }
+
     public void UpdateFirstNumberMaterial(int number)
     {
         slots[0].material = materials[number];
