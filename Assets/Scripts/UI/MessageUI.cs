@@ -11,7 +11,18 @@ public class MessageUI : MonoBehaviour
     }
     void SetText(string s)
     {
+        Time.timeScale = 0f;
+        EventCore.instance.UE_PausePlayer.Invoke();
         transform.GetChild(0).gameObject.SetActive(true);
         text.text = s;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayPopup();
+    }
+
+    public void ResumePlayerInvoke()
+    {
+        Time.timeScale = 1f;
+        EventCore.instance.UE_ResumePlayer.Invoke();
     }
 }

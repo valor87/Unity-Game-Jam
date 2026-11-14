@@ -30,6 +30,8 @@ public class Health : MonoBehaviour, IDamageable
 
         EventCore.instance.UE_GivePlayerSheild.AddListener(GiveSheild);
         EventCore.instance.UE_JackpotEffect.AddListener(IncreaseMaxHealth);
+
+        EventCore.instance.UE_RefillPlayerHealth.AddListener(RefillHealth);
     }
 
     private void Update()
@@ -79,5 +81,9 @@ public class Health : MonoBehaviour, IDamageable
     private void DisableBurnDamage()
     {
         burning = false;
+    }
+    private void RefillHealth()
+    {
+        currentHealth = maxHealth;
     }
 }

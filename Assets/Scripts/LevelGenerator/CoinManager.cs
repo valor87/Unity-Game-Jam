@@ -78,10 +78,16 @@ public class CoinManager : MonoBehaviour
     void ResetGroundMaterial(Vector3 arg)
     {
         _groundBlock.GetComponent<MeshRenderer>().material = _baseMaterial;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.StopLavaAmbience();
     }
     void SetLavaGround()
     {
         _baseMaterial = _groundBlock.GetComponent<MeshRenderer>().material;
         _groundBlock.GetComponent<MeshRenderer>().material = _lavaAnimation;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.StartLavaAmbience(_groundBlock.transform);
     }
 }
