@@ -8,10 +8,12 @@ public class CoinManager : MonoBehaviour
 
     [SerializeField] List<CoinSpawner> _allCoinPositions = new List<CoinSpawner>();
     [SerializeField] List<CoinSpawner> _remainingPositions = new List<CoinSpawner>();
+    [SerializeField] private GameObject _groundBlock;
+    [SerializeField] private Material _lavaAnimation;
+    private Material _baseMaterial;
     void Start()
     {
         EventCore.instance.UE_SpawnCoins.AddListener(CoinSpawnLoop);
-
         for (int i = 0; i < _amountOfCoins; i++)
         {
             GameObject c = Instantiate(_coinPrefab);
@@ -69,9 +71,14 @@ public class CoinManager : MonoBehaviour
             temp2.Add(var);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
 
+    void ResetGroundMaterial()
+    {
+        _groundBlock.GetComponent<MeshRenderer>().material = _baseMaterial;
+    }
+    void SetLavaGround()
+    {
+        _baseMaterial = _groundBlock.GetComponent<MeshRenderer>().material;
+        _groundBlock.GetComponent<MeshRenderer>().material = _lavaAnimation;
     }
 }
