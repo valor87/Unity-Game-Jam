@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
             AirStrafe(direction);
         }
     }
-    void Jump()
+    public void Jump()
     {
         //Collider[] colliders = Physics.OverlapSphere(transform.position - Vector3.up * 0.41f, 0.72f);
         List<Collider> colliders = new List<Collider>();
