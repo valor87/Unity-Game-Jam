@@ -65,8 +65,31 @@ public class EventCore : MonoBehaviour
     /// Effect that spawns no coins in the level
     /// </summary>
     public UnityEvent UE_SpawnNoCoins;
-
-    void Awake()
+    /// <summary>
+    /// give the player three sheilds
+    /// </summary>
+    public UnityEvent UE_GivePlayerSheild;
+    /// Effect that makes floors slippery
+    /// </summary>
+    public UnityEvent UE_SetSlipperyFloors;
+    /// <summary>
+    /// Wind effect will push against you 
+    /// </summary>
+    public UnityEvent UE_StartWindEffect;
+    /// <summary>
+    /// Enables player double jumping mid air
+    /// </summary>
+    public UnityEvent UE_EnableDoubleJump;
+    /// <summary>
+    /// Enables bouncy walls
+    /// </summary>
+    public UnityEvent UE_EnableBouncyWalls;
+    /// <summary>
+    /// Enables bouncy walls
+    /// </summary>
+    public UnityEvent UE_EnableSuperJumpOffWalls;
+    public UnityEvent UE_UsedShield;
+        void Awake()
     {
         if (instance == null)
         {

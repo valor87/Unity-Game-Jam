@@ -17,6 +17,10 @@ public class CoinCollect : MonoBehaviour
             return;
         currentCoins += coinIncreaseValue;
         EventCore.instance.UE_ChangeCoinValue.Invoke(currentCoins);
+        
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayCoinCollect(other.transform);
+
         other.gameObject.SetActive(false);
     }
 

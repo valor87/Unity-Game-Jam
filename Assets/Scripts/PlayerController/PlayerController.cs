@@ -15,27 +15,60 @@ public class PlayerController : MonoBehaviour
     private float currentCamFOV;
 
     [Header("Movement units")]
-    [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength;
+    [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength, linearDampingAmount;
     private Vector3 moveDirection;
     private List<Transform> surfacesPlayerIsTouching = new List<Transform>();
     private bool isGrounded => surfacesPlayerIsTouching.Count > 0;
 
+
+    //Effects
+    private bool isFloorSlippery = false;
+    [Header("Bouncy walls")]
+    private bool alreadyDoubleJumped, canDoubleJump = false;
+    [SerializeField] BouncyWalls bouncyWalls;
+    [Header("Super wall jump vars")]
+    private bool isWallRunning => bouncyWalls.wallsPlayerIsTouching.Count > 0;
+    private bool canSuperWallJump = false;
+    [SerializeField] float superWallJumpStrength;
     private void Start()
     {
         _camera = Camera.main;
         rb = GetComponent<Rigidbody>();
+
+        EventCore.instance.UE_SetSlipperyFloors.AddListener(SetSlipperyFloors);
+        EventCore.instance.UE_EnterEndElevator.AddListener(ResetSlipperyFloors);
+        EventCore.instance.UE_EnableDoubleJump.AddListener(EnableDoubleJump);
+        EventCore.instance.UE_EnterEndElevator.AddListener(DisableDoubleJump);
+        EventCore.instance.UE_EnableSuperJumpOffWalls.AddListener(EnableSuperJumpOffWalls);
+        EventCore.instance.UE_EnterEndElevator.AddListener(DisableSuperJumpOffWalls);
+
     }
 
     private void Update()
     {
+        if (!isFloorSlippery)
+        {
+            rb.linearDamping = linearDampingAmount;
+        }
+        
         rb.maxLinearVelocity = maxMoveSpeed;
         if (!isGrounded)
         {
+            rb.linearDamping = 0;
             rb.maxLinearVelocity = 700;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) )
         {
-            Jump();
+            if (isGrounded)
+            {
+                Jump(jumpStrength);
+                alreadyDoubleJumped = false;
+            }
+            else if (canDoubleJump && !alreadyDoubleJumped)
+            {
+                Jump(jumpStrength);
+                alreadyDoubleJumped = true;
+            }
         }
         ChangeCameraFOVBasedOnSpeed();
     }
@@ -52,7 +85,7 @@ public class PlayerController : MonoBehaviour
             AirStrafe(direction);
         }
     }
-    void Jump()
+    public void Jump(float _jumpStrength)
     {
         //Collider[] colliders = Physics.OverlapSphere(transform.position - Vector3.up * 0.41f, 0.72f);
         List<Collider> colliders = new List<Collider>();
@@ -68,11 +101,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Closest pos: " + closestPos + " | name of obj: " + collider.name);
             meanPosition += closestPos;
         }
-        meanPosition /= colliders.Count;
+        if(colliders.Count>0) meanPosition /= colliders.Count;
+
         Debug.Log("mean position: " +  meanPosition);
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
-        rb.linearVelocity += direction.normalized * jumpStrength;
+        _jumpStrength += (isWallRunning && canSuperWallJump) ? 5 : 0;
+        rb.linearVelocity += direction.normalized * _jumpStrength;
     }
     void MoveInDirection(Vector3 _direction)
     {
@@ -106,7 +141,31 @@ public class PlayerController : MonoBehaviour
             surfacesPlayerIsTouching.Remove(other.transform);
         }
     }
-
+    private void SetSlipperyFloors()
+    {
+        isFloorSlippery = true;
+    }
+    private void ResetSlipperyFloors(Vector3 arg)
+    {
+        isFloorSlippery = false;
+    }
+    
+    private void EnableDoubleJump()
+    {
+        canDoubleJump = true;
+    }
+    private void DisableDoubleJump(Vector3 arg)
+    {
+        canDoubleJump = false;
+    }
+    private void EnableSuperJumpOffWalls()
+    {
+        canSuperWallJump = true;
+    }
+    private void DisableSuperJumpOffWalls(Vector3 arg)
+    {
+        canSuperWallJump = false;
+    }
 }
 
 

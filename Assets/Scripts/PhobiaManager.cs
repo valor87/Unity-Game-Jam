@@ -28,6 +28,7 @@ public class PhobiaManager : MonoBehaviour
     public void AddPhobia(int number)
     {
         Phobias[number] = true;
+        PhobiaEvents.RaisePhobiaAdded(number);
     }
     public void RemovePhobia(int number)
     {

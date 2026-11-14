@@ -2712,6 +2712,9 @@ MonoBehaviour:
   UE_DoubleDamage:
     m_PersistentCalls:
       m_Calls: []
+  UE_HalfDamage:
+    m_PersistentCalls:
+      m_Calls: []
   UE_TrippleDamge:
     m_PersistentCalls:
       m_Calls: []
@@ -2728,6 +2731,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   UE_SpawnNoCoins:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_GivePlayerSheild:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_SetSlipperyFloors:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_StartWindEffect:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_EnableDoubleJump:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &713658321
@@ -3714,6 +3729,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   _maxHealth: 100
   _currentHealth: 100
+  _currentSheild: 0
   tickDamage: 1
 --- !u!114 &910788280
 MonoBehaviour:
@@ -4041,7 +4057,6 @@ Transform:
   m_Children:
   - {fileID: 541038280}
   - {fileID: 1218672684}
-  - {fileID: 1580499070}
   m_Father: {fileID: 1246604873}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1022880996
@@ -6580,12 +6595,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580499069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 25.18, y: 7.67, z: 20.029999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1022880995}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1580499072
 BoxCollider:
@@ -7946,6 +7961,10 @@ PrefabInstance:
       value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      propertyPath: linearDampingAmount
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139943531171715633, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       propertyPath: maxSpeedForFOVChange
       value: 55
       objectReference: {fileID: 0}
@@ -8032,6 +8051,7 @@ SceneRoots:
   - {fileID: 771030423}
   - {fileID: 639934852}
   - {fileID: 1732695094}
+  - {fileID: 1580499070}
   - {fileID: 474278977}
   - {fileID: 968974811}
   - {fileID: 1793382434}

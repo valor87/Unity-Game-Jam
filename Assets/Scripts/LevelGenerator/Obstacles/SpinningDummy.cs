@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpinningDummy : MonoBehaviour
 {
     [SerializeField] private float _bufferTime;
-    [SerializeField] private int _amountOfSpins;
+    [SerializeField] private float _amountOfSpins;
     [SerializeField] private float _rotationSpeed;
     private float _rotatinoSpeedDoubled;
     private float _rotationSpeedHalfed;
@@ -48,6 +48,7 @@ public class SpinningDummy : MonoBehaviour
         _windUp = true;
         _currentIntervelTime = 0;
         _rotationTarget = 0;
+        _rotationSpeed = _rotationSpeed / 2;
     }
     //spin the dummy
     void Spin()
@@ -66,6 +67,7 @@ public class SpinningDummy : MonoBehaviour
             {
                 // set the new rotation for the dummy
                 _rotationTarget = 390 * _amountOfSpins;
+                _rotationSpeed = _rotationSpeed * 2;
                 _windUp = false;
             }
         }
