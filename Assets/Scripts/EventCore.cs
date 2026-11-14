@@ -84,7 +84,8 @@ public class EventCore : MonoBehaviour
     /// Enables bouncy walls
     /// </summary>
     public UnityEvent UE_EnableBouncyWalls;
-    void Awake()
+    public UnityEvent UE_UsedShield;
+        void Awake()
     {
         if (instance == null)
         {
