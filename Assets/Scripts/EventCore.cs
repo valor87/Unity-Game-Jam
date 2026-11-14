@@ -94,8 +94,7 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent<string> UE_DisplayMessage;
 
-    public UnityEvent UE_FirstPhobia;
-
+    public UnityEvent UE_FoggyLevel;
 
         void Awake()
     {
