@@ -30,12 +30,13 @@ public class Health : MonoBehaviour, IDamageable
     {
         if(rb.linearVelocity.magnitude < 0.3f && takeDamageWhenStill)
         {
-            GetComponent<IDamageable>().TakeDamage(tickDamage);
+            GetComponent<IDamageable>().TakeDamage(tickDamage * Time.deltaTime);
         }
         if (rb.linearVelocity.magnitude > 0.3f && healWhenMoving)
         {
-            GetComponent<IDamageable>().TakeDamage(-tickDamage);
+            GetComponent<IDamageable>().TakeDamage(-tickDamage * Time.deltaTime);
         }
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 
     private void EnableTakeDamageWhileStill()
