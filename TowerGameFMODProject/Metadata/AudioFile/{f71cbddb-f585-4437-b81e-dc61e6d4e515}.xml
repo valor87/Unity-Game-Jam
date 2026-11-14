@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{baba63ba-1ee9-48ed-b85c-55b27a980e5e}">
+	<object class="AudioFile" id="{f71cbddb-f585-4437-b81e-dc61e6d4e515}">
 		<property name="assetPath">
-			<value>Ice Step_4.wav</value>
+			<value>MarcusUnityJam_2026_MedievalMusic_8bit_loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.47710416666666666</value>
+			<value>33.982312925170071</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{709bd059-392a-47dc-b985-387c4bf50488}</destination>

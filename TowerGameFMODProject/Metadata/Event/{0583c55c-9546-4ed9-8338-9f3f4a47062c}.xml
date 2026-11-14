@@ -5,7 +5,7 @@
 			<value>Sword Swipe</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7c216fed-166d-4c05-bd34-15b542bd6049}</destination>
@@ -120,6 +120,7 @@
 	<object class="MixerBusEffectChain" id="{8564c6ae-144d-471c-ae68-4499fcfbcd73}">
 		<relationship name="effects">
 			<destination>{3e7d1de8-1446-4caa-a28b-f499bcc51509}</destination>
+			<destination>{cc762942-8eda-49db-a1f5-0538249e0326}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{47fd8198-d5f1-444a-aec7-3a4205636f4c}" />
@@ -164,5 +165,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{69e9478c-f7d9-4622-9671-44d19e46189c}" />
 	<object class="MixerBusFader" id="{3e7d1de8-1446-4caa-a28b-f499bcc51509}" />
+	<object class="SpatialiserEffect" id="{cc762942-8eda-49db-a1f5-0538249e0326}">
+		<property name="maximumDistance">
+			<value>15</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{ca64a5a2-2753-49b5-9530-8eb83c6210d0}" />
 </objects>
