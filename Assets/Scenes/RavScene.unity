@@ -1088,13 +1088,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 366852431632487469, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 146064680}
   m_SourcePrefab: {fileID: 100100000, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
 --- !u!4 &146064678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1034846030325157527, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
   m_PrefabInstance: {fileID: 146064677}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &146064679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 366852431632487469, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
+  m_PrefabInstance: {fileID: 146064677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &146064680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146064679}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 23.943708, y: 60.48404, z: 24.524832}
+  m_Center: {x: -0.16157562, y: 29.742023, z: -0.15394674}
 --- !u!1001 &168917932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3289,6 +3318,13 @@ MonoBehaviour:
   elevatorStateParameter: Elevator State
   closedLabel: Closed
   openLabel: Open
+  popupEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   playerDamageEvent:
     Guid:
       Data1: 0
@@ -3304,6 +3340,20 @@ MonoBehaviour:
       Data4: 0
     Path: 
   axeSwingEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  lavaAmbienceEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  lavaBurnEvent:
     Guid:
       Data1: 0
       Data2: 0
@@ -5386,7 +5436,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222120676}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -7498,6 +7548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710172455}
   - component: {fileID: 1710172454}
+  - component: {fileID: 1710172456}
   - component: {fileID: 1710172453}
   - component: {fileID: 1710172452}
   m_Layer: 0
@@ -7603,6 +7654,19 @@ Transform:
   - {fileID: 146064678}
   m_Father: {fileID: 1732695094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710172456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710172451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6201543d94e57a042b5aff7caafdbbfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GumballMachineInteract
+  shopManager: {fileID: 1793382435}
 --- !u!1 &1732695093
 GameObject:
   m_ObjectHideFlags: 0

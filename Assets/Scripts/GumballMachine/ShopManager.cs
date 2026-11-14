@@ -16,21 +16,26 @@ public class ShopManager : MonoBehaviour
     public void ReplenishShop()
     {
         spawnedItems = new List<GameObject>();
+        ListSpawnableItems();
         for (int i = 0; i < 2; i++)
         {
-            int randomNum = Random.Range(1, items.Count);
-            spawnedItems.Add(Instantiate(items[randomNum]));
+            int randomNum = Random.Range(1, availableItemsToSpawnList.Count);
+            spawnedItems.Add(Instantiate(availableItemsToSpawnList[randomNum], menu.transform));
         }
     }
     public void ListSpawnableItems()
     {
-        for (int i = 0; i < items.Count - 1; i++)
+        for (int i = 1; i < items.Count; i++)
         {
-
+            if (PhobiaManager.instance.Phobias[i])
+            {
+                availableItemsToSpawnList.Add(items[i]);
+            }
         }
     }
     public void OpenShop()
     {
+        Debug.Log("Opening shop");
         PlayerController.instance.enabled = false;
         menu.alpha = 1;
     }

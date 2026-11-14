@@ -29,6 +29,7 @@ public class Elevator : MonoBehaviour
         EventCore.instance.UE_SpawnCoins.Invoke(numberOfCoinsToSpawn);
         levelExitDoors.OpenDoors();
         levelEntranceDoors.interactable = false;
+        ShopManager.instance.ReplenishShop();
     }
     public void MakeStartDoorsInteractable()
     {
