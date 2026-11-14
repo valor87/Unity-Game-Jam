@@ -91,7 +91,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Closest pos: " + closestPos + " | name of obj: " + collider.name);
             meanPosition += closestPos;
         }
-        meanPosition /= colliders.Count;
+        if(colliders.Count>0) meanPosition /= colliders.Count;
+
         Debug.Log("mean position: " +  meanPosition);
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
