@@ -4440,6 +4440,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MessageUI
   text: {fileID: 388186239}
+--- !u!224 &753279343 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1523764211101887952, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+  m_PrefabInstance: {fileID: 1449934849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &771030422
 GameObject:
   m_ObjectHideFlags: 0
@@ -6070,7 +6075,7 @@ MonoBehaviour:
   secondNumber: 0
   thirdNumber: 0
   _slotMachineInteract: {fileID: 881329157}
-  _tokenPreview: {fileID: 0}
+  _tokenPreview: {fileID: 1079015869}
 --- !u!4 &968974811
 Transform:
   m_ObjectHideFlags: 0
@@ -6939,6 +6944,17 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5748041805199642020, guid: 19837e45d39ffd6448b2ca59b5689137, type: 3}
   m_PrefabInstance: {fileID: 871577031}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1079015869 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3507378755700073796, guid: 19837e45d39ffd6448b2ca59b5689137, type: 3}
+  m_PrefabInstance: {fileID: 871577031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a85bb8b7f221b647b7973228c15b6e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1089439512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7541,6 +7557,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1902678495}
   m_LocalEulerAnglesHint: {x: 0, y: 22.793, z: 0}
+--- !u!1 &1157949399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157949402}
+  - component: {fileID: 1157949401}
+  - component: {fileID: 1157949400}
+  m_Layer: 0
+  m_Name: Image (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1157949400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157949399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1157949401
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157949399}
+  m_CullTransparentMesh: 1
+--- !u!224 &1157949402
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157949399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2120522434}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -368.9, y: 151}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1161457982
 GameObject:
   m_ObjectHideFlags: 0
@@ -9376,9 +9467,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7101031673034334732, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+      propertyPath: slots.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 1157949400}
+    - target: {fileID: 7101031673034334732, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+      propertyPath: slots.Array.data[1].description
+      value: 
+      objectReference: {fileID: 1607115551}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5985098131100237485, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1157949402}
+    - targetCorrespondingSourceObject: {fileID: 1523764211101887952, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1607115549}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
 --- !u!1001 &1461513252
@@ -9819,8 +9924,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OneEffect
   number: 1
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: e7b6a831775f5d84d83ec52ad74abf05, type: 3}
+  badIcon: {fileID: 21300000, guid: e864e13d8560dbc499e36dae908d7458, type: 3}
   goodDescription: Health regenerates while moving
   badDescription: Health depletes while still
 --- !u!114 &1521607003
@@ -9875,8 +9980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SixSixSixEffect
   number: 666
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: 15b006081bf98844f92725e8bbd41b56, type: 3}
+  badIcon: {fileID: 21300000, guid: 15b006081bf98844f92725e8bbd41b56, type: 3}
   goodDescription: Floor is lava
   badDescription: Floor is lava
 --- !u!114 &1521607006
@@ -9892,8 +9997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SevenSevenSevenEffect
   number: 777
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: 072622b59ada0f248a12374c0bb99526, type: 3}
+  badIcon: {fileID: 21300000, guid: 072622b59ada0f248a12374c0bb99526, type: 3}
   goodDescription: Permanent health upgrade and MONEY
   badDescription: Permanent health upgrade and MONEY
 --- !u!114 &1521607007
@@ -9909,8 +10014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NineEffect
   number: 9
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: 1bb2dc77a519c3d42bb7e5183f3f34f6, type: 3}
+  badIcon: {fileID: 21300000, guid: d7d36d6335e21bf4faa5daf64116f1e7, type: 3}
   goodDescription: You're on cloud 9 (Less gravity)
   badDescription: Vision reduced by fog
 --- !u!114 &1521607008
@@ -9926,8 +10031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EightEffect
   number: 8
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: 20749174faa58324389afa6d1a4ed398, type: 3}
+  badIcon: {fileID: 21300000, guid: b3447733786a01e409f571de8b6baf55, type: 3}
   goodDescription: Super Wall Jump
   badDescription: Bouncy Walls
 --- !u!114 &1521607009
@@ -9943,8 +10048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SevenEffect
   number: 7
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: d55f82a017974c1479932e42be365d80, type: 3}
+  badIcon: {fileID: 21300000, guid: d57ab9fa52992a54387b2f44faf5c0e8, type: 3}
   goodDescription: Two coins spawn
   badDescription: No coins spawn
 --- !u!114 &1521607010
@@ -9960,8 +10065,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SixEffect
   number: 6
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: 929a72006d89c884ea374ebbcc275dc8, type: 3}
+  badIcon: {fileID: 21300000, guid: 13739c51878872c4fa4964ffde12d3b6, type: 3}
   goodDescription: Double jump
   badDescription: There's a draft
 --- !u!114 &1521607011
@@ -9977,8 +10082,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FiveEffect
   number: 5
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: 37e986cab855d7a4c96dced465291de6, type: 3}
+  badIcon: {fileID: 21300000, guid: 1ca67ab5b01393a47bda45462be2f629, type: 3}
   goodDescription: Obstacles are frozen
   badDescription: Floor is icy
 --- !u!114 &1521607012
@@ -9994,8 +10099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FourEffect
   number: 4
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: c573a987f285bdb4d976df53e931e3e2, type: 3}
+  badIcon: {fileID: 21300000, guid: 9cf81e0cc0efc304d94d08da5f765ab4, type: 3}
   goodDescription: Will receive half damage
   badDescription: Will receive double damage
 --- !u!114 &1521607013
@@ -10011,8 +10116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThreeEffect
   number: 3
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: aa657c4adb233cd439c93530ee83a7ac, type: 3}
+  badIcon: {fileID: 21300000, guid: fa87619531ed1e547a7003bf3d817ab3, type: 3}
   goodDescription: Shielded from first 3 hits
   badDescription: Can only take 3 hits
 --- !u!114 &1521607014
@@ -10028,8 +10133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TwoEffect
   number: 2
-  goodIcon: {fileID: 0}
-  badIcon: {fileID: 0}
+  goodIcon: {fileID: 21300000, guid: bd921b4d1e2445d4c985628b18041c84, type: 3}
+  badIcon: {fileID: 21300000, guid: 89746a8a45f8b134abb51a852f1a534f, type: 3}
   goodDescription: Obstacles move half speed
   badDescription: Obstacles move double speed
 --- !u!1 &1529992427
@@ -10417,6 +10522,143 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.702072, y: 9.681513, z: 10.711984}
   m_Center: {x: 6.0575657, y: -3.6448717, z: 0.22504568}
+--- !u!1 &1607115548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607115549}
+  - component: {fileID: 1607115550}
+  - component: {fileID: 1607115551}
+  m_Layer: 0
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1607115549
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607115548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 753279343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -56.300053, y: -32.5}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1607115550
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607115548}
+  m_CullTransparentMesh: 1
+--- !u!114 &1607115551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607115548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Floor is icy
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4291424767
+  m_fontColor: {r: 1, g: 0.9461915, b: 0.7877358, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 15
+  m_fontSizeBase: 15
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 78.76486, y: 2.3412628, z: -33.907417, w: 23.12848}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1633751628
 GameObject:
   m_ObjectHideFlags: 0
@@ -12479,6 +12721,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &2120522434 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5985098131100237485, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+  m_PrefabInstance: {fileID: 1449934849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137684157
 GameObject:
   m_ObjectHideFlags: 0
