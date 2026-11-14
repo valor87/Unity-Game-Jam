@@ -14,6 +14,8 @@ public class Elevator : MonoBehaviour
         playerTransform = GameObject.FindWithTag("Player").transform;
         EventCore.instance.UE_SpawnTwoCoins.AddListener(SevenGoodEffect);
         EventCore.instance.UE_SpawnNoCoins.AddListener(SevenBadEffect);
+        EventCore.instance.UE_JackpotEffect.AddListener(JackPotEffect);
+        EventCore.instance.UE_EnterEndElevator.AddListener(ResetCoinvalue);
     }
     public void PlayerReachedExit()
     {
@@ -53,8 +55,12 @@ public class Elevator : MonoBehaviour
     {
         numberOfCoinsToSpawn = 0;
     }
-    public void ResetCoinvalue()
+    public void ResetCoinvalue(Vector3 arg)
     {
         numberOfCoinsToSpawn = 1;
+    }
+    private void JackPotEffect()
+    {
+        numberOfCoinsToSpawn = 20;
     }
 }

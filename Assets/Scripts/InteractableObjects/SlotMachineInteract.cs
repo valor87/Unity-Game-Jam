@@ -54,5 +54,6 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     {
         heldTime = 0;
         canvasGroup.alpha = 1;
+        SlotMeshAnim.ResetTrigger("Spin");
     }
 }

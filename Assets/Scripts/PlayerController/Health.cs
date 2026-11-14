@@ -14,7 +14,7 @@ public class Health : MonoBehaviour, IDamageable
     public int _sheildValue { get => _currentSheild; set => _currentSheild = value; }
 
     //Effect stuff
-    private bool takeDamageWhenStill = false, healWhenMoving = false;
+    private bool takeDamageWhenStill = false, healWhenMoving = false, burning = false;
     [SerializeField] float tickDamage = 0.1f;
     void Start()
     {
@@ -29,6 +29,7 @@ public class Health : MonoBehaviour, IDamageable
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableHealWhenMoving);
 
         EventCore.instance.UE_GivePlayerSheild.AddListener(GiveSheild);
+        EventCore.instance.UE_JackpotEffect.AddListener(IncreaseMaxHealth);
     }
 
     private void Update()
@@ -38,6 +39,10 @@ public class Health : MonoBehaviour, IDamageable
             GetComponent<IDamageable>().TakeDamage(tickDamage * Time.deltaTime);
         }
         if (rb.linearVelocity.magnitude > 0.3f && healWhenMoving)
+        {
+            GetComponent<IDamageable>().TakeDamage(-tickDamage * Time.deltaTime);
+        }
+        if (burning)
         {
             GetComponent<IDamageable>().TakeDamage(-tickDamage * Time.deltaTime);
         }
@@ -62,5 +67,17 @@ public class Health : MonoBehaviour, IDamageable
     private void DisableHealWhenMoving(Vector3 arf)
     {
         healWhenMoving = false;
+    }
+    private void IncreaseMaxHealth()
+    {
+        if (isPlayer) maxHealth += 20;
+    }
+    private void EnableBurnDamage()
+    {
+        burning = true;
+    }
+    private void DisableBurnDamage()
+    {
+        burning = false;
     }
 }
