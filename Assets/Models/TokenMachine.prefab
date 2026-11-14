@@ -566,6 +566,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a85bb8b7f221b647b7973228c15b6e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Rollresult: 0
+  Slot1: {fileID: 3486521299901929075}
+  Slot2: {fileID: 2168027723909427429}
+  Slot3: {fileID: 5348859712634493383}
+  slots: []
+  Num1: {fileID: 2100000, guid: 5c855d8620b6ad540a72297d11f411f7, type: 2}
+  Num2: {fileID: 2100000, guid: f7b0e6dad8ee8fb419a6e3d3986113f9, type: 2}
+  Num3: {fileID: 2100000, guid: 71e65e70f5576944cbc8acdee03ffee3, type: 2}
+  Num4: {fileID: 2100000, guid: 97402f9ab402f7b488e871faffce7626, type: 2}
+  Num5: {fileID: 2100000, guid: 676974007b03a0e4b8cd9428726c6ee2, type: 2}
+  Num6: {fileID: 2100000, guid: 59c82e843593aed4591ee0a73be97e25, type: 2}
+  Num7: {fileID: 2100000, guid: a966f892bd16a4240a88fc549989d887, type: 2}
+  Num8: {fileID: 2100000, guid: c62635e4ed8a2d64daaad32753327f82, type: 2}
+  Num9: {fileID: 2100000, guid: ef21eabb16dcca74d95a54a1f655e9af, type: 2}
+  Trnasparent: {fileID: 2100000, guid: a481cb5e6885c7b4bbefa2e3e2954172, type: 2}
+  SlotNum: 0
+  rollresult: 
 --- !u!4 &4496807121463895362 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4fb211f3c095c3479a06711c2674597, type: 3}

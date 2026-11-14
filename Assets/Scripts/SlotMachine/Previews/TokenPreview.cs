@@ -28,7 +28,7 @@ public class TokenPreview : MonoBehaviour
     public Material Trnasparent;
 
 
-    public int SlotNum;
+    private int SlotNum;
   
     public string rollresult; 
 
