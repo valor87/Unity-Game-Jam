@@ -14,6 +14,9 @@ public class CoinManager : MonoBehaviour
     void Start()
     {
         EventCore.instance.UE_SpawnCoins.AddListener(CoinSpawnLoop);
+        EventCore.instance.UE_666Effect.AddListener(SetLavaGround);
+        EventCore.instance.UE_EnterEndElevator.AddListener(ResetGroundMaterial);
+
         for (int i = 0; i < _amountOfCoins; i++)
         {
             GameObject c = Instantiate(_coinPrefab);
@@ -72,7 +75,7 @@ public class CoinManager : MonoBehaviour
         }
     }
 
-    void ResetGroundMaterial()
+    void ResetGroundMaterial(Vector3 arg)
     {
         _groundBlock.GetComponent<MeshRenderer>().material = _baseMaterial;
     }
