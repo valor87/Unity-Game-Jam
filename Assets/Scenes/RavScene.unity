@@ -3836,7 +3836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlotMachineInteract
   timeToHold: 1
   decayrate: 0.3
-  TokenPrev: {fileID: 0}
+  TokenPrev: {fileID: 1577601875}
   SlotMeshAnim: {fileID: 871577034}
   fillCurve:
     serializedVersion: 2

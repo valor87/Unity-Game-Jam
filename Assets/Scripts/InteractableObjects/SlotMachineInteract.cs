@@ -27,7 +27,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
 
         if(progress == timeToHold && SlotMachine.Instance.interactable)
         {
-            SlotMeshAnim.ResetTrigger("Reset");
+            
             SlotMeshAnim.SetTrigger("Spin");
             StartCoroutine(FadeCanvasGroup());
             SlotMachine.Instance.StartSlotMachine();
@@ -58,6 +58,6 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
         SlotMeshAnim.SetTrigger("Reset");
         heldTime = 0;
         canvasGroup.alpha = 1;
-        SlotMeshAnim.ResetTrigger("Spin");
+       
     }
 }
