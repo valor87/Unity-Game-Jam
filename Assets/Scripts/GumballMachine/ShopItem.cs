@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ShopItem : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class ShopItem : MonoBehaviour
         CoinCollect.instance.currentCoins -= cost;
         Destroy(gameObject);
     }
-    private void OnMouseDown()
+    public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Ive been clicked");
         if (CoinCollect.instance.currentCoins > cost) purchase();
