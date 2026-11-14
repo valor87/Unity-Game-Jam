@@ -5,6 +5,13 @@ public class GumballMachineInteract : MonoBehaviour, IInteractable
     [SerializeField] ShopManager shopManager;
     public void Exacute()
     {
-        shopManager.OpenShop();
+        if (shopManager.isShopOpen)
+        {
+            shopManager.CloseShop();
+        }
+        else
+        {
+            shopManager.OpenShop();
+        }
     }
 }

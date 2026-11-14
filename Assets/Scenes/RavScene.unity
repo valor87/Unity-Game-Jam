@@ -1088,42 +1088,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 366852431632487469, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 146064680}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
 --- !u!4 &146064678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1034846030325157527, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
   m_PrefabInstance: {fileID: 146064677}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &146064679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 366852431632487469, guid: 12611f3eb7cf53949a754ad0000dfa40, type: 3}
-  m_PrefabInstance: {fileID: 146064677}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &146064680
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 146064679}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 23.943708, y: 60.48404, z: 24.524832}
-  m_Center: {x: -0.16157562, y: 29.742023, z: -0.15394674}
 --- !u!1001 &168917932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7550,7 +7521,7 @@ GameObject:
   - component: {fileID: 1710172454}
   - component: {fileID: 1710172456}
   - component: {fileID: 1710172453}
-  - component: {fileID: 1710172452}
+  - component: {fileID: 1710172457}
   m_Layer: 0
   m_Name: GumballMachine (SHOP)
   m_TagString: Untagged
@@ -7558,29 +7529,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1710172452
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710172451}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1710172453
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7667,6 +7615,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GumballMachineInteract
   shopManager: {fileID: 1793382435}
+--- !u!65 &1710172457
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710172451}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2427216, y: 2.1820016, z: 0.91281414}
+  m_Center: {x: -0.0071353912, y: 0.117013454, z: 0.15474272}
 --- !u!1 &1732695093
 GameObject:
   m_ObjectHideFlags: 0

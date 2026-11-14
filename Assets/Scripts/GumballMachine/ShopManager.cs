@@ -35,14 +35,17 @@ public class ShopManager : MonoBehaviour
     }
     public void OpenShop()
     {
-        Debug.Log("Opening shop");
         PlayerController.instance.enabled = false;
+        CameraController.instance.enabled = false;
         menu.alpha = 1;
+        isShopOpen = true;
     }
     public void CloseShop()
     {
         menu.alpha = 0;
         PlayerController.instance.enabled = true;
+        CameraController.instance.enabled = true;
+        isShopOpen = false;
     }
 }
 
