@@ -182,7 +182,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8532658047724725762}
+  - {fileID: 0}
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
@@ -697,7 +697,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7214993048590288762}
   cacheVersion: 131861
-  cacheTime: 639301902903723214
+  cacheTime: 639301912778286407
   SerializableEventsDict:
   - key: snapshot:/InShopDucking
     index: 0
@@ -725,6 +725,18 @@ MonoBehaviour:
     index: 11
   - key: event:/Slot Machine 666
     index: 12
+  - key: event:/Axe Swing
+    index: 13
+  - key: event:/Icy Footsteps
+    index: 14
+  - key: event:/Taking Damage
+    index: 15
+  - key: event:/Sword Swipe
+    index: 16
+  - key: event:/Lava
+    index: 17
+  - key: event:/Lava Damage
+    index: 18
 --- !u!114 &116071979998922154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,7 +788,7 @@ MonoBehaviour:
   - {fileID: -7632891137346534755}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1793
+  Length: 320
 --- !u!114 &403645798787682219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,33 +809,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1954
   Exists: 1
---- !u!114 &1475904538640427958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Purchase
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Purchase
-  Guid:
-    Data1: -1828145000
-    Data2: 1131651886
-    Data3: 690920582
-    Data4: 1668263969
-  Banks:
-  - {fileID: -3943751101385233273}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1125
 --- !u!114 &980217713694494696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,6 +836,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 117630
+--- !u!114 &1475904538640427958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Purchase
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Purchase
+  Guid:
+    Data1: -1828145000
+    Data2: 1131651886
+    Data3: 690920582
+    Data4: 1668263969
+  Banks:
+  - {fileID: -3943751101385233273}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1125
 --- !u!114 &2424381686454042810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +1076,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639301906414880385
+  lastModified: 639301912778136099
   FileSizes:
   - Name: Desktop
     Value: 1804
@@ -1318,7 +1330,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/SFXBank.bank
   Name: SFXBank
   StudioPath: bank:/SFXBank
-  lastModified: 639301906415075807
+  lastModified: 639301912778286407
   FileSizes:
   - Name: Desktop
     Value: 2973280

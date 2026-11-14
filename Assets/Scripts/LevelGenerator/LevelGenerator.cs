@@ -35,8 +35,7 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         EventCore.instance.UE_EnterEndElevator.AddListener(ClearProps);
-        EventCore.instance.UE_EnterEndElevator.AddListener(spawnProps);
-        spawnProps(Vector3.zero);
+        spawnProps();
     }
 
     private void Update()
@@ -45,7 +44,7 @@ public class LevelGenerator : MonoBehaviour
     }
 
     [ContextMenu("Spawn Objects")]
-    private void spawnProps(Vector3 arg)
+    private void spawnProps()
     {
         spawnPropsLoop(propType.Roof, _amountOfRoofProps);
         if(_amountOfFloatingProps != 0)
@@ -60,6 +59,7 @@ public class LevelGenerator : MonoBehaviour
         {
             _allSpawnedProps[i].SetActive(false);
         }
+        spawnProps();
     }
     private void spawnPropsLoop(propType _p, int _itemSpawnAmount)
     {
