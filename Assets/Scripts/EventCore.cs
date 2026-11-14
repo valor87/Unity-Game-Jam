@@ -65,6 +65,10 @@ public class EventCore : MonoBehaviour
     /// Effect that spawns no coins in the level
     /// </summary>
     public UnityEvent UE_SpawnNoCoins;
+    /// <summary>
+    /// Effect that makes floors slippery
+    /// </summary>
+    public UnityEvent UE_SetSlipperyFloors;
 
     void Awake()
     {
