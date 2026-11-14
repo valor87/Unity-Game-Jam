@@ -47,8 +47,6 @@ public class Elevator : MonoBehaviour
         playerTransform.position = startElevator.position + new Vector3(0f,playerTransform.localScale.y,0f);
         EventCore.instance.UE_EnterEndElevator.Invoke(Vector3.zero);
 
-        if (SoundManager.Instance != null)
-            SoundManager.Instance.SetMusicState(SoundManager.MusicState.Elevator);
     }
 
     public void SevenGoodEffect()

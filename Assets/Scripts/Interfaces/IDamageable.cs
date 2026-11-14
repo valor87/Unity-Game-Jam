@@ -39,7 +39,7 @@ public interface IDamageable
         {
             EventCore.instance.UE_PlayTakeDamge.Invoke(currentHealth);
 
-            if (SoundManager.Instance != null)
+            if (SoundManager.Instance != null &&  incomingDamage > 3)
                 SoundManager.Instance.PlayPlayerDamage();
         }
     }
