@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        sensitivity = _pausedSens;
+        _pausedSens = sensitivity;
         sensitivity = 0;
     }
     void ResumePlayer()
