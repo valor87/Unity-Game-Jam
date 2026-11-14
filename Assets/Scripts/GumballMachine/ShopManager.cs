@@ -9,18 +9,24 @@ public class ShopManager : MonoBehaviour
     private List<GameObject> availableItemsToSpawnList = new List<GameObject>();
     [SerializeField] private List<GameObject> items = new List<GameObject>();
     public List<GameObject> spawnedItems;
+    [SerializeField] List<Transform> itemPlacements = new List<Transform>();
     private void Start()
     {
         instance = this;
     }
     public void ReplenishShop()
     {
-        spawnedItems = new List<GameObject>();
+        spawnedItems = new List<GameObject>() { Instantiate(items[0], menu.transform) };
         ListSpawnableItems();
-        for (int i = 0; i < 2; i++)
+        int numberOfItems = (availableItemsToSpawnList.Count > 2) ? 2 : availableItemsToSpawnList.Count;
+        Debug.Log(numberOfItems);
+        for (int i = 0; i < numberOfItems; i++)
         {
-            int randomNum = Random.Range(1, availableItemsToSpawnList.Count);
-            spawnedItems.Add(Instantiate(availableItemsToSpawnList[randomNum], menu.transform));
+            int randomNum = Random.Range(0, numberOfItems);
+            GameObject spawnedItem = Instantiate(availableItemsToSpawnList[randomNum], menu.transform);
+            spawnedItems.Add(spawnedItem);
+            spawnedItem.transform.position = itemPlacements[i].position;
+            
         }
     }
     public void ListSpawnableItems()

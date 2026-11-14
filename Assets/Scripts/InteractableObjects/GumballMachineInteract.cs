@@ -3,13 +3,17 @@ using UnityEngine;
 public class GumballMachineInteract : MonoBehaviour, IInteractable
 {
     [SerializeField] ShopManager shopManager;
-    public void Exacute()
+    private void Update()
     {
-        if (shopManager.isShopOpen)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             shopManager.CloseShop();
         }
-        else
+        
+    }
+    public void Exacute()
+    {
+        if (!shopManager.isShopOpen)
         {
             shopManager.OpenShop();
         }
