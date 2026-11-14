@@ -7,6 +7,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     private float heldTime, progress;
     [SerializeField] float timeToHold, decayrate;
 
+    public TokenPreview TokenPrev;
     //connects mesh animations
     public Animator SlotMeshAnim;
     [SerializeField] AnimationCurve fillCurve;
@@ -26,6 +27,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
 
         if(progress == timeToHold && SlotMachine.Instance.interactable)
         {
+            
             SlotMeshAnim.SetTrigger("Spin");
             StartCoroutine(FadeCanvasGroup());
             SlotMachine.Instance.StartSlotMachine();
@@ -52,8 +54,10 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     }
     public void ResetValues()
     {
+        TokenPrev.setSlotsTransparent();
+        SlotMeshAnim.SetTrigger("Reset");
         heldTime = 0;
         canvasGroup.alpha = 1;
-        SlotMeshAnim.ResetTrigger("Spin");
+       
     }
 }

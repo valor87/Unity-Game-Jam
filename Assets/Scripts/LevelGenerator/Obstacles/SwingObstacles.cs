@@ -39,7 +39,7 @@ public class SwingObstacles : MonoBehaviour
 
     private void DoubleMovement()
     {
-        _rotationTime = _doubleRotationTimeAmount / 2;
+        _rotationTime = _baseRotationTime / 2;
     }
     private void ResetRotationTime(Vector3 arg)
     {
