@@ -61,6 +61,10 @@ public class EventCore : MonoBehaviour
     /// Effect that spawns no coins in the level
     /// </summary>
     public UnityEvent UE_SpawnNoCoins;
+    /// <summary>
+    /// give the player three sheilds
+    /// </summary>
+    public UnityEvent UE_GivePlayerSheild;
 
     void Awake()
     {

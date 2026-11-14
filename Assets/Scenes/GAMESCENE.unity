@@ -8070,6 +8070,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthUI
       objectReference: {fileID: 0}
+    - target: {fileID: 718174852035622981, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 718174852035622981, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 718174852035622981, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980276995518902122, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980276995518902122, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 4843562422278729867, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8153,6 +8173,26 @@ PrefabInstance:
     - target: {fileID: 5602123755258020363, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080898166873723600, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -17.999939
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080898166873723600, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047155058395442435, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_Color.b
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047155058395442435, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_Color.g
+      value: 0.38679248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047155058395442435, guid: af49b5229b2ca3946abd12c6180af706, type: 3}
+      propertyPath: m_Color.r
+      value: 0.38679248
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
