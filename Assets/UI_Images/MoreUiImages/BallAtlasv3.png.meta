@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d31a7253d09857c4a960241584cbab79
+guid: 6fe15512a5415f44bad04e12d2ec8e6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BallAtlasv2_0
+      name: BallAtlasv3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,14 +112,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d89e608df5c0ec4fbf5c9976232a9ec
-      internalID: -2057313768
+      spriteID: 65d40bea067cef944b488766c7e24d05
+      internalID: 950546710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_1
+      name: BallAtlasv3_1
       rect:
         serializedVersion: 2
         x: 256
@@ -134,14 +134,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eef342e47c1e3c4d987ee827dfb2005
-      internalID: -642114162
+      spriteID: a6a6556eab2d83a448ed89ec3b7fafea
+      internalID: 1389358079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_2
+      name: BallAtlasv3_2
       rect:
         serializedVersion: 2
         x: 512
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd3b99b50e0c8e74fbd135d0e2f6c1de
-      internalID: 61634908
+      spriteID: 7abd749639b5ac943ab9ba67367be251
+      internalID: -108846324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_3
+      name: BallAtlasv3_3
       rect:
         serializedVersion: 2
         x: 768
@@ -178,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10cf490a105f69f438350cedc18071f0
-      internalID: 1334933647
+      spriteID: cc03af9c9d6674c4991c752629394a48
+      internalID: -987694998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_4
+      name: BallAtlasv3_4
       rect:
         serializedVersion: 2
         x: 0
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 980e25112faadc14b8d0db9d1010ba1f
-      internalID: 718493073
+      spriteID: b14801b741d588a4191439c935bc0671
+      internalID: 228400021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_5
+      name: BallAtlasv3_5
       rect:
         serializedVersion: 2
         x: 256
@@ -222,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d7101ef09f16a1458186fd4bbc3bb22
-      internalID: -1332108554
+      spriteID: 27059544f4a66774a874bfe76f5cf4dc
+      internalID: -1974386631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_6
+      name: BallAtlasv3_6
       rect:
         serializedVersion: 2
         x: 512
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7501cc5ab878d654b932479c84d195ca
-      internalID: 1410479607
+      spriteID: 37999ccc5719b314887025f8d5f00ff7
+      internalID: -269884969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_7
+      name: BallAtlasv3_7
       rect:
         serializedVersion: 2
         x: 768
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a8bd848745551948816b6f38eff204f
-      internalID: 1156213120
+      spriteID: abe00ab23c97f9a49a202637565b59a8
+      internalID: -12491103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_8
+      name: BallAtlasv3_8
       rect:
         serializedVersion: 2
         x: 0
@@ -288,14 +288,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69605e739288e284cb151d68d5abfeb0
-      internalID: -1029000490
+      spriteID: 6c14fa37f320c824990d201452153ae6
+      internalID: 516169009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BallAtlasv2_9
+      name: BallAtlasv3_9
       rect:
         serializedVersion: 2
         x: 256
@@ -310,96 +310,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 809fc6501d7f19c41bfed5abf211a10a
-      internalID: -1800734613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BallAtlasv2_10
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3567d0c528f35d45a62bd5d0ce85043
-      internalID: 1146651318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BallAtlasv2_11
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fdfba28e936067843949dd9b8df3cee4
-      internalID: 1126594789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BallAtlasv2_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a48ed1be4608c64a9d5eb6cfc80bc2e
-      internalID: -63269450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BallAtlasv2_13
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5d48c74114e5ea4681b318fd77119f6
-      internalID: -215282480
+      spriteID: df889c73b85b53d40a0deefe51b10561
+      internalID: -77449577
       vertices: []
       indices: 
       edges: []
@@ -408,7 +320,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 072e3796a8568a44e92a75f46d775413
+    spriteID: 250c842d66a91b44dac89074bc52102b
     internalID: 0
     vertices: []
     indices: 
@@ -420,20 +332,16 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      BallAtlasv2_0: -2057313768
-      BallAtlasv2_1: -642114162
-      BallAtlasv2_10: 1146651318
-      BallAtlasv2_11: 1126594789
-      BallAtlasv2_12: -63269450
-      BallAtlasv2_13: -215282480
-      BallAtlasv2_2: 61634908
-      BallAtlasv2_3: 1334933647
-      BallAtlasv2_4: 718493073
-      BallAtlasv2_5: -1332108554
-      BallAtlasv2_6: 1410479607
-      BallAtlasv2_7: 1156213120
-      BallAtlasv2_8: -1029000490
-      BallAtlasv2_9: -1800734613
+      BallAtlasv3_0: 950546710
+      BallAtlasv3_1: 1389358079
+      BallAtlasv3_2: -108846324
+      BallAtlasv3_3: -987694998
+      BallAtlasv3_4: 228400021
+      BallAtlasv3_5: -1974386631
+      BallAtlasv3_6: -269884969
+      BallAtlasv3_7: -12491103
+      BallAtlasv3_8: 516169009
+      BallAtlasv3_9: -77449577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

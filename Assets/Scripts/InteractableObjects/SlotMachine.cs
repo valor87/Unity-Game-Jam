@@ -53,6 +53,7 @@ public class SlotMachine : MonoBehaviour
         if (randomNum > 99)
         {
             Debug.Log("Rolled 777");
+            firstNumber = secondNumber = thirdNumber = 7;
             rolledResult = SoundManager.SlotResult.Jackpot777;
             PhobiaEvents.RaisePhobiaAdded(PhobiaEvents.Phobia777);
             //777
@@ -60,6 +61,7 @@ public class SlotMachine : MonoBehaviour
         } else if (randomNum > 98)
         {
             Debug.Log("Rolled 666");
+            firstNumber = secondNumber = thirdNumber = 6;
             rolledResult = SoundManager.SlotResult.Ominous666;
             PhobiaEvents.RaisePhobiaAdded(PhobiaEvents.Phobia666);
             //666
