@@ -41,6 +41,7 @@ public class ShopManager : MonoBehaviour
     }
     public void OpenShop()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         PlayerController.instance.enabled = false;
         CameraController.instance.enabled = false;
         menu.alpha = 1;
@@ -48,6 +49,7 @@ public class ShopManager : MonoBehaviour
     }
     public void CloseShop()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         menu.alpha = 0;
         PlayerController.instance.enabled = true;
         CameraController.instance.enabled = true;
