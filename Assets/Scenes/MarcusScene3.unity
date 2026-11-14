@@ -3451,6 +3451,12 @@ MonoBehaviour:
   UE_DisplayMessage:
     m_PersistentCalls:
       m_Calls: []
+  UE_RefillPlayerHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_RemovePhobia:
+    m_PersistentCalls:
+      m_Calls: []
   UE_FoggyLevel:
     m_PersistentCalls:
       m_Calls: []
@@ -4639,6 +4645,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   progressBarUI: {fileID: 1507285974}
   canvasGroup: {fileID: 407318025}
+--- !u!224 &885036093 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 338220359428744244, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+  m_PrefabInstance: {fileID: 557922520729102494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894802333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10133,9 +10144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1938085832}
-  - component: {fileID: 1938085831}
   - component: {fileID: 1938085834}
-  - component: {fileID: 1938085833}
   m_Layer: 0
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -10143,23 +10152,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1938085831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938085830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f55a148ac484e19bf8872fa18aff06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
-  pausePanel: {fileID: 1859133677}
-  bannerHUD: {fileID: 557922520729102495}
-  volumeSlider: {fileID: 1938085833}
-  pauseKey: 27
-  pausedBusPath: 
 --- !u!224 &1938085832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10179,21 +10171,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1239.5167, y: 675.0335}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1938085833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938085830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a82f91dd859415482b37fc21e5b553, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VolumeSlider
-  busPath: bus:/
-  playerPrefsKey: MasterVolume
-  defaultVolume: 1
 --- !u!114 &1938085834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10502,6 +10479,13 @@ MonoBehaviour:
   elevatorStateParameter: Elevator State
   closedLabel: Closed
   openLabel: Open
+  popupEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   playerDamageEvent:
     Guid:
       Data1: 1114040150
@@ -10523,6 +10507,20 @@ MonoBehaviour:
       Data3: 1755412664
       Data4: -1217713705
     Path: event:/Axe Swing
+  lavaAmbienceEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  lavaBurnEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   coinCollectEvent:
     Guid:
       Data1: -9321383
@@ -10750,6 +10748,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7101031673034334732, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
+      propertyPath: detailsPanel
+      value: 
+      objectReference: {fileID: 885036093}
+    - target: {fileID: 7101031673034334732, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
       propertyPath: slots.Array.data[0].icon
       value: 
       objectReference: {fileID: 0}
@@ -10762,17 +10764,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
---- !u!114 &557922520729102495 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7101031673034334732, guid: a384d48b8b6bce648b57391c9f3526f4, type: 3}
-  m_PrefabInstance: {fileID: 557922520729102494}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f41a487e596cc4a9689d34e527c3b222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EffectBannerHUD
 --- !u!114 &1178947986340544830
 MonoBehaviour:
   m_ObjectHideFlags: 0
