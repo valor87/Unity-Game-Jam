@@ -12,6 +12,10 @@ public class BouncyWalls : MonoBehaviour
         EventCore.instance.UE_EnableBouncyWalls.AddListener(EnableBouncyWalls);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableBouncyWalls);
     }
+    private void Update()
+    {
+        if (areWallsBouncy && wallsPlayerIsTouching.Count > 0) controller.Jump(controller.jumpStrength);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (!wallsPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))

@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class ShopItem : MonoBehaviour
 {
-    private Rigidbody rb;
     [SerializeField] int cost;
     [SerializeField] Vector3 direction;
     [SerializeField] float floatSpeed, changeDirectionTime, currentTime;
@@ -24,7 +23,7 @@ public class ShopItem : MonoBehaviour
     private void ChooseNewDirection()
     {
         direction = new Vector3(Random.Range(0, 1),0, Random.Range(0, 1));
-        rb.linearVelocity = direction * floatSpeed;
+        //rb.linearVelocity = direction * floatSpeed;
     }
     public virtual void purchase()
     {

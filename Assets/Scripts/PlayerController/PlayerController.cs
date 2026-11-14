@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float currentCamFOV;
 
     [Header("Movement units")]
-    [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength, linearDampingAmount;
+    [SerializeField] public float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength, linearDampingAmount;
     private Vector3 moveDirection;
     private List<Transform> surfacesPlayerIsTouching = new List<Transform>();
     private bool isGrounded => surfacesPlayerIsTouching.Count > 0;

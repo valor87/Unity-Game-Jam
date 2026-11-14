@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public interface IDamageable
 {
@@ -31,6 +32,7 @@ public interface IDamageable
         if (IsDead())
         {
             Debug.Log("im dead, send the player back to the main menu");
+            SceneManager.LoadScene("GAMESCENE");
         }
 
         if (isPlayer)

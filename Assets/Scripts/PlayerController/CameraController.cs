@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController instance;
     private float XRotation,  YRotation;
     public float sensitivity = 2;
     private float _pausedSens;
     private void Start()
     {
+        instance = this;
         //Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
