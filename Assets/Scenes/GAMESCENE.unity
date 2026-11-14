@@ -2808,6 +2808,9 @@ MonoBehaviour:
   UE_DoubleDamage:
     m_PersistentCalls:
       m_Calls: []
+  UE_HalfDamage:
+    m_PersistentCalls:
+      m_Calls: []
   UE_TrippleDamge:
     m_PersistentCalls:
       m_Calls: []
@@ -2824,6 +2827,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   UE_SpawnNoCoins:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_GivePlayerSheild:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_SetSlipperyFloors:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &713658321
@@ -3796,6 +3805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   _maxHealth: 100
   _currentHealth: 100
+  _currentSheild: 0
   tickDamage: 0.1
 --- !u!114 &910788272
 MonoBehaviour:
