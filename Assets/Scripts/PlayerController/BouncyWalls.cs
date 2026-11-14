@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BouncyWalls : MonoBehaviour
 {
-    PlayerController controller;
+    public PlayerController controller;
     bool areWallsBouncy = false;
     public List<Transform> wallsPlayerIsTouching = new List<Transform>();
 
