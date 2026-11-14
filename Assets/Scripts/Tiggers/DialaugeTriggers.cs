@@ -8,5 +8,6 @@ public class DialaugeTriggers : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         EventCore.instance.UE_DisplayMessage.Invoke(message);
+        GetComponent<BoxCollider>().enabled = false;
     }
 }
