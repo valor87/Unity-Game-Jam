@@ -30,6 +30,9 @@ public class Elevator : MonoBehaviour
         levelExitDoors.OpenDoors();
         levelEntranceDoors.interactable = false;
         ShopManager.instance.ReplenishShop();
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.SetMusicState(SoundManager.MusicState.Level);
     }
     public void MakeStartDoorsInteractable()
     {
