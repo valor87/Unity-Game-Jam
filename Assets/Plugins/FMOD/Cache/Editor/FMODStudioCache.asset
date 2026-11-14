@@ -1076,7 +1076,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639302175856749273
+  lastModified: 639302128109362198
   FileSizes:
   - Name: Desktop
     Value: 1804
@@ -1330,7 +1330,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/SFXBank.bank
   Name: SFXBank
   StudioPath: bank:/SFXBank
-  lastModified: 639302175857267702
+  lastModified: 639302166842230074
   FileSizes:
   - Name: Desktop
     Value: 2973280

@@ -109,6 +109,14 @@ public class EventCore : MonoBehaviour
     /// When triggering messages for the player
     /// </summary>
     public UnityEvent<string> UE_DisplayMessage;
+    /// <summary>
+    /// Used by item to refill player health to full
+    /// </summary>
+    public UnityEvent UE_RefillPlayerHealth;
+    /// <summary>
+    /// Used by item to rid player of a phobia
+    /// </summary>
+    public UnityEvent<int> UE_RemovePhobia;
 
     public UnityEvent UE_FoggyLevel;
 

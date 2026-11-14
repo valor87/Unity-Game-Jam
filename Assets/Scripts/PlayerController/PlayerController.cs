@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     private Rigidbody rb;
     private Camera _camera; //for movement zoom out effects
     [Header("Camera units")]
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float superWallJumpStrength;
     private void Start()
     {
+        instance = this;
         _camera = Camera.main;
         rb = GetComponent<Rigidbody>();
 
