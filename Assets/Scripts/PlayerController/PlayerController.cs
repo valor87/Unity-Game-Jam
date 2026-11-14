@@ -15,22 +15,32 @@ public class PlayerController : MonoBehaviour
     private float currentCamFOV;
 
     [Header("Movement units")]
-    [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength;
+    [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength, linearDampingAmount;
     private Vector3 moveDirection;
     private List<Transform> surfacesPlayerIsTouching = new List<Transform>();
     private bool isGrounded => surfacesPlayerIsTouching.Count > 0;
 
+    private bool isFloorSlippery = false;
     private void Start()
     {
         _camera = Camera.main;
         rb = GetComponent<Rigidbody>();
+
+        EventCore.instance.UE_SetSlipperyFloors.AddListener(SetSlipperyFloors);
+        EventCore.instance.UE_EnterEndElevator.AddListener(ResetSlipperyFloors);
     }
 
     private void Update()
     {
+        if (!isFloorSlippery)
+        {
+            rb.linearDamping = linearDampingAmount;
+        }
+        
         rb.maxLinearVelocity = maxMoveSpeed;
         if (!isGrounded)
         {
+            rb.linearDamping = 0;
             rb.maxLinearVelocity = 700;
         }
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -94,7 +104,7 @@ public class PlayerController : MonoBehaviour
     //TRIGGER COLLISIONS CHECKING FOR SURFACES PLAYER IS COLLIDING WITH
     private void OnTriggerEnter(Collider other)
     {
-        if (!surfacesPlayerIsTouching.Contains(other.transform))
+        if (!surfacesPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))
         {
             surfacesPlayerIsTouching.Add(other.transform);
         }
@@ -105,6 +115,14 @@ public class PlayerController : MonoBehaviour
         {
             surfacesPlayerIsTouching.Remove(other.transform);
         }
+    }
+    private void SetSlipperyFloors()
+    {
+        isFloorSlippery = true;
+    }
+    private void ResetSlipperyFloors(Vector3 arg)
+    {
+        isFloorSlippery = false;
     }
 
 }

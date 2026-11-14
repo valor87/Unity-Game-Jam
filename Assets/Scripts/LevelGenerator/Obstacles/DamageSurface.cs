@@ -8,13 +8,18 @@ public class DamageSurface : MonoBehaviour
     [SerializeField] private float _damgeIntervelsSec = .25f;
     [SerializeField] private bool _respawnFloor = false;
     private bool _trippleDamage;
+    private float _originalDamage;
     private float _doubleDamage;
+    private float _halfDamage;
     private float t;
    
     void Start()
     {
+        _originalDamage = _damageNumber;
         _doubleDamage = _damageNumber * 2;
+        _halfDamage = _damageNumber / 2;
         EventCore.instance.UE_DoubleDamage.AddListener(DoubleDamage);
+        EventCore.instance.UE_HalfDamage.AddListener(HalfDamage);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetDamage);
         EventCore.instance.UE_TrippleDamge.AddListener(TrippleDamage);
     }
@@ -43,13 +48,17 @@ public class DamageSurface : MonoBehaviour
 
     private void ResetDamage(Vector3 arg)
     {
-        _damageNumber = _doubleDamage / 2;
+        _damageNumber = _originalDamage;
         _trippleDamage = false;
     }
 
     private void DoubleDamage()
     {
         _damageNumber = _doubleDamage;
+    }
+    private void HalfDamage()
+    {
+        _damageNumber = _halfDamage;
     }
 
     private void TrippleDamage()

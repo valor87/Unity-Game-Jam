@@ -38,6 +38,10 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_DoubleDamage;
     /// <summary>
+    /// Half damage got rolled
+    /// </summary>
+    public UnityEvent UE_HalfDamage;
+    /// <summary>
     /// for when the player only takes three hits on the bottom platform
     /// </summary>
     public UnityEvent UE_TrippleDamge;
@@ -62,9 +66,15 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_SpawnNoCoins;
     /// <summary>
+<<<<<<< HEAD
     /// give the player three sheilds
     /// </summary>
     public UnityEvent UE_GivePlayerSheild;
+=======
+    /// Effect that makes floors slippery
+    /// </summary>
+    public UnityEvent UE_SetSlipperyFloors;
+>>>>>>> main
 
     void Awake()
     {
