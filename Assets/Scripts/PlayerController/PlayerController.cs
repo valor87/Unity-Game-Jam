@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
     //TRIGGER COLLISIONS CHECKING FOR SURFACES PLAYER IS COLLIDING WITH
     private void OnTriggerEnter(Collider other)
     {
-        if (!surfacesPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))
+        if (!surfacesPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin") && !other.CompareTag("TriggerSurface"))
         {
             surfacesPlayerIsTouching.Add(other.transform);
         }
