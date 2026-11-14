@@ -20,6 +20,22 @@ public class SoundManager : MonoBehaviour
         Ominous666
     }
 
+    /// <summary>Which version of the music is playing. The numbers match the Music State parameter in FMOD.</summary>
+    public enum MusicState
+    {
+        Level = 0,    // drums version
+        Elevator = 1, // no drums, quieter
+        Shop = 2      // 8-bit version
+    }
+
+    [Header("Music")]
+    [Tooltip("One 2D event with all three music tracks playing in sync, crossfaded by the Music State parameter.")]
+    [SerializeField] private EventReference musicEvent;
+    [Tooltip("Must match the parameter name in FMOD exactly (case-sensitive).")]
+    [SerializeField] private string musicStateParameter = "Music State";
+    [Tooltip("Start the music automatically when the game starts.")]
+    [SerializeField] private bool autoStartMusic = true;
+
     [Header("Slot machine")]
     [Tooltip("Default slot machine sound, used for almost every roll. The elevator starts when the sound finishes.")]
     [SerializeField] private EventReference slotMachineEvent;
@@ -40,6 +56,16 @@ public class SoundManager : MonoBehaviour
     [Tooltip("Parameter label that triggers the door-open sound. Must match FMOD exactly.")]
     [SerializeField] private string openLabel = "Open";
 
+    [Header("Player")]
+    [Tooltip("One-shot played when the player takes damage. Use a 2D event so it always sounds the same.")]
+    [SerializeField] private EventReference playerDamageEvent;
+
+    [Header("Obstacles")]
+    [Tooltip("One-shot played when a spinning dummy launches its attack. Use a 3D event so it comes from the dummy.")]
+    [SerializeField] private EventReference dummySwingEvent;
+    [Tooltip("One-shot played each time a swinging axe passes the middle of its swing. Use a 3D event so it comes from the axe.")]
+    [SerializeField] private EventReference axeSwingEvent;
+
     [Header("Coins")]
     [Tooltip("One-shot played when the player collects a coin.")]
     [SerializeField] private EventReference coinCollectEvent;
@@ -50,6 +76,11 @@ public class SoundManager : MonoBehaviour
 
     private EventInstance elevatorInstance;
     private bool elevatorPlaying; // true from loop start until the doors are opened
+
+    private EventInstance musicInstance;
+    private bool musicStarted;
+    private MusicState currentMusicState = MusicState.Level;
+    private MusicState stateBeforeShop = MusicState.Level;
 
     private void Awake()
     {
@@ -63,10 +94,26 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        // A duplicate manager destroys itself in Awake, so only the real one starts the music
+        if (Instance == this && autoStartMusic)
+            StartMusic();
+    }
+
     private void OnDestroy()
     {
         if (Instance == this)
+        {
             Instance = null;
+
+            if (musicStarted)
+            {
+                musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                musicInstance.release();
+                musicStarted = false;
+            }
+        }
 
         CancelPendingElevatorStart();
 
@@ -191,6 +238,47 @@ public class SoundManager : MonoBehaviour
         elevatorPlaying = false;
     }
 
+    // ---------------- Music ----------------
+
+    /// <summary>Starts the music in the Level state. Called automatically unless Auto Start Music is off.</summary>
+    public void StartMusic()
+    {
+        if (musicStarted || musicEvent.IsNull)
+            return;
+
+        musicInstance = RuntimeManager.CreateInstance(musicEvent);
+        musicInstance.setParameterByName(musicStateParameter, (float)MusicState.Level);
+        musicInstance.start();
+        musicStarted = true;
+        currentMusicState = MusicState.Level;
+    }
+
+    /// <summary>Crossfades to another version of the music. FMOD's seek speed on the parameter sets how smooth it is.</summary>
+    public void SetMusicState(MusicState state)
+    {
+        currentMusicState = state;
+
+        if (!musicStarted)
+            return;
+
+        musicInstance.setParameterByName(musicStateParameter, (float)state);
+    }
+
+    /// <summary>Call when the shop menu opens: switches to the 8-bit version and remembers what to go back to.</summary>
+    public void EnterShop()
+    {
+        if (currentMusicState != MusicState.Shop)
+            stateBeforeShop = currentMusicState;
+
+        SetMusicState(MusicState.Shop);
+    }
+
+    /// <summary>Call when the shop menu closes: goes back to whichever version was playing before.</summary>
+    public void ExitShop()
+    {
+        SetMusicState(stateBeforeShop);
+    }
+
     // ---------------- Coins ----------------
 
     /// <summary>Call at the moment a coin is collected. Pass the coin's transform so the sound plays from it.</summary>
@@ -200,6 +288,38 @@ public class SoundManager : MonoBehaviour
             return;
 
         RuntimeManager.PlayOneShot(coinCollectEvent, GetPosition(source));
+    }
+
+    // ---------------- Player ----------------
+
+    /// <summary>Call when the player takes damage.</summary>
+    public void PlayPlayerDamage()
+    {
+        if (playerDamageEvent.IsNull)
+            return;
+
+        // No source: plays at the camera, which suits a 2D "it hit me" sound
+        RuntimeManager.PlayOneShot(playerDamageEvent, GetPosition(null));
+    }
+
+    // ---------------- Obstacles ----------------
+
+    /// <summary>Call at the moment a spinning dummy launches its attack. Pass the dummy's transform so the sound comes from it.</summary>
+    public void PlayDummySwing(Transform source)
+    {
+        if (dummySwingEvent.IsNull)
+            return;
+
+        RuntimeManager.PlayOneShot(dummySwingEvent, GetPosition(source));
+    }
+
+    /// <summary>Call each time a swinging axe passes the middle of its swing. Pass the axe's transform so the sound comes from it.</summary>
+    public void PlayAxeSwing(Transform source)
+    {
+        if (axeSwingEvent.IsNull)
+            return;
+
+        RuntimeManager.PlayOneShot(axeSwingEvent, GetPosition(source));
     }
 
     // ---------------- Helpers ----------------

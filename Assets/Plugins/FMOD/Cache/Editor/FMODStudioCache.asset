@@ -539,7 +539,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 9114013651860211447}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -690,6 +690,7 @@ MonoBehaviour:
   - {fileID: 7973749826694083006}
   - {fileID: 980217713694494696}
   - {fileID: -9185775594977457811}
+  - {fileID: 5877387006966674672}
   EditorParameters:
   - {fileID: 8922966024763351459}
   MasterBanks:
@@ -697,7 +698,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 7214993048590288762}
   cacheVersion: 131861
-  cacheTime: 639302175857267702
+  cacheTime: 639302166842230074
   SerializableEventsDict:
   - key: snapshot:/InShopDucking
     index: 0
@@ -737,6 +738,8 @@ MonoBehaviour:
     index: 17
   - key: event:/Lava Damage
     index: 18
+  - key: event:/Music
+    index: 19
 --- !u!114 &116071979998922154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +839,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 117630
+--- !u!114 &1262762054521214861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Music State
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Music State
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1027000181
+    data2: 3233630950
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1475904538640427958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,7 +932,7 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639301330086838454
+  lastModified: 639302128109306249
   FileSizes:
   - Name: Desktop
     Value: 1954
@@ -934,6 +961,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5877387006966674672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music
+  Guid:
+    Data1: -981679496
+    Data2: 1198033852
+    Data3: 928555953
+    Data4: -1826367855
+  Banks:
+  - {fileID: 9114013651860211447}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1262762054521214861}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 33982
 --- !u!114 &5935766873302305698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,10 +1131,10 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639302175856749273
+  lastModified: 639302128109362198
   FileSizes:
   - Name: Desktop
-    Value: 1804
+    Value: 1882
   Exists: 1
 --- !u!114 &7215789891695877044
 MonoBehaviour:
@@ -1183,7 +1238,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 9114013651860211447}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1330,8 +1385,8 @@ MonoBehaviour:
   Path: TowerGameFMODProject/Build/Desktop/SFXBank.bank
   Name: SFXBank
   StudioPath: bank:/SFXBank
-  lastModified: 639302175857267702
+  lastModified: 639302166842230074
   FileSizes:
   - Name: Desktop
-    Value: 2973280
+    Value: 4387552
   Exists: 1

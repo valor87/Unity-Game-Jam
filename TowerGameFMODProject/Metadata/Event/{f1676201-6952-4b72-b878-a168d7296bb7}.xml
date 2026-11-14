@@ -5,7 +5,7 @@
 			<value>Axe Swing</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{7c216fed-166d-4c05-bd34-15b542bd6049}</destination>
@@ -148,9 +148,18 @@
 	<object class="MixerBusEffectChain" id="{2c88c314-af18-4ddf-8029-6c81d8372ec7}">
 		<relationship name="effects">
 			<destination>{4be3e003-4232-4c05-97e1-9ca0dc9b27b8}</destination>
+			<destination>{566bacb8-18eb-4ded-8566-8f775c4cb1e1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c7ca08a8-58f3-4c5c-8db5-9c9a12377504}" />
 	<object class="MixerBusFader" id="{cb74a720-7b62-4ec2-8d9a-784e9de53462}" />
 	<object class="MixerBusFader" id="{4be3e003-4232-4c05-97e1-9ca0dc9b27b8}" />
+	<object class="SpatialiserEffect" id="{566bacb8-18eb-4ded-8566-8f775c4cb1e1}">
+		<property name="maximumDistance">
+			<value>10</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 </objects>

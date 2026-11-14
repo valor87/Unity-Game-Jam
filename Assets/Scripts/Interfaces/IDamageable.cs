@@ -18,6 +18,7 @@ public interface IDamageable
     }
     public void TakeDamage(float incomingDamage)
     {
+
         _sheildValue = Mathf.Clamp(_sheildValue, 0 , 3);
         if (_sheildValue != 0)
         {
@@ -35,6 +36,9 @@ public interface IDamageable
         if (isPlayer)
         {
             EventCore.instance.UE_PlayTakeDamge.Invoke(currentHealth);
+
+            if (SoundManager.Instance != null)
+                SoundManager.Instance.PlayPlayerDamage();
         }
     }
 }
