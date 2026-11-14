@@ -1,8 +1,4 @@
-using NUnit.Framework;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
