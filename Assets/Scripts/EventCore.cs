@@ -72,8 +72,20 @@ public class EventCore : MonoBehaviour
     /// Effect that makes floors slippery
     /// </summary>
     public UnityEvent UE_SetSlipperyFloors;
-
-    void Awake()
+    /// <summary>
+    /// Wind effect will push against you 
+    /// </summary>
+    public UnityEvent UE_StartWindEffect;
+    /// <summary>
+    /// Enables player double jumping mid air
+    /// </summary>
+    public UnityEvent UE_EnableDoubleJump;
+    /// <summary>
+    /// Enables bouncy walls
+    /// </summary>
+    public UnityEvent UE_EnableBouncyWalls;
+    public UnityEvent UE_UsedShield;
+        void Awake()
     {
         if (instance == null)
         {
