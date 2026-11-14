@@ -18,7 +18,7 @@ public class BouncyWalls : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!wallsPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))
+        if (!wallsPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin") && !other.CompareTag("TriggerSurface"))
         {
             wallsPlayerIsTouching.Add(other.transform);
 

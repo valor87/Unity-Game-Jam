@@ -17,6 +17,10 @@ public class PhobiaManager : MonoBehaviour
         }
         EventCore.instance.UE_RemovePhobia.AddListener(RemovePhobia);
     }
+    public void ShowEffectInBanner(int number)
+    {
+        Effects[number - 1].SetSymbolInBanner();
+    }
     public void StartAllActiveEffects()
     {
         RunEffect(SlotMachine.Instance.firstNumber);

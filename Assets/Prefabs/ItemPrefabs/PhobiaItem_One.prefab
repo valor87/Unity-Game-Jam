@@ -93,4 +93,4 @@ MonoBehaviour:
   floatSpeed: 1
   changeDirectionTime: 3
   currentTime: 0
-  number: 0
+  number: 1

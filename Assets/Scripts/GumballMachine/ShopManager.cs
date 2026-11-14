@@ -43,7 +43,6 @@ public class ShopManager : MonoBehaviour
     {
         EventCore.instance.UE_PausePlayer.Invoke();
         PlayerController.instance.enabled = false;
-        CameraController.instance.enabled = false;
         menu.alpha = 1;
         isShopOpen = true;
 
@@ -56,7 +55,6 @@ public class ShopManager : MonoBehaviour
         EventCore.instance.UE_ResumePlayer.Invoke();
         menu.alpha = 0;
         PlayerController.instance.enabled = true;
-        CameraController.instance.enabled = true;
         isShopOpen = false;
 
         if (SoundManager.Instance != null)

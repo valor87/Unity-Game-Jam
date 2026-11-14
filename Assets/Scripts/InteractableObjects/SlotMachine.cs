@@ -32,10 +32,13 @@ public class SlotMachine : MonoBehaviour
             SoundManager.Instance.PlaySlotMachineThenElevator(rolledResult, transform);
         yield return new WaitForSeconds(timeForFirstNum);
         _tokenPreview.UpdateFirstNumberMaterial(firstNumber-1);
+        PhobiaManager.instance.ShowEffectInBanner(firstNumber);
         yield return new WaitForSeconds(timeForSecondNum);
         _tokenPreview.UpdateSecondNumberMaterial(secondNumber-1);
+        PhobiaManager.instance.ShowEffectInBanner(secondNumber);
         yield return new WaitForSeconds(timeForThirdNum);
         _tokenPreview.UpdateThirdNumberMaterial(thirdNumber-1);
+        PhobiaManager.instance.ShowEffectInBanner(thirdNumber);
 
         yield return new WaitForSeconds(endTime);
         SlotMachineAnimationEnds();

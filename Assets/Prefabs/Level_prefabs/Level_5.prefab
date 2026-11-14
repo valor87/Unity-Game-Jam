@@ -1365,6 +1365,8 @@ MonoBehaviour:
   _coinPrefab: {fileID: 2361610134225572011, guid: 2c94841ba8af06f46a48a9f29a3158ad, type: 3}
   _allCoinPositions: []
   _remainingPositions: []
+  _groundBlock: {fileID: 0}
+  _lavaAnimation: {fileID: 0}
 --- !u!1 &4937864993714434848
 GameObject:
   m_ObjectHideFlags: 0

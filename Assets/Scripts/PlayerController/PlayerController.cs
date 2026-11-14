@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
         _jumpStrength += (isWallRunning && canSuperWallJump) ? superWallJumpStrength : 0;
-        rb.linearVelocity += direction.normalized * _jumpStrength;
+        rb.linearVelocity += (direction.normalized + Vector3.up)* _jumpStrength;
     }
     void MoveInDirection(Vector3 _direction)
     {

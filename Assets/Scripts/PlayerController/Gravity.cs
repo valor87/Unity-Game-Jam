@@ -18,7 +18,7 @@ public class Gravity : MonoBehaviour
     }
     void FixedUpdate()
     {
-        rb.linearVelocity += Vector3.down * gravityScale + wind * windScale;
+        rb.linearVelocity += (Vector3.down * gravityScale) + (wind * windScale);
     }
     private void EnableWindEffect()
     {
