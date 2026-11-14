@@ -41,7 +41,7 @@ public class ShopManager : MonoBehaviour
     }
     public void OpenShop()
     {
-        Cursor.lockState = CursorLockMode.None;
+        EventCore.instance.UE_PausePlayer.Invoke();
         PlayerController.instance.enabled = false;
         CameraController.instance.enabled = false;
         menu.alpha = 1;
@@ -52,7 +52,8 @@ public class ShopManager : MonoBehaviour
     }
     public void CloseShop()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+
+        EventCore.instance.UE_ResumePlayer.Invoke();
         menu.alpha = 0;
         PlayerController.instance.enabled = true;
         CameraController.instance.enabled = true;
