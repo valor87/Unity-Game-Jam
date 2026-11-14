@@ -6,6 +6,7 @@ public class ShopManager : MonoBehaviour
     public static ShopManager instance;
     [SerializeField] private CanvasGroup menu;
     public bool isShopOpen;
+    private List<GameObject> availableItemsToSpawnList = new List<GameObject>();
     [SerializeField] private List<GameObject> items = new List<GameObject>();
     public List<GameObject> spawnedItems;
     private void Start()
@@ -19,6 +20,13 @@ public class ShopManager : MonoBehaviour
         {
             int randomNum = Random.Range(1, items.Count);
             spawnedItems.Add(Instantiate(items[randomNum]));
+        }
+    }
+    public void ListSpawnableItems()
+    {
+        for (int i = 0; i < items.Count - 1; i++)
+        {
+
         }
     }
     public void OpenShop()
