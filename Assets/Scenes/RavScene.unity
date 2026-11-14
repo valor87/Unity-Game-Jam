@@ -1408,6 +1408,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isStartDoor: 0
 --- !u!65 &317035047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2326,6 +2327,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isStartDoor: 0
 --- !u!65 &584425273
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2722,6 +2724,12 @@ MonoBehaviour:
   UE_HealWhenMoving:
     m_PersistentCalls:
       m_Calls: []
+  UE_SpawnTwoCoins:
+    m_PersistentCalls:
+      m_Calls: []
+  UE_SpawnNoCoins:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &713658321
 Transform:
   m_ObjectHideFlags: 0
@@ -3082,6 +3090,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777536534}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &784305384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 784305386}
+  - component: {fileID: 784305385}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &784305385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784305384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea8463ca05e84819845ab910de16a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  slotMachineEvent:
+    Guid:
+      Data1: 2033818693
+      Data2: 1252065908
+      Data3: 737093002
+      Data4: 514597319
+    Path: event:/Slot Machine
+  slotMachine777Event:
+    Guid:
+      Data1: 1270628538
+      Data2: 1097105458
+      Data3: 1784865178
+      Data4: -812965459
+    Path: event:/Slot Machine Jackpot
+  slotMachine666Event:
+    Guid:
+      Data1: 1087367010
+      Data2: 1222091435
+      Data3: 94468762
+      Data4: 215726939
+    Path: event:/Slot Machine 666
+  elevatorStartDelay: 6
+  elevatorEvent:
+    Guid:
+      Data1: 1752466509
+      Data2: 1112662031
+      Data3: 1847582883
+      Data4: 1601771393
+    Path: event:/Elevator
+  elevatorStateParameter: Elevator State
+  closedLabel: Closed
+  openLabel: Open
+--- !u!4 &784305386
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784305384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.51496, y: -0.9, z: 23.42837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786228783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,6 +3242,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isStartDoor: 0
 --- !u!1 &851828390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,6 +3700,35 @@ MonoBehaviour:
   _cameraTransform: {fileID: 7648649474997021127}
   _interactionKey: 101
   _interactionDistance: 5
+--- !u!114 &910788279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910788260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56db98e13a99fbd419d7b87661ec094c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  _maxHealth: 100
+  _currentHealth: 100
+  tickDamage: 1
+--- !u!114 &910788280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910788260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d5eb3eb1b037445b65d8cbefce411f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinCollect
+  currentCoins: 0
+  coinIncreaseValue: 1
 --- !u!1 &968974809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3971,6 +4085,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isStartDoor: 1
 --- !u!65 &1022880997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7888,6 +8003,12 @@ PrefabInstance:
       addedObject: {fileID: 910788270}
     - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 910788280}
+    - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 910788279}
+    - targetCorrespondingSourceObject: {fileID: 6345926857273361753, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 910788269}
   m_SourcePrefab: {fileID: 100100000, guid: 8ca74a9db1f2e184fa612ef84da93420, type: 3}
 --- !u!4 &7648649474997021127 stripped
@@ -7918,4 +8039,5 @@ SceneRoots:
   - {fileID: 713658321}
   - {fileID: 1783490774}
   - {fileID: 1521607004}
+  - {fileID: 784305386}
   - {fileID: 297476993}

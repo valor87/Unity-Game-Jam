@@ -22,7 +22,7 @@ public class Health : MonoBehaviour, IDamageable
         EventCore.instance.UE_TakeDamageWhenStill.AddListener(EnableTakeDamageWhileStill);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableTakeDamageWhileStill);
         //one philia
-        EventCore.instance.UE_TakeDamageWhenStill.AddListener(EnableHealWhenMoving);
+        EventCore.instance.UE_HealWhenMoving.AddListener(EnableHealWhenMoving);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableHealWhenMoving);
     }
 

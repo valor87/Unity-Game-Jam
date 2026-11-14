@@ -70,6 +70,7 @@ public class SlotMachine : MonoBehaviour
         numbers.Remove(secondNumber);
         randomNum = Random.Range(0, 100);
         thirdNumber = numbers[(int)(randomNum % numbers.Count)];
+        PhobiaManager.instance.AddPhobia(thirdNumber);
         Debug.Log($"rolled: {firstNumber} {secondNumber} {thirdNumber}");
     }
     

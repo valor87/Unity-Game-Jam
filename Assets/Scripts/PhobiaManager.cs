@@ -25,4 +25,12 @@ public class PhobiaManager : MonoBehaviour
     {
         Effects[number - 1].DoEffect();
     }
+    public void AddPhobia(int number)
+    {
+        Phobias[number] = true;
+    }
+    public void RemovePhobia(int number)
+    {
+        Phobias[number] = false;
+    }
 }
