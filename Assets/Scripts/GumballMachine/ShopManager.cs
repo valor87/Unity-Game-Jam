@@ -45,6 +45,9 @@ public class ShopManager : MonoBehaviour
         CameraController.instance.enabled = false;
         menu.alpha = 1;
         isShopOpen = true;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.EnterShop();
     }
     public void CloseShop()
     {
@@ -52,6 +55,9 @@ public class ShopManager : MonoBehaviour
         PlayerController.instance.enabled = true;
         CameraController.instance.enabled = true;
         isShopOpen = false;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.ExitShop();
     }
 }
 

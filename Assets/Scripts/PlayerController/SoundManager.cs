@@ -70,6 +70,13 @@ public class SoundManager : MonoBehaviour
     [Tooltip("One-shot played each time a swinging axe passes the middle of its swing. Use a 3D event so it comes from the axe.")]
     [SerializeField] private EventReference axeSwingEvent;
 
+    [Header("Shop")]
+    [Tooltip("Looping shop ambience. Starts when the shop opens and fades out when it closes. Use a 2D event.")]
+    [SerializeField] private EventReference shopAmbienceEvent;
+
+    [Tooltip("One-shot played when the player buys an item in the shop. Use a 2D event.")]
+    [SerializeField] private EventReference shopPurchaseEvent;
+
     [Header("Lava level")]
     [Tooltip("Looping lava ambience. Plays from when the lava appears until the player enters the end elevator.")]
     [SerializeField] private EventReference lavaAmbienceEvent;
@@ -91,6 +98,9 @@ public class SoundManager : MonoBehaviour
     private bool musicStarted;
     private MusicState currentMusicState = MusicState.Level;
     private MusicState stateBeforeShop = MusicState.Level;
+
+    private EventInstance shopAmbienceInstance;
+    private bool shopAmbiencePlaying;
 
     private EventInstance lavaInstance;
     private bool lavaInstancePlaying;
@@ -132,6 +142,7 @@ public class SoundManager : MonoBehaviour
             }
 
             StopLavaAmbience(immediate: true);
+            StopShopAmbience(immediate: true);
         }
 
         CancelPendingElevatorStart();
@@ -283,19 +294,53 @@ public class SoundManager : MonoBehaviour
         musicInstance.setParameterByName(musicStateParameter, (float)state);
     }
 
-    /// <summary>Call when the shop menu opens: switches to the 8-bit version and remembers what to go back to.</summary>
+    /// <summary>
+    /// Call when the shop menu opens: switches the music to the 8-bit version (remembering what to go back to)
+    /// and starts the shop ambience.
+    /// </summary>
     public void EnterShop()
     {
         if (currentMusicState != MusicState.Shop)
             stateBeforeShop = currentMusicState;
 
         SetMusicState(MusicState.Shop);
+        StartShopAmbience();
     }
 
-    /// <summary>Call when the shop menu closes: goes back to whichever version was playing before.</summary>
+    /// <summary>Call when the shop menu closes: music goes back to whichever version was playing, and the shop ambience fades out.</summary>
     public void ExitShop()
     {
         SetMusicState(stateBeforeShop);
+        StopShopAmbience();
+    }
+
+    /// <summary>Call when the player successfully buys an item.</summary>
+    public void PlayShopPurchase()
+    {
+        if (shopPurchaseEvent.IsNull)
+            return;
+
+        RuntimeManager.PlayOneShot(shopPurchaseEvent, GetPosition(null));
+    }
+
+    private void StartShopAmbience()
+    {
+        if (shopAmbiencePlaying || shopAmbienceEvent.IsNull)
+            return;
+
+        shopAmbienceInstance = RuntimeManager.CreateInstance(shopAmbienceEvent);
+        shopAmbienceInstance.start();
+        shopAmbiencePlaying = true;
+    }
+
+    private void StopShopAmbience(bool immediate = false)
+    {
+        if (!shopAmbiencePlaying)
+            return;
+
+        shopAmbienceInstance.stop(immediate ? FMOD.Studio.STOP_MODE.IMMEDIATE : FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        shopAmbienceInstance.release();
+        shopAmbiencePlaying = false;
     }
 
     // ---------------- Coins ----------------

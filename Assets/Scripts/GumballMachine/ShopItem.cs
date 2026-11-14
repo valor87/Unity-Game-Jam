@@ -28,11 +28,16 @@ public class ShopItem : MonoBehaviour
     public virtual void purchase()
     {
         CoinCollect.instance.currentCoins -= cost;
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayShopPurchase();
+        
         Destroy(gameObject);
+
     }
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Ive been clicked");
-        if (CoinCollect.instance.currentCoins > cost) purchase();
+        if (CoinCollect.instance.currentCoins >= cost) purchase();
     }
 }
