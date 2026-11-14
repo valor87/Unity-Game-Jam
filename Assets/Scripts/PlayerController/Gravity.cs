@@ -3,15 +3,18 @@ using UnityEngine;
 public class Gravity : MonoBehaviour
 {
     private Rigidbody rb;
-    public float gravityScale = 9.81f, windScale = 0.4f;
+    public float gravityScale, lowGravityScale, windScale = 0.4f;
+    private float originalGravityScale;
     private Vector3 wind = Vector3.zero;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        originalGravityScale = gravityScale;
         EventCore.instance.UE_StartWindEffect.AddListener(EnableWindEffect);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableWindEffect);
+        EventCore.instance.UE_Cloud9.AddListener(EnableCloud9);
+        EventCore.instance.UE_EnterEndElevator.AddListener(DisableCloud9);
     }
     void FixedUpdate()
     {
@@ -26,5 +29,13 @@ public class Gravity : MonoBehaviour
     private void DisableWindEffect(Vector3 arg)
     {
         wind = Vector3.zero;
+    }
+    private void EnableCloud9()
+    {
+        gravityScale = lowGravityScale;
+    }
+    private void DisableCloud9(Vector3 arg)
+    {
+        gravityScale = originalGravityScale;
     }
 }

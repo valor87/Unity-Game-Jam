@@ -11,6 +11,7 @@ public class SlotMachine : MonoBehaviour
     public int firstNumber, secondNumber, thirdNumber;
     private Coroutine slotMachineCR;
     [SerializeField] SlotMachineInteract _slotMachineInteract;
+    [SerializeField] TokenPreview _tokenPreview;
     private SoundManager.SlotResult rolledResult;
     private void Start()
     {
@@ -30,11 +31,11 @@ public class SlotMachine : MonoBehaviour
             if (SoundManager.Instance != null)
             SoundManager.Instance.PlaySlotMachineThenElevator(rolledResult, transform);
         yield return new WaitForSeconds(timeForFirstNum);
-        //DISPLAY FIRST NUM CODE HERE
+        _tokenPreview.UpdateFirstNumberMaterial(firstNumber);
         yield return new WaitForSeconds(timeForSecondNum);
-        //DISPLAY SECOND NUM CODE HERE
+        _tokenPreview.UpdateSecondNumberMaterial(secondNumber);
         yield return new WaitForSeconds(timeForThirdNum);
-        //DISPLAY THIRD NUM CODE HERE
+        _tokenPreview.UpdateThirdNumberMaterial(thirdNumber);
 
         yield return new WaitForSeconds(endTime);
         SlotMachineAnimationEnds();
