@@ -80,9 +80,16 @@ public class EventCore : MonoBehaviour
     /// Enables player double jumping mid air
     /// </summary>
     public UnityEvent UE_EnableDoubleJump;
-
+    /// <summary>
+    /// Enables bouncy walls
+    /// </summary>
+    public UnityEvent UE_EnableBouncyWalls;
+    /// <summary>
+    /// Enables bouncy walls
+    /// </summary>
+    public UnityEvent UE_EnableSuperJumpOffWalls;
     public UnityEvent UE_UsedShield;
-    void Awake()
+        void Awake()
     {
         if (instance == null)
         {

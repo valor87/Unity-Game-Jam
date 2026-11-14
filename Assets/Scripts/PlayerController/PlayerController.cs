@@ -20,9 +20,16 @@ public class PlayerController : MonoBehaviour
     private List<Transform> surfacesPlayerIsTouching = new List<Transform>();
     private bool isGrounded => surfacesPlayerIsTouching.Count > 0;
 
-    private bool isFloorSlippery = false;
 
+    //Effects
+    private bool isFloorSlippery = false;
+    [Header("Bouncy walls")]
     private bool alreadyDoubleJumped, canDoubleJump = false;
+    [SerializeField] BouncyWalls bouncyWalls;
+    [Header("Super wall jump vars")]
+    private bool isWallRunning => bouncyWalls.wallsPlayerIsTouching.Count > 0;
+    private bool canSuperWallJump = false;
+    [SerializeField] float superWallJumpStrength;
     private void Start()
     {
         _camera = Camera.main;
@@ -32,6 +39,9 @@ public class PlayerController : MonoBehaviour
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetSlipperyFloors);
         EventCore.instance.UE_EnableDoubleJump.AddListener(EnableDoubleJump);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableDoubleJump);
+        EventCore.instance.UE_EnableSuperJumpOffWalls.AddListener(EnableSuperJumpOffWalls);
+        EventCore.instance.UE_EnterEndElevator.AddListener(DisableSuperJumpOffWalls);
+
     }
 
     private void Update()
@@ -51,12 +61,12 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded)
             {
-                Jump();
+                Jump(jumpStrength);
                 alreadyDoubleJumped = false;
             }
             else if (canDoubleJump && !alreadyDoubleJumped)
             {
-                Jump();
+                Jump(jumpStrength);
                 alreadyDoubleJumped = true;
             }
         }
@@ -75,7 +85,7 @@ public class PlayerController : MonoBehaviour
             AirStrafe(direction);
         }
     }
-    void Jump()
+    public void Jump(float _jumpStrength)
     {
         //Collider[] colliders = Physics.OverlapSphere(transform.position - Vector3.up * 0.41f, 0.72f);
         List<Collider> colliders = new List<Collider>();
@@ -96,7 +106,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("mean position: " +  meanPosition);
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
-        rb.linearVelocity += direction.normalized * jumpStrength;
+        _jumpStrength += (isWallRunning && canSuperWallJump) ? 5 : 0;
+        rb.linearVelocity += direction.normalized * _jumpStrength;
     }
     void MoveInDirection(Vector3 _direction)
     {
@@ -146,6 +157,14 @@ public class PlayerController : MonoBehaviour
     private void DisableDoubleJump(Vector3 arg)
     {
         canDoubleJump = false;
+    }
+    private void EnableSuperJumpOffWalls()
+    {
+        canSuperWallJump = true;
+    }
+    private void DisableSuperJumpOffWalls(Vector3 arg)
+    {
+        canSuperWallJump = false;
     }
 }
 

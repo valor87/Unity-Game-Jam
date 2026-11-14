@@ -40,6 +40,10 @@ public class SoundManager : MonoBehaviour
     [Tooltip("Parameter label that triggers the door-open sound. Must match FMOD exactly.")]
     [SerializeField] private string openLabel = "Open";
 
+    [Header("Coins")]
+    [Tooltip("One-shot played when the player collects a coin.")]
+    [SerializeField] private EventReference coinCollectEvent;
+
     private EventInstance slotInstance;
     private bool slotActive;
     private Coroutine pendingElevatorStart;
@@ -185,6 +189,17 @@ public class SoundManager : MonoBehaviour
         // release() lets the event play out (the door-open sound) and then frees it automatically
         elevatorInstance.release();
         elevatorPlaying = false;
+    }
+
+    // ---------------- Coins ----------------
+
+    /// <summary>Call at the moment a coin is collected. Pass the coin's transform so the sound plays from it.</summary>
+    public void PlayCoinCollect(Transform source = null)
+    {
+        if (coinCollectEvent.IsNull)
+            return;
+
+        RuntimeManager.PlayOneShot(coinCollectEvent, GetPosition(source));
     }
 
     // ---------------- Helpers ----------------
