@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded => surfacesPlayerIsTouching.Count > 0;
 
     private bool isFloorSlippery = false;
+
+    private bool alreadyDoubleJumped, canDoubleJump = false;
     private void Start()
     {
         _camera = Camera.main;
@@ -28,6 +30,8 @@ public class PlayerController : MonoBehaviour
 
         EventCore.instance.UE_SetSlipperyFloors.AddListener(SetSlipperyFloors);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetSlipperyFloors);
+        EventCore.instance.UE_EnableDoubleJump.AddListener(EnableDoubleJump);
+        EventCore.instance.UE_EnterEndElevator.AddListener(DisableDoubleJump);
     }
 
     private void Update()
@@ -43,9 +47,18 @@ public class PlayerController : MonoBehaviour
             rb.linearDamping = 0;
             rb.maxLinearVelocity = 700;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) )
         {
-            Jump();
+            if (isGrounded)
+            {
+                Jump();
+                alreadyDoubleJumped = false;
+            }
+            else if (canDoubleJump && !alreadyDoubleJumped)
+            {
+                Jump();
+                alreadyDoubleJumped = true;
+            }
         }
         ChangeCameraFOVBasedOnSpeed();
     }
@@ -78,7 +91,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Closest pos: " + closestPos + " | name of obj: " + collider.name);
             meanPosition += closestPos;
         }
-        meanPosition /= colliders.Count;
+        if(colliders.Count>0) meanPosition /= colliders.Count;
+
         Debug.Log("mean position: " +  meanPosition);
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
@@ -124,7 +138,15 @@ public class PlayerController : MonoBehaviour
     {
         isFloorSlippery = false;
     }
-
+    
+    private void EnableDoubleJump()
+    {
+        canDoubleJump = true;
+    }
+    private void DisableDoubleJump(Vector3 arg)
+    {
+        canDoubleJump = false;
+    }
 }
 
 
