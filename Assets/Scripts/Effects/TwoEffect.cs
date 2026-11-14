@@ -9,6 +9,6 @@ public class TwoEffect : EffectNumber
 
     public override void BadEffect()
     {
-        
+        EventCore.instance.UE_HalfObsticalSpeed.Invoke();
     }
 }

@@ -38,6 +38,10 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_DoubleDamage;
     /// <summary>
+    /// Half damage got rolled
+    /// </summary>
+    public UnityEvent UE_HalfDamage;
+    /// <summary>
     /// for when the player only takes three hits on the bottom platform
     /// </summary>
     public UnityEvent UE_TrippleDamge;
