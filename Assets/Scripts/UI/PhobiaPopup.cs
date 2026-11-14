@@ -59,6 +59,8 @@ public class PhobiaPopup : MonoBehaviour
     [SerializeField] private float fadeInDuration = 0.3f;
     [SerializeField] private float fadeOutDuration = 0.5f;
 
+    [TextArea(1, 10)]
+    [SerializeField] private string _firstPhobiaMessage;
     private Coroutine showRoutine;
 
     private void Awake()
@@ -167,6 +169,12 @@ public class PhobiaPopup : MonoBehaviour
         }
 
         yield return Fade(1f, 0f, fadeOutDuration);
+
+        if (_firstPhobiaMessage != "")
+        {
+            EventCore.instance.UE_DisplayMessage.Invoke(_firstPhobiaMessage);
+            _firstPhobiaMessage = "";
+        }
 
         popup.gameObject.SetActive(false);
         showRoutine = null;

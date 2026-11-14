@@ -12,6 +12,6 @@ public class CoinsUI : MonoBehaviour
     }
     private void SetUIText(int coinAmount)
     {
-        text.text = $"Coins {coinAmount}";
+        text.text = $"{coinAmount}";
     }
 }

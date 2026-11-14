@@ -12,6 +12,8 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
     [SerializeField] AnimationCurve fillCurve;
     [SerializeField] Slider progressBarUI;
     [SerializeField] CanvasGroup canvasGroup;
+
+
     private void Update()
     {
         if (SlotMachine.Instance.interactable)
