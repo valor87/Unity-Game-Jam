@@ -11,13 +11,14 @@ public class CoinCollect : MonoBehaviour
         instance = this;
         doubledCoinValue = coinIncreaseValue * 2;
         EventCore.instance.UE_DoubleCoinValue.AddListener(DoubleCoinValue);
-        EventCore.instance.UE_EnterEndElevator.AddListener(ResetCoinValue);
+        //EventCore.instance.UE_EnterEndElevator.AddListener(ResetCoinValue);
     }
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Coin"))
             return;
         currentCoins += coinIncreaseValue;
+        Debug.Log("currentcoins: " + currentCoins);
         EventCore.instance.UE_ChangeCoinValue.Invoke(currentCoins);
         
         if (SoundManager.Instance != null)

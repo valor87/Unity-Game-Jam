@@ -133,6 +133,7 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_LoadNewLevel;
     public UnityEvent UE_FoggyLevel;
+    public UnityEvent<bool> UE_SlotMachineStartedRolling;
 
         void Awake()
     {

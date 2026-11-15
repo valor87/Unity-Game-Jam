@@ -10,7 +10,7 @@ using UnityEngine.UI;
 /// </summary>
 public class EffectBannerHUD : MonoBehaviour
 {
-    [SerializeField] Color goodEffectColor, badEffectColor;
+    [SerializeField] Color goodEffectColor, badEffectColor, activePhobiaColor, missingPhobiaColor;
     [System.Serializable]
     private class BannerSlot
     {
@@ -21,9 +21,21 @@ public class EffectBannerHUD : MonoBehaviour
         [Tooltip("The text inside the big pause-menu banner that describes this effect.")]
         public TMP_Text description;
     }
+    [System.Serializable]
+    private class PhobiaSlot
+    {
+        public GameObject root;
+        public Image icon;
+        public TMP_Text name;
+    }
 
     [Header("Banners (fill in order: 1st, 2nd, 3rd number)")]
     [SerializeField] private BannerSlot[] slots = new BannerSlot[3];
+
+    [Header("Phobias (fill in order: 1st, 2nd, 3rd number)")]
+    [SerializeField] private PhobiaSlot[] phobiaSlots = new PhobiaSlot[9];
+    [SerializeField] private Sprite[] activeSprites = new Sprite[9];
+    [SerializeField] private Sprite[] missingSprites = new Sprite[9];
 
     [Header("Pause menu details banner")]
     [Tooltip("The big banner that drops down behind the three small ones. Place it BEFORE (behind) the small banners in the hierarchy.")]
@@ -55,12 +67,28 @@ public class EffectBannerHUD : MonoBehaviour
 
     private void Start()
     {
-        ClearBanners();
+        ClearBanners(Vector3.zero);
+        ClearPhobias();
+        EventCore.instance.UE_EnterEndElevator.AddListener(ClearBanners);
+        EventCore.instance.UE_SlotMachineStartedRolling.AddListener(SetExpanded);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SetExpanded(true);
+        }
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            SetExpanded(false);
+        }
     }
 
     private void OnEnable()
     {
         EffectNumber.EffectTriggered += OnEffectTriggered;
+        PhobiaEvents.PhobiaAdded += onPhobiaAdded;
+        PhobiaEvents.PhobiaRemoved += onPhobiaRemoved;
     }
 
     private void OnDisable()
@@ -74,7 +102,7 @@ public class EffectBannerHUD : MonoBehaviour
     {
         // A new set of three effects is starting: wipe the previous level's banners
         if (filled >= slots.Length)
-            ClearBanners();
+            ClearBanners(Vector3.zero);
 
         BannerSlot slot = slots[filled];
         filled++;
@@ -96,9 +124,34 @@ public class EffectBannerHUD : MonoBehaviour
         if (slot.root != null)
             slot.root.SetActive(true);
     }
-
+    /// <summary>
+    /// Adds the icon and highlights the text of a newly added phobia in the phobia banner that is visible when tabbed.
+    /// </summary>
+    private void onPhobiaAdded(int _number)
+    {
+        phobiaSlots[_number - 1].icon.sprite = activeSprites[_number - 1];
+        phobiaSlots[_number - 1].name.color = activePhobiaColor;
+    }
+    /// <summary>
+    /// Removes the icon and highlights the text of a newly removed phobia in the phobia banner that is visible when tabbed.
+    /// </summary>
+    private void onPhobiaRemoved(int _number)
+    {
+        phobiaSlots[_number - 1].icon.sprite = missingSprites[_number - 1];
+        phobiaSlots[_number - 1].name.color = missingPhobiaColor;
+    }
+    /// <summary>
+    /// Removes all phobias. Usually used at the start.
+    /// </summary>
+    public void ClearPhobias()
+    {
+        for (int i = 1; i < phobiaSlots.Length + 1; i++)
+        {
+            onPhobiaRemoved(i);
+        }
+    }
     /// <summary>Hides all three banners and clears their text. Call this if you ever need to reset manually.</summary>
-    public void ClearBanners()
+    public void ClearBanners(Vector3 arg)
     {
         filled = 0;
 

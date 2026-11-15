@@ -27,6 +27,7 @@ public class SlotMachine : MonoBehaviour
     }
     private IEnumerator RunSlotMachineCoroutine()
     {
+        EventCore.instance.UE_SlotMachineStartedRolling.Invoke(true);
         RollRandomNumbers();
             if (SoundManager.Instance != null)
             SoundManager.Instance.PlaySlotMachineThenElevator(rolledResult, transform);
@@ -38,10 +39,14 @@ public class SlotMachine : MonoBehaviour
         PhobiaManager.instance.ShowEffectInBanner(secondNumber);
         yield return new WaitForSeconds(timeForThirdNum);
         _tokenPreview.UpdateThirdNumberMaterial(thirdNumber-1);
-        PhobiaManager.instance.ShowEffectInBanner(thirdNumber);
-
-        yield return new WaitForSeconds(endTime);
+        if(!(firstNumber == secondNumber))
+        {
+            PhobiaManager.instance.ShowEffectInBanner(thirdNumber);
+            PhobiaManager.instance.AddPhobia(thirdNumber);
+        }
         SlotMachineAnimationEnds();
+        yield return new WaitForSeconds(endTime);
+        EventCore.instance.UE_SlotMachineStartedRolling.Invoke(false);
     }
     private void SlotMachineAnimationEnds()
     {
@@ -80,7 +85,6 @@ public class SlotMachine : MonoBehaviour
         numbers.Remove(secondNumber);
         randomNum = Random.Range(0, 100);
         thirdNumber = numbers[(int)(randomNum % numbers.Count)];
-        PhobiaManager.instance.AddPhobia(thirdNumber);
         Debug.Log($"rolled: {firstNumber} {secondNumber} {thirdNumber}");
     }
     

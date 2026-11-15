@@ -33,6 +33,7 @@ public class PhobiaManager : MonoBehaviour
     }
     public void AddPhobia(int number)
     {
+        if (Phobias[number]) return;
         Phobias[number] = true;
         PhobiaEvents.RaisePhobiaAdded(number);
     }
