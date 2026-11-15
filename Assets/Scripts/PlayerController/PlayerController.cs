@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     [Header("Super wall jump vars")]
     private bool isWallRunning => bouncyWalls.wallsPlayerIsTouching.Count > 0;
     private bool canSuperWallJump = false;
-    [SerializeField] float superWallJumpStrength;
+    [SerializeField] float superWallJumpStrength, superWallJumpHorizontalModifier;
     private void Start()
     {
         instance = this;
@@ -109,7 +109,11 @@ public class PlayerController : MonoBehaviour
         Debug.Log("mean position: " +  meanPosition);
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
-        _jumpStrength += (isWallRunning && canSuperWallJump) ? superWallJumpStrength : 0;
+        if(isWallRunning && canSuperWallJump)
+        {
+            _jumpStrength += superWallJumpStrength;
+            direction.x *= superWallJumpHorizontalModifier; direction.z *= superWallJumpHorizontalModifier;
+        }
         rb.linearVelocity += (direction.normalized + Vector3.up)* _jumpStrength;
     }
     void MoveInDirection(Vector3 _direction)

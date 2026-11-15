@@ -24,9 +24,13 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_HalfObsticalSpeed;
     /// <summary>
-    /// called everytime the player takes damage
+    /// The screen flashes red when damaged
     /// </summary>
     public UnityEvent<float> UE_PlayTakeDamge;
+    /// <summary>
+    /// for updating the health icon top right
+    /// </summary>
+    public UnityEvent<float, float> UE_UpdateHealthBar;
     /// <summary>
     /// For whenever the coin values changes. The int
     /// passed in the NEW coin value

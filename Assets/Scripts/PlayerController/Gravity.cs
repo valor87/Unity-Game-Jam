@@ -6,6 +6,7 @@ public class Gravity : MonoBehaviour
     public float gravityScale, lowGravityScale, windScale = 0.4f;
     private float originalGravityScale;
     private Vector3 wind = Vector3.zero;
+    [SerializeField] ParticleSystem windParticles;
 
     private void Start()
     {
@@ -22,12 +23,15 @@ public class Gravity : MonoBehaviour
     }
     private void EnableWindEffect()
     {
-        float randomX = Random.Range(0, 1);
-        float randomZ = Random.Range(0, 1);
+        float randomX = Random.Range(0.5f, 1);
+        float randomZ = Random.Range(0.5f, 1);
         wind = new Vector3(randomX, 0, randomZ);
+        windParticles.transform.rotation = Quaternion.LookRotation(Vector3.Cross(Vector3.up, wind), Vector3.up);
+        windParticles.Play();
     }
     private void DisableWindEffect(Vector3 arg)
     {
+        windParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         wind = Vector3.zero;
     }
     private void EnableCloud9()
