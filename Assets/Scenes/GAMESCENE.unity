@@ -6752,6 +6752,9 @@ MonoBehaviour:
   UE_RemovePhobia:
     m_PersistentCalls:
       m_Calls: []
+  UE_LoadNewLevel:
+    m_PersistentCalls:
+      m_Calls: []
   UE_FoggyLevel:
     m_PersistentCalls:
       m_Calls: []
@@ -15025,10 +15028,10 @@ Transform:
   - {fileID: 4379328759908719798}
   - {fileID: 748033361}
   - {fileID: 331652232}
-  - {fileID: 1260358087}
   - {fileID: 3085881}
   - {fileID: 515336561}
   - {fileID: 1146102771}
+  - {fileID: 1260358087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518746506
@@ -18890,6 +18893,18 @@ PrefabInstance:
     - target: {fileID: 3122873294919582244, guid: 3f8685781478e294ea9ca5d479a2bbed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015733868932155291, guid: 3f8685781478e294ea9ca5d479a2bbed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6135179543850288948, guid: 3f8685781478e294ea9ca5d479a2bbed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096349183023239146, guid: 3f8685781478e294ea9ca5d479a2bbed, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.93
       objectReference: {fileID: 0}
     - target: {fileID: 7331280736630002210, guid: 3f8685781478e294ea9ca5d479a2bbed, type: 3}
       propertyPath: icon

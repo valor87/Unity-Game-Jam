@@ -16,21 +16,25 @@ public class ShopManager : MonoBehaviour
     }
     public void ReplenishShop()
     {
-        spawnedItems = new List<GameObject>() { Instantiate(items[0], menu.transform) };
+        GameObject spawnedHealthItem = Instantiate(availableItemsToSpawnList[0], menu.transform);
+        spawnedHealthItem.transform.position = itemPlacements[itemPlacements.Count - 1].transform.position;
+        spawnedItems = new List<GameObject>() { spawnedHealthItem };
+
         ListSpawnableItems();
-        int numberOfItems = (availableItemsToSpawnList.Count > 2) ? 2 : availableItemsToSpawnList.Count;
-        Debug.Log(numberOfItems);
+
+        int numberOfItems = Mathf.Clamp(availableItemsToSpawnList.Count, 0, 2);
+
         for (int i = 0; i < numberOfItems; i++)
         {
-            int randomNum = Random.Range(0, numberOfItems);
+            int randomNum = Random.Range(0, availableItemsToSpawnList.Count);
             GameObject spawnedItem = Instantiate(availableItemsToSpawnList[randomNum], menu.transform);
             spawnedItems.Add(spawnedItem);
             spawnedItem.transform.position = itemPlacements[i].position;
-            
         }
     }
     public void ListSpawnableItems()
     {
+        availableItemsToSpawnList = new List<GameObject>();
         for (int i = 1; i < items.Count; i++)
         {
             if (PhobiaManager.instance.Phobias[i])
