@@ -63,4 +63,12 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
         doorMovingCR = null;
     }
 
+    public bool isHoldToInteract()
+    {
+        return false;
+    }
+    public bool shouldShowInteractSign()
+    {
+        return interactable;
+    }
 }

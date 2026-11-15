@@ -41,6 +41,7 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
             heldTime += Time.deltaTime;
         }
     }
+    
 
     private IEnumerator FadeCanvasGroup()
     {
@@ -59,5 +60,14 @@ public class SlotMachineInteract : MonoBehaviour, IInteractable
         heldTime = 0;
         canvasGroup.alpha = 1;
        
+    }
+
+    public bool isHoldToInteract()
+    {
+        return true;
+    }
+    public bool shouldShowInteractSign()
+    {
+        return SlotMachine.Instance.interactable;
     }
 }

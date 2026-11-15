@@ -18,4 +18,13 @@ public class GumballMachineInteract : MonoBehaviour, IInteractable
             shopManager.OpenShop();
         }
     }
+
+    public bool isHoldToInteract()
+    {
+        return false;
+    }
+    public bool shouldShowInteractSign()
+    {
+        return true;
+    }
 }
