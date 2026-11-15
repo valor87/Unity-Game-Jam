@@ -10,6 +10,7 @@ using UnityEngine.UI;
 /// </summary>
 public class EffectBannerHUD : MonoBehaviour
 {
+    [SerializeField] Color goodEffectColor, badEffectColor;
     [System.Serializable]
     private class BannerSlot
     {
@@ -85,8 +86,12 @@ public class EffectBannerHUD : MonoBehaviour
             slot.icon.enabled = sprite != null;
         }
 
-        if (slot.description != null)
+        if (slot.description != null) 
+        { 
             slot.description.text = effect.GetDescription(isBad);
+            if (isBad) slot.description.color = isBad ? badEffectColor : goodEffectColor;
+        }
+            
 
         if (slot.root != null)
             slot.root.SetActive(true);
