@@ -16,7 +16,7 @@ public class ShopManager : MonoBehaviour
     }
     public void ReplenishShop()
     {
-        GameObject spawnedHealthItem = Instantiate(availableItemsToSpawnList[0], menu.transform);
+        GameObject spawnedHealthItem = Instantiate(items[0], menu.transform);
         spawnedHealthItem.transform.position = itemPlacements[itemPlacements.Count - 1].transform.position;
         spawnedItems = new List<GameObject>() { spawnedHealthItem };
 

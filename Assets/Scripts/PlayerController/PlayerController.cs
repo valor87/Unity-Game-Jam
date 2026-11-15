@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("Number of surfaces player is touching: " + surfacesPlayerIsTouching.Count);
+        }
+        
         if (!isFloorSlippery)
         {
             rb.linearDamping = linearDampingAmount;
@@ -125,7 +130,7 @@ public class PlayerController : MonoBehaviour
         _camera.fieldOfView = currentCamFOV;
     }
     //TRIGGER COLLISIONS CHECKING FOR SURFACES PLAYER IS COLLIDING WITH
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (!surfacesPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin") && !other.CompareTag("TriggerSurface"))
         {
