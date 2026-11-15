@@ -17,6 +17,7 @@ public class SpinningDummy : MonoBehaviour
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
         EventCore.instance.UE_HalfObsticalSpeed.AddListener(HalfMovementSpeed);
+        EventCore.instance.UE_FreezeObstacles.AddListener(ZeroMovementSpeed);
     }
     private void DoubleMovementSpeed()
     {
@@ -25,6 +26,10 @@ public class SpinningDummy : MonoBehaviour
     private void HalfMovementSpeed()
     {
         _rotationSpeed = _rotationSpeedHalfed;
+    }
+    private void ZeroMovementSpeed()
+    {
+        _rotationSpeed = 0;
     }
     private void ReturnMovement(Vector3 arg)
     {

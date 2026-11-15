@@ -32,6 +32,10 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent<float, float> UE_UpdateHealthBar;
     /// <summary>
+    /// for freezing all obstacles
+    /// </summary>
+    public UnityEvent UE_FreezeObstacles;
+    /// <summary>
     /// For whenever the coin values changes. The int
     /// passed in the NEW coin value
     /// </summary>

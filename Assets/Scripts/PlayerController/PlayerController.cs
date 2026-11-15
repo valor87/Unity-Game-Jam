@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 
     //Effects
-    private bool isFloorSlippery = false;
+    private float floorFriction;
     [Header("Bouncy walls")]
     private bool alreadyDoubleJumped, canDoubleJump = false;
     [SerializeField] BouncyWalls bouncyWalls;
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         instance = this;
         _camera = Camera.main;
         rb = GetComponent<Rigidbody>();
+        floorFriction = linearDampingAmount;
 
         EventCore.instance.UE_SetSlipperyFloors.AddListener(SetSlipperyFloors);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetSlipperyFloors);
@@ -49,10 +50,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Number of surfaces player is touching: " + surfacesPlayerIsTouching.Count);
         }
         
-        if (!isFloorSlippery)
-        {
-            rb.linearDamping = linearDampingAmount;
-        }
+            rb.linearDamping = floorFriction;
         
         rb.maxLinearVelocity = maxMoveSpeed;
         if (!isGrounded)
@@ -150,11 +148,11 @@ public class PlayerController : MonoBehaviour
     }
     private void SetSlipperyFloors()
     {
-        isFloorSlippery = true;
+        floorFriction = 0;
     }
     private void ResetSlipperyFloors(Vector3 arg)
     {
-        isFloorSlippery = false;
+        floorFriction = linearDampingAmount;
     }
     
     private void EnableDoubleJump()

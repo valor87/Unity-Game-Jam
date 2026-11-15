@@ -14,13 +14,14 @@ public class SwingObstacles : MonoBehaviour
     float _previousSide;
     [SerializeField, Range(0f, 0.5f)] float _whooshLead = 0.15f;
 
-    bool changeRotation = false;
+    bool changeRotation = false, freezeRotation = false;
     float _doubleRotationTimeAmount;
     void Start()
     {
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetRotationTime);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovement);
         EventCore.instance.UE_HalfObsticalSpeed.AddListener(HalfMovementSpeed);
+        EventCore.instance.UE_FreezeObstacles.AddListener(ZeroMovementSpeed);
         _doubleRotationTimeAmount = _rotationTime * 2;
         _baseRotationTime = _rotationTime;
         _rotationR = _rightApex.rotation;
@@ -41,12 +42,18 @@ public class SwingObstacles : MonoBehaviour
     {
         _rotationTime = _baseRotationTime / 2;
     }
+    private void ZeroMovementSpeed()
+    {
+        freezeRotation = true;
+    }
     private void ResetRotationTime(Vector3 arg)
     {
+        freezeRotation = false;
         _rotationTime = _baseRotationTime;
     }
     private void RoateAxe()
     {
+        if (freezeRotation) return;
         t += Time.deltaTime;
         transform.rotation = Quaternion.Lerp(_rotationR, _rotationL, _curve.Evaluate(t / _rotationTime));
         
