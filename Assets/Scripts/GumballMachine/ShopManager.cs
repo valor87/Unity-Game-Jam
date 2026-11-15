@@ -49,9 +49,9 @@ public class ShopManager : MonoBehaviour
         PlayerController.instance.enabled = false;
         menu.alpha = 1;
         isShopOpen = true;
-
+        /*
         if (SoundManager.Instance != null)
-            SoundManager.Instance.EnterShop();
+            SoundManager.Instance.EnterShop();*/
     }
     public void CloseShop()
     {

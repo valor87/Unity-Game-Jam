@@ -4,11 +4,11 @@ public class TwoEffect : EffectNumber
 {
     public override void GoodEffect()
     {
-        EventCore.instance.UE_DoubleObsticalSpeed.Invoke();
+        EventCore.instance.UE_HalfObsticalSpeed.Invoke();
     }
 
     public override void BadEffect()
     {
-        EventCore.instance.UE_HalfObsticalSpeed.Invoke();
+        EventCore.instance.UE_DoubleObsticalSpeed.Invoke();
     }
 }
