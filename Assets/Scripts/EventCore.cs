@@ -120,7 +120,10 @@ public class EventCore : MonoBehaviour
     /// Used by item to rid player of a phobia
     /// </summary>
     public UnityEvent<int> UE_RemovePhobia;
-
+    /// <summary>
+    /// Used by elevator script to load a new prefab level
+    /// </summary>
+    public UnityEvent UE_LoadNewLevel;
     public UnityEvent UE_FoggyLevel;
 
         void Awake()

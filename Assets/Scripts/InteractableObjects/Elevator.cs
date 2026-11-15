@@ -51,7 +51,7 @@ public class Elevator : MonoBehaviour
         //Vector3 offset = playerTransform.position - exitElevator.position;
         playerTransform.position = startElevator.position + new Vector3(0f,playerTransform.localScale.y,0f);
         EventCore.instance.UE_EnterEndElevator.Invoke(Vector3.zero);
-
+        EventCore.instance.UE_LoadNewLevel.Invoke();
     }
 
     public void SevenGoodEffect()
