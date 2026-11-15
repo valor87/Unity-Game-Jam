@@ -6,6 +6,7 @@ public class BouncyWalls : MonoBehaviour
     public PlayerController controller;
     bool areWallsBouncy = false;
     public List<Transform> wallsPlayerIsTouching = new List<Transform>();
+    [SerializeField] float bounceStrength;
 
     private void Start()
     {
@@ -14,7 +15,7 @@ public class BouncyWalls : MonoBehaviour
     }
     private void Update()
     {
-        if (areWallsBouncy && wallsPlayerIsTouching.Count > 0) controller.Jump(controller.jumpStrength);
+        if (areWallsBouncy && wallsPlayerIsTouching.Count > 0) controller.Jump(bounceStrength);
     }
     private void OnTriggerEnter(Collider other)
     {

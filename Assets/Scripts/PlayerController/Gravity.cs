@@ -26,7 +26,7 @@ public class Gravity : MonoBehaviour
         float randomX = Random.Range(0.5f, 1);
         float randomZ = Random.Range(0.5f, 1);
         wind = new Vector3(randomX, 0, randomZ);
-        windParticles.transform.rotation = Quaternion.LookRotation(Vector3.Cross(wind, Vector3.up), Vector3.up);
+        windParticles.transform.rotation = Quaternion.LookRotation(Vector3.Cross(wind, Vector3.up), -Vector3.up);
         windParticles.Play();
     }
     private void DisableWindEffect(Vector3 arg)

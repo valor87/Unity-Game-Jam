@@ -7670,9 +7670,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1595834938057550915, guid: aaa3f87953c695d449d1d4c4e663f87b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2146015921087796059, guid: aaa3f87953c695d449d1d4c4e663f87b, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146876213816417330, guid: aaa3f87953c695d449d1d4c4e663f87b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2533563200138417987, guid: aaa3f87953c695d449d1d4c4e663f87b, type: 3}
       propertyPath: m_Name
@@ -7692,7 +7700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5564639931232503599, guid: aaa3f87953c695d449d1d4c4e663f87b, type: 3}
       propertyPath: m_BlocksRaycasts
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6658072058720289090, guid: aaa3f87953c695d449d1d4c4e663f87b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -25863,9 +25871,9 @@ Transform:
   - {fileID: 748033361}
   - {fileID: 331652232}
   - {fileID: 3085881}
-  - {fileID: 1260358087}
   - {fileID: 1390410161}
   - {fileID: 515336561}
+  - {fileID: 1260358087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1511375095 stripped
