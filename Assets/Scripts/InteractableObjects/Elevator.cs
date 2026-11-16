@@ -34,7 +34,6 @@ public class Elevator : MonoBehaviour
         EventCore.instance.UE_SpawnCoins.Invoke(numberOfCoinsToSpawn);
         levelExitDoors.OpenDoors();
         levelEntranceDoors.interactable = false;
-        ShopManager.instance.ReplenishShop();
 
         if (SoundManager.Instance != null)
             SoundManager.Instance.SetMusicState(SoundManager.MusicState.Level);
@@ -45,6 +44,7 @@ public class Elevator : MonoBehaviour
     }
     private void EndLevel()
     {
+        ShopManager.instance.ReplenishShop();
         //Teleport player to start elevator and make start doors uninteractable and make slot machine interactable
         levelEntranceDoors.interactable = false;
         SlotMachine.Instance.interactable = true;

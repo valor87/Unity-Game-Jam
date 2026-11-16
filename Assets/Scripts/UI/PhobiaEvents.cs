@@ -15,14 +15,18 @@ public static class PhobiaEvents
     /// <summary>Fired with the phobia that was added: 1-9, or 777 / 666 for the special rolls.</summary>
     public static event Action<int> PhobiaAdded;
     public static event Action<int> PhobiaRemoved;
-
+    public static event Action<int> DisplayPhobiaInBanner;
     /// <summary>Call this from AddPhobia, right when a phobia is added.</summary>
     public static void RaisePhobiaAdded(int phobia)
     {
-        PhobiaAdded?.Invoke(phobia);
+        PhobiaAdded?.Invoke(phobia-1);
     }
     public static void RaisePhobiaRemoved(int phobia)
     {
-        PhobiaRemoved?.Invoke(phobia);
+        PhobiaRemoved?.Invoke(phobia-1);
+    }
+    public static void RaiseDisplayPhobiaInBanner(int phobia)
+    {
+        DisplayPhobiaInBanner?.Invoke(phobia - 1);
     }
 }

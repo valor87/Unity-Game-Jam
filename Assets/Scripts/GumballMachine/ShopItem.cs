@@ -3,41 +3,30 @@ using UnityEngine.EventSystems;
 
 public class ShopItem : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] int cost;
-    [SerializeField] Vector3 direction;
-    [SerializeField] float floatSpeed, changeDirectionTime, currentTime;
-
-    private void Start()
+    [SerializeField]protected int cost;
+    protected void Start()
     {
-        ChooseNewDirection();   
+        EventCore.instance.UE_ClearItemsFromShop.AddListener(DestroyItem);
     }
-    private void Update()
-    {
-        currentTime += Time.deltaTime;
-        if (currentTime > changeDirectionTime)
-        {
-            currentTime = 0;
-            ChooseNewDirection();
-        }
-    }
-    private void ChooseNewDirection()
-    {
-        direction = new Vector3(Random.Range(0, 1),0, Random.Range(0, 1));
-        //rb.linearVelocity = direction * floatSpeed;
-    }
-    public virtual void purchase()
+    protected virtual void Purchase()
     {
         CoinCollect.instance.currentCoins -= cost;
-
+        EventCore.instance.UE_ChangeCoinValue.Invoke(CoinCollect.instance.currentCoins);
         if (SoundManager.Instance != null)
             SoundManager.Instance.PlayShopPurchase();
-        
-        Destroy(gameObject);
 
+        Destroy(gameObject);
     }
-    public void OnPointerClick(PointerEventData eventData)
+    protected virtual void TryPurchase() { } //put the conditions required for purchase here and call Purchase() from inside
+    
+    protected void DestroyItem()
+    {
+        Destroy(gameObject);
+    }
+
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Ive been clicked");
-        if (CoinCollect.instance.currentCoins >= cost) purchase();
+        TryPurchase();
     }
 }

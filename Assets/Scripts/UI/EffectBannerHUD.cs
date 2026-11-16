@@ -27,6 +27,7 @@ public class EffectBannerHUD : MonoBehaviour
         public GameObject root;
         public Image icon;
         public TMP_Text name;
+        public TMP_Text desc;
     }
 
     [Header("Banners (fill in order: 1st, 2nd, 3rd number)")]
@@ -71,6 +72,7 @@ public class EffectBannerHUD : MonoBehaviour
         ClearPhobias();
         EventCore.instance.UE_EnterEndElevator.AddListener(ClearBanners);
         EventCore.instance.UE_SlotMachineStartedRolling.AddListener(SetExpanded);
+        EventCore.instance.UE_OpenedShop.AddListener(SetExpanded);
     }
     private void Update()
     {
@@ -87,7 +89,7 @@ public class EffectBannerHUD : MonoBehaviour
     private void OnEnable()
     {
         EffectNumber.EffectTriggered += OnEffectTriggered;
-        PhobiaEvents.PhobiaAdded += onPhobiaAdded;
+        PhobiaEvents.DisplayPhobiaInBanner += onPhobiaAdded;
         PhobiaEvents.PhobiaRemoved += onPhobiaRemoved;
     }
 
@@ -117,7 +119,7 @@ public class EffectBannerHUD : MonoBehaviour
         if (slot.description != null) 
         { 
             slot.description.text = effect.GetDescription(isBad);
-            if (isBad) slot.description.color = isBad ? badEffectColor : goodEffectColor;
+            slot.description.color = isBad ? badEffectColor : goodEffectColor;
         }
             
 
@@ -129,23 +131,25 @@ public class EffectBannerHUD : MonoBehaviour
     /// </summary>
     private void onPhobiaAdded(int _number)
     {
-        phobiaSlots[_number - 1].icon.sprite = activeSprites[_number - 1];
-        phobiaSlots[_number - 1].name.color = activePhobiaColor;
+        Debug.Log("On phobia added number: " + _number);
+        phobiaSlots[_number].icon.sprite = activeSprites[_number];
+        phobiaSlots[_number].name.color = phobiaSlots[_number].desc.color = activePhobiaColor;
     }
     /// <summary>
     /// Removes the icon and highlights the text of a newly removed phobia in the phobia banner that is visible when tabbed.
     /// </summary>
     private void onPhobiaRemoved(int _number)
     {
-        phobiaSlots[_number - 1].icon.sprite = missingSprites[_number - 1];
-        phobiaSlots[_number - 1].name.color = missingPhobiaColor;
+        Debug.Log("On phobia removed number: " + _number);
+        phobiaSlots[_number].icon.sprite = missingSprites[_number];
+        phobiaSlots[_number].name.color = phobiaSlots[_number].desc.color = missingPhobiaColor;
     }
     /// <summary>
     /// Removes all phobias. Usually used at the start.
     /// </summary>
     public void ClearPhobias()
     {
-        for (int i = 1; i < phobiaSlots.Length + 1; i++)
+        for (int i = 0; i < phobiaSlots.Length; i++)
         {
             onPhobiaRemoved(i);
         }

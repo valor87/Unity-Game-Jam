@@ -134,8 +134,9 @@ public class EventCore : MonoBehaviour
     public UnityEvent UE_LoadNewLevel;
     public UnityEvent UE_FoggyLevel;
     public UnityEvent<bool> UE_SlotMachineStartedRolling;
-
-        void Awake()
+    public UnityEvent UE_ClearItemsFromShop;
+    public UnityEvent<bool> UE_OpenedShop;
+    void Awake()
     {
         if (instance == null)
         {

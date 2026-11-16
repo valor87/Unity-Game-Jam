@@ -3,9 +3,17 @@ using UnityEngine;
 public class PhobiaItem : ShopItem
 {
     public int number;
-    public override void purchase()
+    protected override void TryPurchase()
+    {
+        if (CoinCollect.instance.currentCoins >= cost)
+        {
+            Purchase();
+        }
+    }
+    protected override void Purchase()
     {
         EventCore.instance.UE_RemovePhobia.Invoke(number);
-        base.purchase();
+        PhobiaEvents.RaisePhobiaRemoved(number);
+        base.Purchase();
     }
 }

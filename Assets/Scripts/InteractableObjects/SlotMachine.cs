@@ -42,7 +42,7 @@ public class SlotMachine : MonoBehaviour
         if(!(firstNumber == secondNumber))
         {
             PhobiaManager.instance.ShowEffectInBanner(thirdNumber);
-            PhobiaManager.instance.AddPhobia(thirdNumber);
+            
         }
         SlotMachineAnimationEnds();
         yield return new WaitForSeconds(endTime);
@@ -85,6 +85,7 @@ public class SlotMachine : MonoBehaviour
         numbers.Remove(secondNumber);
         randomNum = Random.Range(0, 100);
         thirdNumber = numbers[(int)(randomNum % numbers.Count)];
+        PhobiaManager.instance.AddPhobia(thirdNumber);
         Debug.Log($"rolled: {firstNumber} {secondNumber} {thirdNumber}");
     }
     

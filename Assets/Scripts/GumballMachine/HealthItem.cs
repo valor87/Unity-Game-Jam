@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class HealthItem : ShopItem
 {
-    public override void purchase()
+    protected override void TryPurchase()
+    {
+        if (CoinCollect.instance.currentCoins >= cost)
+        {
+            Purchase();
+        }
+    }
+    protected override void Purchase()
     {
         EventCore.instance.UE_RefillPlayerHealth.Invoke();
-        base.purchase();
+        base.Purchase();
     }
 }

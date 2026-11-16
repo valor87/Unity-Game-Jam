@@ -92,6 +92,7 @@ public class PhobiaPopup : MonoBehaviour
     /// </summary>
     public void Show(int phobia)
     {
+        phobia++;
         if (popup == null)
             return;
 
@@ -126,9 +127,11 @@ public class PhobiaPopup : MonoBehaviour
 
     private IEnumerator ShowRoutine(PhobiaEntry entry)
     {
+        Debug.Log("Phobia pop up event");
         if (delayBeforeShow > 0f)
             yield return new WaitForSecondsRealtime(delayBeforeShow);
 
+        PhobiaEvents.RaiseDisplayPhobiaInBanner(entry.number);
         if (icon != null)
         {
             icon.sprite = entry.icon;

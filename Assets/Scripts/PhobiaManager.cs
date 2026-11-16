@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PhobiaManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class PhobiaManager : MonoBehaviour
     }
     public void AddPhobia(int number)
     {
+        Debug.Log("Adding phobia: " + number);
+        Debug.Log("Does phobia already exist?: " + Phobias[number]);
         if (Phobias[number]) return;
         Phobias[number] = true;
         PhobiaEvents.RaisePhobiaAdded(number);

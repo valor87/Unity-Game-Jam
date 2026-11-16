@@ -85,5 +85,6 @@ public class Health : MonoBehaviour, IDamageable
     private void RefillHealth()
     {
         currentHealth = maxHealth;
+        EventCore.instance.UE_UpdateHealthBar.Invoke(currentHealth, maxHealth);
     }
 }
