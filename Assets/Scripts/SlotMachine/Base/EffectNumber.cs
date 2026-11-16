@@ -27,15 +27,15 @@ public class EffectNumber : MonoBehaviour
     /// The banner HUD listens to this, so PhobiaManager doesn't need to know about the UI.
     /// </summary>
     public static event Action<EffectNumber, bool> EffectTriggered;
-
-    public virtual void DoEffect()
+    public void SetSymbolInBanner()
     {
         bool isBad = PhobiaManager.instance.Phobias[number];
-
         // Announce the result first, so the HUD shows what was decided at this moment
         EffectTriggered?.Invoke(this, isBad);
-
-        if (isBad)
+    }
+    public virtual void DoEffect()
+    {
+        if (PhobiaManager.instance.Phobias[number])
         {
             BadEffect();
         }

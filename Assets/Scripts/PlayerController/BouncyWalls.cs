@@ -3,18 +3,23 @@ using UnityEngine;
 
 public class BouncyWalls : MonoBehaviour
 {
-    PlayerController controller;
+    public PlayerController controller;
     bool areWallsBouncy = false;
     public List<Transform> wallsPlayerIsTouching = new List<Transform>();
+    [SerializeField] float bounceStrength;
 
     private void Start()
     {
         EventCore.instance.UE_EnableBouncyWalls.AddListener(EnableBouncyWalls);
         EventCore.instance.UE_EnterEndElevator.AddListener(DisableBouncyWalls);
     }
+    private void Update()
+    {
+        if (areWallsBouncy && wallsPlayerIsTouching.Count > 0) controller.Jump(bounceStrength);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (!wallsPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))
+        if (!wallsPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin") && !other.CompareTag("TriggerSurface"))
         {
             wallsPlayerIsTouching.Add(other.transform);
 

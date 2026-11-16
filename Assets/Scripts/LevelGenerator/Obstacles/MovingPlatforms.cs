@@ -18,6 +18,7 @@ public class MovingPlatforms : MonoBehaviour
         EventCore.instance.UE_EnterEndElevator.AddListener(ReturnMovement);
         EventCore.instance.UE_DoubleObsticalSpeed.AddListener(DoubleMovementSpeed);
         EventCore.instance.UE_HalfObsticalSpeed.AddListener(HalfMovementSpeed);
+        EventCore.instance.UE_FreezeObstacles.AddListener(ZeroMovementSpeed);
     }
     private void DoubleMovementSpeed()
     {
@@ -26,6 +27,10 @@ public class MovingPlatforms : MonoBehaviour
     private void HalfMovementSpeed()
     {
         _platformSpeed = _moveAmountHalved;
+    }
+    private void ZeroMovementSpeed()
+    {
+        _platformSpeed = 0;
     }
     private void ReturnMovement(Vector3 arg)
     {

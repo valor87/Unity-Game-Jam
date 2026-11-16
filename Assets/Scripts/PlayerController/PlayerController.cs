@@ -1,12 +1,9 @@
-using NUnit.Framework;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     private Rigidbody rb;
     private Camera _camera; //for movement zoom out effects
     [Header("Camera units")]
@@ -15,25 +12,27 @@ public class PlayerController : MonoBehaviour
     private float currentCamFOV;
 
     [Header("Movement units")]
-    [SerializeField] private float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength, linearDampingAmount;
+    [SerializeField] public float moveSpeed, airStrafeSpeed, maxMoveSpeed, jumpStrength, linearDampingAmount;
     private Vector3 moveDirection;
     private List<Transform> surfacesPlayerIsTouching = new List<Transform>();
     private bool isGrounded => surfacesPlayerIsTouching.Count > 0;
 
 
     //Effects
-    private bool isFloorSlippery = false;
+    private float floorFriction;
     [Header("Bouncy walls")]
     private bool alreadyDoubleJumped, canDoubleJump = false;
     [SerializeField] BouncyWalls bouncyWalls;
     [Header("Super wall jump vars")]
     private bool isWallRunning => bouncyWalls.wallsPlayerIsTouching.Count > 0;
     private bool canSuperWallJump = false;
-    [SerializeField] float superWallJumpStrength;
+    [SerializeField] float superWallJumpStrength, superWallJumpHorizontalModifier;
     private void Start()
     {
+        instance = this;
         _camera = Camera.main;
         rb = GetComponent<Rigidbody>();
+        floorFriction = linearDampingAmount;
 
         EventCore.instance.UE_SetSlipperyFloors.AddListener(SetSlipperyFloors);
         EventCore.instance.UE_EnterEndElevator.AddListener(ResetSlipperyFloors);
@@ -46,10 +45,12 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!isFloorSlippery)
+        if (Input.GetKeyDown(KeyCode.N))
         {
-            rb.linearDamping = linearDampingAmount;
+            Debug.Log("Number of surfaces player is touching: " + surfacesPlayerIsTouching.Count);
         }
+        
+            rb.linearDamping = floorFriction;
         
         rb.maxLinearVelocity = maxMoveSpeed;
         if (!isGrounded)
@@ -106,8 +107,12 @@ public class PlayerController : MonoBehaviour
         Debug.Log("mean position: " +  meanPosition);
         Vector3 direction = transform.position - meanPosition;
         Debug.Log("direction: " + direction);
-        _jumpStrength += (isWallRunning && canSuperWallJump) ? superWallJumpStrength : 0;
-        rb.linearVelocity += direction.normalized * _jumpStrength;
+        if(isWallRunning && canSuperWallJump)
+        {
+            _jumpStrength += superWallJumpStrength;
+            direction.x *= superWallJumpHorizontalModifier; direction.z *= superWallJumpHorizontalModifier;
+        }
+        rb.linearVelocity += (direction.normalized + Vector3.up)* _jumpStrength;
     }
     void MoveInDirection(Vector3 _direction)
     {
@@ -127,9 +132,9 @@ public class PlayerController : MonoBehaviour
         _camera.fieldOfView = currentCamFOV;
     }
     //TRIGGER COLLISIONS CHECKING FOR SURFACES PLAYER IS COLLIDING WITH
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (!surfacesPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin"))
+        if (!surfacesPlayerIsTouching.Contains(other.transform) && !other.CompareTag("Coin") && !other.CompareTag("TriggerSurface"))
         {
             surfacesPlayerIsTouching.Add(other.transform);
         }
@@ -143,11 +148,11 @@ public class PlayerController : MonoBehaviour
     }
     private void SetSlipperyFloors()
     {
-        isFloorSlippery = true;
+        floorFriction = 0;
     }
     private void ResetSlipperyFloors(Vector3 arg)
     {
-        isFloorSlippery = false;
+        floorFriction = linearDampingAmount;
     }
     
     private void EnableDoubleJump()

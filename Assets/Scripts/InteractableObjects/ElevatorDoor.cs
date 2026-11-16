@@ -15,18 +15,17 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
     {
         if (interactable)
         {
-            // Only play the sound if the doors will actually open (not already open or mid-animation)
-            bool willOpen = doorMovingCR == null && !isOpened;
-            if (willOpen && SoundManager.Instance != null)
-            {
-                SoundManager.Instance.OpenElevatorDoors(transform);
-            }
             OpenDoors();
+            interactable = false;
             if (isStartDoor) Elevator.instance.PlayerStartedLevel();
         }
     }
     public void OpenDoors()
     {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.OpenElevatorDoors(transform);
+        }
         if (doorMovingCR == null && !isOpened)
         {
             doorMovingCR = StartCoroutine(MoveDoors(distanceToOpenDoor));
@@ -63,4 +62,12 @@ public class ElevatorDoor : MonoBehaviour, IInteractable
         doorMovingCR = null;
     }
 
+    public bool isHoldToInteract()
+    {
+        return false;
+    }
+    public bool shouldShowInteractSign()
+    {
+        return interactable;
+    }
 }

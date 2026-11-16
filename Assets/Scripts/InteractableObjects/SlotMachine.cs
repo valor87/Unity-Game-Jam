@@ -27,18 +27,26 @@ public class SlotMachine : MonoBehaviour
     }
     private IEnumerator RunSlotMachineCoroutine()
     {
+        EventCore.instance.UE_SlotMachineStartedRolling.Invoke(true);
         RollRandomNumbers();
             if (SoundManager.Instance != null)
             SoundManager.Instance.PlaySlotMachineThenElevator(rolledResult, transform);
         yield return new WaitForSeconds(timeForFirstNum);
-        _tokenPreview.UpdateFirstNumberMaterial(firstNumber);
+        _tokenPreview.UpdateFirstNumberMaterial(firstNumber-1);
+        PhobiaManager.instance.ShowEffectInBanner(firstNumber);
         yield return new WaitForSeconds(timeForSecondNum);
-        _tokenPreview.UpdateSecondNumberMaterial(secondNumber);
+        _tokenPreview.UpdateSecondNumberMaterial(secondNumber-1);
+        PhobiaManager.instance.ShowEffectInBanner(secondNumber);
         yield return new WaitForSeconds(timeForThirdNum);
-        _tokenPreview.UpdateThirdNumberMaterial(thirdNumber);
-
-        yield return new WaitForSeconds(endTime);
+        _tokenPreview.UpdateThirdNumberMaterial(thirdNumber-1);
+        if(!(firstNumber == secondNumber))
+        {
+            PhobiaManager.instance.ShowEffectInBanner(thirdNumber);
+            
+        }
         SlotMachineAnimationEnds();
+        yield return new WaitForSeconds(endTime);
+        EventCore.instance.UE_SlotMachineStartedRolling.Invoke(false);
     }
     private void SlotMachineAnimationEnds()
     {
@@ -53,6 +61,7 @@ public class SlotMachine : MonoBehaviour
         if (randomNum > 99)
         {
             Debug.Log("Rolled 777");
+            firstNumber = secondNumber = thirdNumber = 7;
             rolledResult = SoundManager.SlotResult.Jackpot777;
             PhobiaEvents.RaisePhobiaAdded(PhobiaEvents.Phobia777);
             //777
@@ -60,6 +69,7 @@ public class SlotMachine : MonoBehaviour
         } else if (randomNum > 98)
         {
             Debug.Log("Rolled 666");
+            firstNumber = secondNumber = thirdNumber = 6;
             rolledResult = SoundManager.SlotResult.Ominous666;
             PhobiaEvents.RaisePhobiaAdded(PhobiaEvents.Phobia666);
             //666

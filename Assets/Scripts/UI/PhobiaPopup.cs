@@ -59,8 +59,6 @@ public class PhobiaPopup : MonoBehaviour
     [SerializeField] private float fadeInDuration = 0.3f;
     [SerializeField] private float fadeOutDuration = 0.5f;
 
-    [TextArea(1, 10)]
-    [SerializeField] private string _firstPhobiaMessage;
     private Coroutine showRoutine;
 
     private void Awake()
@@ -94,6 +92,7 @@ public class PhobiaPopup : MonoBehaviour
     /// </summary>
     public void Show(int phobia)
     {
+        phobia++;
         if (popup == null)
             return;
 
@@ -128,9 +127,11 @@ public class PhobiaPopup : MonoBehaviour
 
     private IEnumerator ShowRoutine(PhobiaEntry entry)
     {
+        Debug.Log("Phobia pop up event");
         if (delayBeforeShow > 0f)
             yield return new WaitForSecondsRealtime(delayBeforeShow);
 
+        PhobiaEvents.RaiseDisplayPhobiaInBanner(entry.number);
         if (icon != null)
         {
             icon.sprite = entry.icon;
@@ -150,6 +151,10 @@ public class PhobiaPopup : MonoBehaviour
             dismissPrompt.SetActive(keyDismiss);
 
         popup.gameObject.SetActive(true);
+
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.PlayPopup();
+
         yield return Fade(0f, 1f, fadeInDuration);
 
         float timer = 0f;
@@ -169,12 +174,6 @@ public class PhobiaPopup : MonoBehaviour
         }
 
         yield return Fade(1f, 0f, fadeOutDuration);
-
-        if (_firstPhobiaMessage != "")
-        {
-            EventCore.instance.UE_DisplayMessage.Invoke(_firstPhobiaMessage);
-            _firstPhobiaMessage = "";
-        }
 
         popup.gameObject.SetActive(false);
         showRoutine = null;

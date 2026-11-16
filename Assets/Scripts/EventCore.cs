@@ -24,9 +24,17 @@ public class EventCore : MonoBehaviour
     /// </summary>
     public UnityEvent UE_HalfObsticalSpeed;
     /// <summary>
-    /// called everytime the player takes damage
+    /// The screen flashes red when damaged
     /// </summary>
     public UnityEvent<float> UE_PlayTakeDamge;
+    /// <summary>
+    /// for updating the health icon top right
+    /// </summary>
+    public UnityEvent<float, float> UE_UpdateHealthBar;
+    /// <summary>
+    /// for freezing all obstacles
+    /// </summary>
+    public UnityEvent UE_FreezeObstacles;
     /// <summary>
     /// For whenever the coin values changes. The int
     /// passed in the NEW coin value
@@ -112,10 +120,23 @@ public class EventCore : MonoBehaviour
     /// When triggering messages for the player
     /// </summary>
     public UnityEvent<string> UE_DisplayMessage;
-
+    /// <summary>
+    /// Used by item to refill player health to full
+    /// </summary>
+    public UnityEvent UE_RefillPlayerHealth;
+    /// <summary>
+    /// Used by item to rid player of a phobia
+    /// </summary>
+    public UnityEvent<int> UE_RemovePhobia;
+    /// <summary>
+    /// Used by elevator script to load a new prefab level
+    /// </summary>
+    public UnityEvent UE_LoadNewLevel;
     public UnityEvent UE_FoggyLevel;
-
-        void Awake()
+    public UnityEvent<bool> UE_SlotMachineStartedRolling;
+    public UnityEvent UE_ClearItemsFromShop;
+    public UnityEvent<bool> UE_OpenedShop;
+    void Awake()
     {
         if (instance == null)
         {

@@ -15,14 +15,17 @@ public class DamgeUI : MonoBehaviour
     {
         if (running)
             return;
+
         StartCoroutine(DamgeUiAnimation());
+
     }
     IEnumerator DamgeUiAnimation()
     {
         running = true;
         Color baseColor = _hurtImage.color;
         float transparency = _transparencyAmount;
-        while(transparency >= 0){
+        while (transparency >= 0)
+        {
             transparency -= 0.1f;
             baseColor.a = transparency;
             _hurtImage.color = baseColor;

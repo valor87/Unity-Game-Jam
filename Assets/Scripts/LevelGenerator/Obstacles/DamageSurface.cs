@@ -38,7 +38,16 @@ public class DamageSurface : MonoBehaviour
 
             collision.gameObject.GetComponent<IDamageable>().TakeDamage(_tempDamge);
             if (_respawnFloor)
+            {
+                if (collision.gameObject.GetComponent<IDamageable>().isPlayer
+                    && SoundManager.Instance != null
+                    && SoundManager.Instance.IsLavaActive)
+                {   
+                    SoundManager.Instance.PlayLavaBurn(collision.transform);
+                }
+
                 EventCore.instance.UE_RespawnPlayer.Invoke(collision.transform);
+            }
         }
     }
     private void OnCollisionExit(Collision collision)

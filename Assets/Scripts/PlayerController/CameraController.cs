@@ -3,32 +3,24 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController instance;
     private float XRotation,  YRotation;
     public float sensitivity = 2;
     private float _pausedSens;
     private void Start()
     {
+        instance = this;
         //Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 
         EventCore.instance.UE_PausePlayer.AddListener(PausePlayer);
         EventCore.instance.UE_ResumePlayer.AddListener(ResumePlayer);
 
     }
+    
     private void Update()
     {
         //allow players to unlock their cursor
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(Cursor.lockState != CursorLockMode.Locked)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            } else
-            {
-                Cursor.lockState = CursorLockMode.Confined;
-            }
-        }
 
         XRotation += Input.GetAxis("Mouse Y") * -1 * sensitivity;
         YRotation += Input.GetAxis("Mouse X") * sensitivity;

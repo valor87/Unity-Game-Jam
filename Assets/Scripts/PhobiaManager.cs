@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PhobiaManager : MonoBehaviour
 {
     public static PhobiaManager instance;
     public Dictionary<int, bool>Phobias = new Dictionary<int, bool>();
     public List<EffectNumber> Effects = new List<EffectNumber>();
+
     private void Start()
     {
         instance = this;
@@ -14,6 +16,11 @@ public class PhobiaManager : MonoBehaviour
             Phobias.Add(i, false);
             Debug.Log("Phobia added: " + i);
         }
+        EventCore.instance.UE_RemovePhobia.AddListener(RemovePhobia);
+    }
+    public void ShowEffectInBanner(int number)
+    {
+        Effects[number - 1].SetSymbolInBanner();
     }
     public void StartAllActiveEffects()
     {
@@ -27,6 +34,9 @@ public class PhobiaManager : MonoBehaviour
     }
     public void AddPhobia(int number)
     {
+        Debug.Log("Adding phobia: " + number);
+        Debug.Log("Does phobia already exist?: " + Phobias[number]);
+        if (Phobias[number]) return;
         Phobias[number] = true;
         PhobiaEvents.RaisePhobiaAdded(number);
     }

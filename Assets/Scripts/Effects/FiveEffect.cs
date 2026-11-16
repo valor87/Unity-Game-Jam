@@ -4,7 +4,7 @@ public class FiveEffect : EffectNumber
 {
     public override void GoodEffect()
     {
-        
+        EventCore.instance.UE_FreezeObstacles.Invoke();
     }
 
     public override void BadEffect()

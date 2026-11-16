@@ -11,8 +11,13 @@ public class CoinSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject coin;
     [SerializeField] private CoinPosition coinPos;
+    private void Start()
+    {
+        EventCore.instance.UE_EnterEndElevator.AddListener(ResetCoinAtEndOfLevel);
+    }
     public void SpawnCoint(GameObject c)
     {
+        coin = c;
         Vector3 spawnPositino = transform.position;
         switch (coinPos)
         {
@@ -32,5 +37,10 @@ public class CoinSpawner : MonoBehaviour
 
         c.transform.position = spawnPositino;
         c.SetActive(true);
+    }
+
+    private void ResetCoinAtEndOfLevel(Vector3 arg)
+    {
+        coin.SetActive(false);
     }
 }

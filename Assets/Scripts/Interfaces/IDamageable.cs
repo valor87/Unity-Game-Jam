@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public interface IDamageable
 {
@@ -31,14 +32,19 @@ public interface IDamageable
         if (IsDead())
         {
             Debug.Log("im dead, send the player back to the main menu");
+            SceneManager.LoadScene("GAMESCENE");
         }
 
         if (isPlayer)
         {
-            EventCore.instance.UE_PlayTakeDamge.Invoke(currentHealth);
-
-            if (SoundManager.Instance != null)
-                SoundManager.Instance.PlayPlayerDamage();
+            EventCore.instance.UE_UpdateHealthBar.Invoke(currentHealth, maxHealth);
+            if (incomingDamage > 3)
+            {
+                EventCore.instance.UE_PlayTakeDamge.Invoke(currentHealth);
+                if (SoundManager.Instance != null)
+                    SoundManager.Instance.PlayPlayerDamage();
+            }
+            
         }
     }
 }
