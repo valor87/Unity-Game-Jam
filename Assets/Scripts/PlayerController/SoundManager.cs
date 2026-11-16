@@ -328,7 +328,7 @@ public class SoundManager : MonoBehaviour
         if (shopAmbiencePlaying || shopAmbienceEvent.IsNull)
             return;
 
-        shopAmbienceInstance = RuntimeManager.CreateInstance(shopAmbienceEvent);
+        //shopAmbienceInstance = RuntimeManager.CreateInstance(shopAmbienceEvent);
         shopAmbienceInstance.start();
         shopAmbiencePlaying = true;
     }
